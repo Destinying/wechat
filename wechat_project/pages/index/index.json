@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "allpages": "../allpages/allpages"
+  },
+  "navigationBarTitleText":"Meshmellow"
 }

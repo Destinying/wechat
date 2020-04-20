@@ -1,13 +1,22 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<view>
+  <view class="title_lay">
+    <text>分类：</text>
+      <view  class="title_data" wx:for="{{title_data}}" wx:key="index">
+            {{item.name}}
+      </view>
+      <view  class="flex_view">
+      <text style="display:block">标签：</text>
+      <view class="title_inline">
+          <scroll-view scroll-x  class="scroll_class">
+            <view class="scroll_view" wx:for="{{title_Classification}}" wx:key="index">
+                  {{item.name}}
+            </view>
+          </scroll-view>
+      </view>
+      </view>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class="container">
+    <allpages imgList="{{getallpages}}"></allpages>
   </view>
 </view>

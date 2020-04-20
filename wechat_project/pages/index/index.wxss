@@ -1,21 +1,32 @@
-/**index.wxss**/
-.userinfo {
+.title_lay{
+  margin: 0 2%;
+  font-size: 30rpx
+}
+.scroll_class{
+  white-space:nowrap;
+}
+.scroll_view{
+  display: inline-block;
+  margin:0 40rpx 0 0rpx;
+}
+.title_lay view{
+ 
+}
+.flex_view{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin-top: 10rpx;
 }
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.title_data{
+  display: inline-block;
+  margin:0 20rpx;
 }
-
-.userinfo-nickname {
-  color: #aaa;
+.title_inline{
+  width: 85%;
 }
-
-.usermotto {
-  margin-top: 200px;
+.title_lay text{
+  color:#999;
+  width: 15%;
+}
+.title_lay view{
+  color: #555;
 }
