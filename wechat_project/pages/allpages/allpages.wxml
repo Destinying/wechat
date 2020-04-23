@@ -1,4 +1,4 @@
-
+<navigator url = "../playvideo/playvideo?id={{item.id}}" hover-class="none">
   <view class="all_pages" wx:for="{{getallpages}}" wx:key="index">
       <view class="layout_img">
         <image src='{{item.thumbnail}}' class="all_pages_img"></image>
@@ -9,3 +9,4 @@
         <text>更新时间：{{item.res_name}}</text>
       </view>
   </view>
+</navigator>

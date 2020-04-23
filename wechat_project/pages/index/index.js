@@ -18,27 +18,96 @@ Page({
    arr_f:[],
    item_id:'',
    showstate:false,
-   value:"",
-   switchNav_01:"",
-   currentTab_01:""
+   value:0,
+   switchNav_01:0,
+   currentTab_01:"",
+   height:"",
+   current_page:1,
+   total:0,
+   per_page:1,
+   cont:'',
+   result:[],
+   dif_title:[]
   },
-  getallpages() {
-    var _this = this;
+  lower(event){
+    var _this=this;
+    event.index=1
+    // console.log(event)
+    var per_page = _this.data.per_page+1;  //获取当前的页数加1传给后台
+    // console.log(per_page)
+    var value = _this.data.value;
+    var switchNav = _this.data.switchNav_01;
     wx.request({
       url: 'https://cloud.meshmellow.cn/wechatapi/course_lists.html',
       data: {
-        cid: 0,
-        tag_id: 0,
+        page: per_page,
+        cid: value,
+        tag_id: switchNav,
       },
       success(res) {
-        console.log(res)
+        // console.log(res)                   //当前页数返回的数据
+        _this.result = _this.data.getallpages; 
+        // console.log(_this.result)
+        var resArr = [];
+        var resArr_01=[];
+        resArr=res.data.data.data;  //存的现在最新的20个数据
+        // console.log(resArr)
+        
+        var total =res.data.data.total;
+        // var per_page = parseInt(total/_this.per_page)
+        // _this.result.forEach(function (val, index) {
+        //   resArr_01.push(val)
+        // })
+        // console.log(resArr_01)     // 所有页数返回回来的数据
+        resArr_01= _this.result.concat(resArr);
+        var cont=resArr_01;
+        _this.data.per_page = res.data.data.current_page;
+        //算出当前页数      
+        // console.log(_this.data.per_page)
+        // console.log(resArr_01.length);
+    if (cont.length >= total) {
+      wx.showToast({ //如果全部加载完成了也弹一个框
+        title: '我也是有底线的~',
+        icon: 'none',
+        duration: 1000,
+        iconType:'cancel'
+      });
+      return false;
+    } else {
+      wx.showLoading({ //期间为了显示效果可以添加一个过度的弹出框提示“加载中”  
+        title: '加载中',
+        icon: 'loading',
+      });
+      setTimeout(() => {
+        _this.setData({
+          getallpages: resArr_01
+        });
+        wx.hideLoading();
+      }, 1500)
+    }
+      }
+    })
+  },
+  getallpages() {
+    var _this = this;
+    var value = _this.data.value;
+    var switchNav = _this.data.switchNav_01;
+    wx.request({
+      url: 'https://cloud.meshmellow.cn/wechatapi/course_lists.html',
+      data: {
+        cid: value,
+        tag_id: switchNav,
+      },
+      success(res) {
+        // console.log(res)
         var title_data=res.data.class_list; //分类
         title_data.splice(0,0,{id:0,name:"全部"}) //分类添加全部
         var title_Classification = res.data.tag_list; //标签
         title_Classification.splice(0, 0, { id: 0, name: "全部" })
         title_Classification.splice(16, 1)
-       
+        _this.total = res.data.data.total //获取所有数据
         var res_data = res.data.data.data; //20个图片加文字
+        _this.per_page = res.data.data.per_page //获取当前页面数据数量
         var res_val_arr=[];
         res_data.forEach(function(val,index){
           var updatetime = new Date(val.update_time*1000);
@@ -50,6 +119,7 @@ Page({
           val.res_name = res_val;
         })
         _this.setData({
+          resArr_01: res_data,
           getallpages: res_data,
           title_data: title_data,
           showstate:true,
@@ -114,7 +184,8 @@ Page({
         this.setData({
           pixelRatio: res.pixelRatio,
           windowHeight: res.windowHeight,
-          windowWidth: res.windowWidth
+          windowWidth: res.windowWidth,
+          height:res.windowHeight
         })
        
       },
@@ -123,10 +194,12 @@ Page({
   clicktitle(event){
     var _this = this;
     var cur = event.currentTarget.dataset.current;
-    console.log(event.currentTarget)
-    _this.value = event.currentTarget.id;
-    var value = _this.value;
-    var switchNav= _this.switchNav_01;
+    // console.log(event.currentTarget)
+    _this.data.value = event.currentTarget.id;
+    var value = _this.data.value;
+    var switchNav= _this.data.switchNav_01; 
+    // console.log(switchNav)
+    // console.log(value)
     _this.showstate = false;
     wx.request({
       url: "https://cloud.meshmellow.cn/wechatapi/course_lists.html",
@@ -136,9 +209,10 @@ Page({
       },
       method: "POST",
       success(res) {
-        var dif_title = res.data.data.data;
+        _this.dif_title = res.data.data.data;
+       
         _this.setData({
-          getallpages: dif_title,
+          getallpages: _this.dif_title,
           showstate: true,
           currentTab_01: value
         })
@@ -150,9 +224,11 @@ Page({
     //每个tab选项宽度占1/5
     var _this=this;
     var cur = event.currentTarget.dataset.current;
-    _this.switchNav_01 = event.currentTarget.id;
-    var value = _this.value;
-    var switchNav = _this.switchNav_01;
+    _this.data.switchNav_01 = event.currentTarget.id;
+    var value = _this.data.value;
+    var switchNav = _this.data.switchNav_01;
+    // console.log(switchNav)
+    // console.log(_this.data.value)
     _this.showstate = false;
     // _this.arr_f=_this.title_arr;  //获取所有标签数组中的信息
     // console.log(_this.arr_f)
@@ -174,7 +250,7 @@ Page({
       title: '加载中...',
       showstate: false
     })
-    setTimeout(function () {
+    // setTimeout(function () {
     wx.request({
         url:"https://cloud.meshmellow.cn/wechatapi/course_lists.html",
         data:{
@@ -183,20 +259,22 @@ Page({
         },
         method:"POST",
         success(res){
-          var dif_title=res.data.data.data;
+          _this.dif_title=res.data.data.data;
+          // console.log(_this.dif_title)
           _this.setData({
-          getallpages :dif_title,
+            getallpages: _this.dif_title,
           showstate:true
           })
         }
       })
-    },1000)
+    // },1000)
   },
   switchTab(event){
     var cur = event.detail.current;
     var cur_id = event.detail.currentItemId
     var _this=this;
     var singleNavWidth = this.data.windowWidth / 5;
+    var value=_this.data.value
     this.setData({
       currentTab: cur,
       navScrollLeft: (cur - 2) * singleNavWidth,
@@ -209,16 +287,14 @@ Page({
         wx.request({
           url: "https://cloud.meshmellow.cn/wechatapi/course_lists.html",
           data: {
-            cid: 0,
+            cid: value,
             tag_id: cur_id,
           },
           method: "POST",
-
           success(res) {
-
-            var dif_title = res.data.data.data;
+            _this.dif_title = res.data.data.data;
             _this.setData({
-              getallpages: dif_title,
+              getallpages: _this.dif_title,
               showstate: true
             })
             wx.hideLoading()
