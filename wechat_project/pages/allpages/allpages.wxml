@@ -1,10 +1,11 @@
-<view class="all_pages" wx:for="{{imgList}}" wx:key="index">
-    <view class="layout_img">
-      <image src='{{item.thumbnail}}' class="all_pages_img"></image>
-    </view>
-    <view class="layout_text">
-      <text>{{item.title}}</text>
-      <text>销售价：￥{{item.present_price}}</text>
-      <text>更新时间：{{item.res_name}}</text>
-    </view>
-</view>
+
+  <view class="all_pages" wx:for="{{getallpages}}" wx:key="index">
+      <view class="layout_img">
+        <image src='{{item.thumbnail}}' class="all_pages_img"></image>
+      </view>
+      <view class="layout_text">
+        <text>{{item.title}}</text>
+        <text>销售价：￥{{item.present_price}}</text>
+        <text>更新时间：{{item.res_name}}</text>
+      </view>
+  </view>

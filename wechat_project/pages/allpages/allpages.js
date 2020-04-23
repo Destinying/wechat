@@ -5,12 +5,12 @@ Component({
    */
 
   properties: {
-    imgList: {
+    getallpages: {
        type: Array,
        value: [],
        observer: function(newVal, oldVal) {
          this.setData({
-          imgList: newVal
+           getallpages: newVal
          })
        }
     }
@@ -20,7 +20,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-      
+ 
   },
   /**
    * 组件的方法列表

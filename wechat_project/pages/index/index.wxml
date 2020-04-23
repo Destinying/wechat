@@ -1,22 +1,36 @@
 <!--index.wxml-->
-<view>
+
+<view style="height:100%">
   <view class="title_lay">
-    <text>分类：</text>
-      <view  class="title_data" wx:for="{{title_data}}" wx:key="index">
-            {{item.name}}
+  <view class="fenlei_layout">
+      <text>分类：</text>
+      <view class="fenlei">
+        <view  class="title_data {{currentTab_01 == item.id?'active':''}}" wx:for="{{title_data}}" wx:key="index" bindtap="clicktitle" id="{{item.id}}">
+              {{item.name}}
+        </view>
       </view>
+  </view>
       <view  class="flex_view">
       <text style="display:block">标签：</text>
       <view class="title_inline">
-          <scroll-view scroll-x  class="scroll_class">
-            <view class="scroll_view" wx:for="{{title_Classification}}" wx:key="index">
+          <scroll-view scroll-x  class="scroll_class" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+            <view class="scroll_view {{currentTab == index?'active':''}}" wx:for="{{title_Classification}}" wx:key="index" bindtap="switchNav" data-current="{{index}}" id="{{item.id}}">
                   {{item.name}}
             </view>
           </scroll-view>
       </view>
       </view>
   </view>
-  <view class="container">
-    <allpages imgList="{{getallpages}}"></allpages>
-  </view>
+  <!-- <view class="container">
+    <allpages getallpages="{{getallpages}}"></allpages>
+  </view> -->
+  
+
+   <swiper class="tab-box" current="{{currentTab}}" duration="300" bindchange="switchTab" >        
+        <swiper-item wx:for="{{title_Classification}}" wx:key="index" class="tab-content" item-id="{{item.id}}">
+             <view class="container" >
+              <allpages getallpages="{{getallpages}}" class="allpages_class {{showstate==false?'showstate':''}}" ></allpages>
+            </view>
+        </swiper-item>
+    </swiper>
 </view>

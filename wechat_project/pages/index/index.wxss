@@ -8,6 +8,7 @@
 .scroll_view{
   display: inline-block;
   margin:0 40rpx 0 0rpx;
+  font-size: 24rpx;
 }
 .title_lay view{
  
@@ -18,7 +19,8 @@
 }
 .title_data{
   display: inline-block;
-  margin:0 20rpx;
+  margin: 0 40rpx 0 0;
+  font-size: 24rpx
 }
 .title_inline{
   width: 85%;
@@ -29,4 +31,33 @@
 }
 .title_lay view{
   color: #555;
+}
+.tab-content{
+    overflow-y: scroll;
+}
+.container{
+  height: 100%;
+  width:100%
+}
+.tab-box{
+  height: 100%;
+}
+page{
+  height: 100%;
+  width: 100%;
+}
+.nav-item,.active{
+  color: red!important
+}
+.allpages_class{
+  width: 100%
+}
+.showstate{
+  display: none
+}
+.fenlei{
+  width: 85%
+}
+.fenlei_layout{
+  display: flex;
 }
