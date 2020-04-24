@@ -38,13 +38,21 @@ Page({
     var value = _this.data.value;
     var switchNav = _this.data.switchNav_01;
     wx.request({
+      header:getApp().globalData.header,
       url: 'https://cloud.meshmellow.cn/wechatapi/course_lists.html',
+      dataType:'POST',
       data: {
         page: per_page,
         cid: value,
         tag_id: switchNav,
       },
       success(res) {
+        
+        if (res.header["Set-Cookie"] != null) {
+          //设置cookie
+          getApp().globalData.header["Cookie"] += res.header["Set-Cookie"]
+        }
+        console.log(res)
         // console.log(res)                   //当前页数返回的数据
         _this.result = _this.data.getallpages; 
         // console.log(_this.result)

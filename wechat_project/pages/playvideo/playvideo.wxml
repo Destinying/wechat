@@ -1,2 +1,16 @@
 <!--pages/playvideo/playvideo.wxml-->
-<text>pages/playvideo/playvideo.wxml</text>
+<view>
+  <view>
+    <video src="http://video.meshmellow.cn/cloud/uploads/video/sys/20200320/PpZScTC7KCQnnddCA5ecs248F6ia53Gm.mp4?sign=" direction poster="http://video.meshmellow.cn/cloud/uploads/video/manager/20200320/wG6xY6d5EWZzrzbpzYifr8kDfyXFZ48c.jpg" show-mute-btn enable-play-gesture style="width:100%" bindplay="play_video">
+    </video>
+  </view>
+  <view> 
+    <view>
+      <text>anbdasd</text>
+    </view>
+    <view>
+      <text>455</text>
+      <text>2012-20-11  11:11:11</text>
+    </view>
+  </view> 
+</view>
