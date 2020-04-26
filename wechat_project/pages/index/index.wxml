@@ -2,7 +2,7 @@
 
 <view style="height:100%">
   
-    <view class="title_lay">
+    <view class="title_lay lay_new">
       <view class="fenlei_layout">
           <text>分类：</text>
           <view class="fenlei">

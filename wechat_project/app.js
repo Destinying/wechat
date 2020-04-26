@@ -12,6 +12,7 @@ App({
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })
+
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -34,6 +35,21 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    header: {
+      "content-type": "application/x-www-form-urlencoded",
+      'Cookie': ''
+    },
+    public_time: function (res_add_time) {
+      var add_time = new Date(res_add_time * 1000);
+      var Y = add_time.getFullYear();
+      var M = (add_time.getMonth() + 1 < 10 ? '0' + (add_time.getMonth() + 1) : add_time.getMonth() + 1);
+      var D = (add_time.getDate() < 10 ? '0' + add_time.getDate() : add_time.getDate());
+      var H = (add_time.getHours() < 10 ? '0' + add_time.getHours() : add_time.getHours());
+      var min = (add_time.getMinutes() < 10 ? '0' + add_time.getMinutes() : add_time.getMinutes());
+      var S = (add_time.getSeconds() < 10 ? '0' + add_time.getSeconds() : add_time.getSeconds())
+      var res_val = Y + "-" + M + "-" + D + " " + H + ":" + min + ":" + S;
+      return res_val
+    },
   }
 })

@@ -41,6 +41,20 @@
 }
 .tab-box{
   height: 100%;
+  position: relative;
+  top: 95rpx;
+
+}
+.lay_new{
+  position: fixed;
+  height: 95rpx;
+  background: #fff;
+  width: 98%;
+  left: 50%;
+  margin-left: -48%;
+  padding: 0rpx 0;
+  top: 0;
+  z-index: 99;
 }
 page{
   height: 100%;

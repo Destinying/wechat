@@ -1,8 +1,8 @@
 {
   "pages":[
+    "pages/playvideo/playvideo",
     "pages/index/index",
     "pages/allpages/allpages",
-    "pages/playvideo/playvideo",
     "pages/mycode/mycode",
     "pages/logs/logs"
   ],
@@ -23,8 +23,20 @@
         "selectedIconPath": "image/shouye_origin.png"
       },
       {
+        "pagePath": "pages/index/index",
+        "text": "分类1",
+        "iconPath": "image/select_shouye.png",
+        "selectedIconPath": "image/select_mycode.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "订阅1",
+        "iconPath": "image/select_shouye.png",
+        "selectedIconPath": "image/select_mycode.png"
+      },
+      {
         "pagePath": "pages/mycode/mycode",
-        "text": "我的",
+        "text": "我的1",
         "iconPath": "image/mycode_origin.png",
         "selectedIconPath": "image/select_mycode.png"
       }

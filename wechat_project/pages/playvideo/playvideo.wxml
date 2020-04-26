@@ -1,2 +1,59 @@
 <!--pages/playvideo/playvideo.wxml-->
-<text>pages/playvideo/playvideo.wxml</text>
+<view>
+  <view>
+    <video src="{{video_list}}" direction poster="{{thumbnail}}" show-mute-btn enable-play-gesture style="width:100%" bindplay="play_video">
+    </video>
+  </view>
+  <view class="width_layout"> 
+      <view>
+        <text class="page_title_class">{{page_title}}</text>
+      </view>
+      <view>
+        <text class="iconfont icon-bofang"></text>
+        <text class="play_count">{{click}}</text>
+        <text class="iconfont icon-buoumaotubiao24"></text>
+        <text class="time_class">{{add_time}}</text>
+      </view>
+  </view>
+  <view class="gery_class"></view>
+  <view class="lesson_class">
+      <view class="nav bc_white">
+          <view class="{{selected?'red':'default'}} bottom_class" bindtap="selected">课时</view>
+          <view class="{{selected1?'red':'default'}} bottom_class" bindtap="selected1">推荐</view>
+      </view>
+      <view class="{{selected?'show':'hidden'}}">
+          <view wx:for="{{video_set}}" wx:key="index" class="layout_sele">
+              <view class="set_video_class">
+                <image src="{{item.thumbnail}}" class="set_lesson_image"></image>
+              </view>
+              <view class="layout_sele_text">
+                <view>{{item.title}}</view>
+                <view>发布时间：{{item.add_time}}</view>
+                <view>
+                  <text class="iconfont icon-dianzan"></text>
+                  <text>{{item.good}}</text>
+                  <text class="play_count icon-bofang iconfont"></text>
+                  <text>{{item.click}}</text>
+                </view>
+              </view>
+          </view> 
+      </view>
+      <view class="{{selected1?'show':'hidden'}}">
+          <view wx:for="{{video_set}}" wx:key="index" class="layout_sele">
+                <view class="set_video_class">
+                  <image src="{{item.thumbnail}}" class="set_lesson_image "></image>
+                </view>
+                <view class="layout_sele_text">
+                 <view>{{item.title}}</view>
+                <view>发布时间：{{item.add_time}}</view>
+                <view>
+                  <text class="iconfont icon-dianzan"></text>
+                  <text>{{item.good}}</text>
+                  <text class="play_count icon-bofang iconfont"></text>
+                  <text>{{item.click}}</text>
+                </view>
+              </view>
+          </view> 
+      </view>
+  </view>
+</view>

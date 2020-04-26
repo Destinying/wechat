@@ -1,4 +1,5 @@
 /**app.wxss**/
+@import 'alibaba/alibaba.wxss';
 .container {
   height: 100%;
   display: flex;
