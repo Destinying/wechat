@@ -11,7 +11,7 @@ Page({
     add_time:"",
     click:"",
     thumbnail:'',
-    video_list:'',
+    video_list:'http://video.meshmellow.cn/cloud/uploads/video/sys/20200320/PpZScTC7KCQnnddCA5ecs248F6ia53Gm.mp4?sign=',
     selected: true,
     selected1: false,
     video_set:'',
@@ -54,12 +54,22 @@ Page({
         var S = (add_time.getSeconds() < 10 ? '0' + add_time.getSeconds() : add_time.getSeconds())
         var res_val = Y + "-" + M + "-" + D +" " + H + ":" + min + ":" + S;
         console.log(res);
+        var video_list_arr = res_01.videoSet
+        var val;
+        var recom_list_time=[];
+        video_list_arr.forEach(function(val,index){
+          val = val.add_time;
+          recom_list_time.push(app.globalData.public_time(val))
+        })
+        console.log(recom_list_time)
         _this.setData({
           page_title: res.title,
           add_time: res_val,
           click: res.click,
-          thumbnail: res.thumbnail,
-          video_set:res_01.videoSet
+          thumbnail: res.thumbnail, 
+          video_set:res_01.videoSet,
+          recom_list: res_01.recom_list,
+          recom_list_time: recom_list_time
         })
       }
     })

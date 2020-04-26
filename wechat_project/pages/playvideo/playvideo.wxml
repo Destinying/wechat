@@ -39,13 +39,14 @@
           </view> 
       </view>
       <view class="{{selected1?'show':'hidden'}}">
-          <view wx:for="{{video_set}}" wx:key="index" class="layout_sele">
+          <view wx:for="{{recom_list}}" wx:key="index" class="layout_sele">
                 <view class="set_video_class">
                   <image src="{{item.thumbnail}}" class="set_lesson_image "></image>
                 </view>
                 <view class="layout_sele_text">
                  <view>{{item.title}}</view>
                 <view>发布时间：{{item.add_time}}</view>
+                <!-- <wxs src="" module=""></wxs> -->
                 <view>
                   <text class="iconfont icon-dianzan"></text>
                   <text>{{item.good}}</text>
