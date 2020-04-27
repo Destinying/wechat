@@ -112,3 +112,10 @@
 .layout_sele_text view text:nth-child(1){
   margin: 0 5rpx 0 0
 }
+.no_lesson{
+  text-align: center;
+  font-size: 30rpx;
+  color: #333;
+  opacity: 0.8;
+  margin-top: 20rpx;
+}

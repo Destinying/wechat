@@ -1,7 +1,8 @@
 <!--pages/playvideo/playvideo.wxml-->
+<wxs src="../../utils/filter_time.wxs" module="filter"></wxs>
 <view>
   <view>
-    <video src="{{video_list}}" direction poster="{{thumbnail}}" show-mute-btn enable-play-gesture style="width:100%" bindplay="play_video">
+    <video src="{{video_list}}" direction poster="{{thumbnail}}" enable-play-gesture="{{enable}}" id="media{{id}}" show-mute-btn  style="width:100%" bindplay="play_video" enable-progress-gesture="{{gesture}}">
     </video>
   </view>
   <view class="width_layout"> 
@@ -22,13 +23,14 @@
           <view class="{{selected1?'red':'default'}} bottom_class" bindtap="selected1">推荐</view>
       </view>
       <view class="{{selected?'show':'hidden'}}">
-          <view wx:for="{{video_set}}" wx:key="index" class="layout_sele">
+        <block wx:if="{{bool}}">
+          <view wx:for="{{video_set}}"  wx:key="index" class="layout_sele" id="{{item.id}}" bindtap="click_getid">
               <view class="set_video_class">
-                <image src="{{item.thumbnail}}" class="set_lesson_image"></image>
+                    <image src="{{item.thumbnail}}" class="set_lesson_image"></image>
               </view>
               <view class="layout_sele_text">
                 <view>{{item.title}}</view>
-                <view>发布时间：{{item.add_time}}</view>
+                <view>发布时间：{{filter.time_change(item.add_time)}}</view>
                 <view>
                   <text class="iconfont icon-dianzan"></text>
                   <text>{{item.good}}</text>
@@ -36,17 +38,20 @@
                   <text>{{item.click}}</text>
                 </view>
               </view>
-          </view> 
+          </view>
+        </block>  
+          <block wx:else>
+            <view class="no_lesson">{{video_set}}</view>
+          </block>
       </view>
       <view class="{{selected1?'show':'hidden'}}">
-          <view wx:for="{{recom_list}}" wx:key="index" class="layout_sele">
+          <view wx:for="{{recom_list}}" wx:key="index" class="layout_sele" bindtap="click_getid_tuijian" id="{{item.id}}">
                 <view class="set_video_class">
                   <image src="{{item.thumbnail}}" class="set_lesson_image "></image>
                 </view>
                 <view class="layout_sele_text">
                  <view>{{item.title}}</view>
-                <view>发布时间：{{item.add_time}}</view>
-                <!-- <wxs src="" module=""></wxs> -->
+                <view>发布时间：{{filter.time_change(item.add_time)}}</view>
                 <view>
                   <text class="iconfont icon-dianzan"></text>
                   <text>{{item.good}}</text>
