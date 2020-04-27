@@ -26,8 +26,6 @@
   <!-- <view class="container">
     <allpages getallpages="{{getallpages}}"></allpages>
   </view> -->
-  
-
    <swiper class="tab-box" current="{{currentTab}}" duration="300" bindchange="switchTab" >        
         <swiper-item wx:for="{{title_Classification}}" wx:key="index" class="tab-content" item-id="{{item.id}}">
             <scroll-view scroll-y style="height:{{height}}px" bindscrolltolower='lower'>

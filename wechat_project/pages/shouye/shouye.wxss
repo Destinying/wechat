@@ -1,0 +1,66 @@
+/* pages/shouye/shouye.wxss */
+.swiper_img{
+  width: 100%;
+  height: 100%;
+}
+.lesson_tuijian{
+  text-align: center;
+  font-size: 35rpx;
+  color: #333;
+  font-weight: bold
+}
+.action_01{
+  margin-top: 30rpx;
+}
+.font_border{
+  background: #ec6444;
+  height: 2px;
+  width: 100rpx;
+  margin: 0 auto 30rpx;
+}
+.lesson_detail{
+  width: 96%;
+  margin: 0 auto 30rpx;
+}
+.lesson_detail image{
+  width: 100%;
+  height: 100%
+}
+.title_style{
+  font-size: 30rpx;
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: space-between
+}
+.title_style_01 view:nth-child(1){
+  color: #999999;
+  text-decoration: line-through;
+  margin-right: 20rpx;
+}
+.title_style_01 view:nth-child(2){
+  color: #ef6444
+}
+.title_style_01{
+  font-size: 30rpx;
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: space-between
+}
+.layout_class{
+  padding: 15rpx 0;
+  width: 98%;
+  margin: 0 auto
+}
+.all_back{
+  background: #f7f8f8;
+  margin-bottom: 30rpx;
+}
+.describe{
+  color: #adadad;
+  font-weight: 400;
+  font-size: 24rpx;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
