@@ -45,7 +45,7 @@ Page({
       url: 'https://cloud.meshmellow.cn/wechatapi/course_play.html',
       data:{
         // id: id,
-        id:id,
+        id:572,
       },
       success(res){
         var res_01 =res.data.data;
@@ -149,8 +149,8 @@ Page({
   click_getid_tuijian:function(event){
     var _this=this;
     _this.data.id = event.currentTarget.id;
-    console.log(event)
-    console.log(_this.data.recom_list)
+    // console.log(event)
+    // console.log(_this.data.recom_list)
     wx.request({
       url: 'https://cloud.meshmellow.cn/wechatapi/payVideo.html',
       data: {
