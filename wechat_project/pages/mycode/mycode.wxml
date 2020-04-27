@@ -1,2 +1,3 @@
 <!--pages/mycode/mycode.wxml-->
 <text>pages/mycode/mycode.wxml</text>
+<button id='login_button' style="border-top-left-radius: 40rpx; border-bottom-left-radius: 40rpx;border-top-right-radius: 40rpx; border-bottom-right-radius: 40rpx;line-height:2;" open-type='getUserInfo' bindgetuserinfo='getwechatUserInfo'>立即登录</button>

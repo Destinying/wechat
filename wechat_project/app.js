@@ -98,7 +98,7 @@ App({
     wx.login({
       success: function (res) {
         that.sendRequest({
-          url: "api.php?s=Login/getWechatInfo",
+          url: "wechatapi/getWechatInfo.html",
           data: {
             code: res.code
           },
@@ -437,6 +437,7 @@ App({
       wx_info.unionid = default_wx_info.unionid;
     }
     this.globalData.wx_info = JSON.stringify(wx_info);
+    console.log(this.globalData);
   },
 
   setToken: function (token) {
@@ -490,7 +491,7 @@ App({
     let that = this;
 
     that.sendRequest({
-      url: "wechatapi/getWechatInfo.html",
+      url: "wechatapi/getWebSiteInfo.html",
       data: {},
       success: function (res) {
         let code = res.code;
@@ -606,7 +607,7 @@ App({
     that.globalData.current_address = '';
     that.globalData.is_yet_login = 0;
     wx.reLaunch({
-      url: '/pagesother/pages/login/login/login',
+      url: '/pages/mycode/mycode',
     })
   },
 
