@@ -11,10 +11,15 @@ Page({
     add_time:"",
     click:"",
     thumbnail:'',
-    video_list:'http://video.meshmellow.cn/cloud/uploads/video/sys/20200320/PpZScTC7KCQnnddCA5ecs248F6ia53Gm.mp4?sign=',
+    video_list:'',
     selected: true,
     selected1: false,
     video_set:'',
+    bool:false,
+    recom_list:'',
+    enable:true,
+    controls: true,
+    gesture: true
   },
 
   /**
@@ -39,11 +44,20 @@ Page({
     wx.request({
       url: 'https://cloud.meshmellow.cn/wechatapi/course_play.html',
       data:{
-        id:513,
+        // id: id,
+        id:id,
       },
       success(res){
         var res_01 =res.data.data;
-        console.log(res_01);
+        console.log(res_01)
+        var videoSet="";
+        if (res_01.videoSet == "" || res_01.videoSet == undefined || res_01.videoSet == null){
+          res_01.videoSet="现在还没有课程！！";
+          _this.bool=false;
+        }else{
+          res_01.videoSet;
+          _this.bool=true
+        }
         var res = res.data.data.videoInfo;
         var add_time = new Date(res.add_time*1000);
         var Y = add_time.getFullYear();
@@ -53,15 +67,7 @@ Page({
         var min = (add_time.getMinutes() < 10 ? '0' + add_time.getMinutes() : add_time.getMinutes());
         var S = (add_time.getSeconds() < 10 ? '0' + add_time.getSeconds() : add_time.getSeconds())
         var res_val = Y + "-" + M + "-" + D +" " + H + ":" + min + ":" + S;
-        console.log(res);
-        var video_list_arr = res_01.videoSet
-        var val;
-        var recom_list_time=[];
-        video_list_arr.forEach(function(val,index){
-          val = val.add_time;
-          recom_list_time.push(app.globalData.public_time(val))
-        })
-        console.log(recom_list_time)
+        var video_list = res.url
         _this.setData({
           page_title: res.title,
           add_time: res_val,
@@ -69,20 +75,103 @@ Page({
           thumbnail: res.thumbnail, 
           video_set:res_01.videoSet,
           recom_list: res_01.recom_list,
-          recom_list_time: recom_list_time
+          bool: _this.bool,
+          video_list: video_list,
+          id:id
         })
       }
     })
   },
-  play_video:function(){
-    var _this=this;
+  play_video:function(e){
+    var _this = this;
+    var id = _this.data.id
+    var video_list = _this.data.video_list
+    video_list="1";
+    wx.request({
+      url:"https://cloud.meshmellow.cn/wechatapi/payVideo.html",
+      data:{
+        id:id
+      },
+      success(res){
+        if(res.data.data.rs==1){
+
+        } else if (res.data.data.rs == 5){
+          wx.showToast({
+            title: '独立付费课程,需要付费购买',
+            duration: 2000, 
+            icon: "none"
+          })
+          _this.setData({
+            video_list: video_list,
+            thumbnail: video_list,
+            enable:false,
+            gesture: false
+          })
+          // var videoCtxPrev = wx.createVideoContext('myVideo' + _this.data.id);
+          // console.log(videoCtxPrev)
+          // videoCtxPrev.pause();
+        }else{
+          wx.showToast({
+            title: '请订阅后再观看课程',
+            duration: 2000,
+            icon:"none"
+          })
+          _this.setData({
+            video_list: video_list,
+            thumbnail: video_list,
+            enable: false,
+            gesture:false
+          })
+        }
+      }
+    })
     
+  },
+  click_getid:function(event){
+    var _this = this;
+   _this.data.id=event.currentTarget.id
+    wx.request({
+      url: 'https://cloud.meshmellow.cn/wechatapi/payVideo.html',
+      data: {
+        id: _this.data.id
+      },
+      success(res) {
+        console.log(res.data.data)
+        _this.video_list=res.data.data.videoInfo.url;
+        _this.thumbnail = res.data.data.videoInfo.thumbnail
+        _this.setData({
+          video_list:_this.video_list,
+          thumbnail: _this.thumbnail
+        })
+      },
+    })
+  },
+  click_getid_tuijian:function(event){
+    var _this=this;
+    _this.data.id = event.currentTarget.id;
+    console.log(event)
+    console.log(_this.data.recom_list)
+    wx.request({
+      url: 'https://cloud.meshmellow.cn/wechatapi/payVideo.html',
+      data: {
+        id: _this.data.id
+      },
+      success(res) {
+        console.log(res.data.data)
+        _this.video_list = res.data.data.videoInfo.url;
+        _this.thumbnail = res.data.data.videoInfo.thumbnail
+        _this.setData({
+          video_list: _this.video_list,
+          thumbnail: _this.thumbnail
+        })
+      },
+    })
   },
   onLoad: function (options) {
     var _this=this;
     _this.play_video
     _this.data.id=options.id;
-    console.log(_this.data.id)
+    // console.log(_this.data.id)
     if(_this.data.id!=""){
       _this.getvideoList()
     }else{

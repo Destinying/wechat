@@ -39,7 +39,6 @@ function getCurrentPageUrlWithArgs() {
 
   return urlWithArgs
 }
-
 module.exports = {
   formatTime: formatTime,
   getCurrentPageUrl: getCurrentPageUrl,
