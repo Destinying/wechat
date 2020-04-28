@@ -3,9 +3,9 @@ App({
   onLaunch: function () {
 
     let that = this;
-    that.app_login();
+    //that.app_login();
     //that.defaultImg();
-    that.webSiteInfo();
+    //that.webSiteInfo();
 
 
     // 展示本地存储能力

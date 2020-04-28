@@ -17,7 +17,8 @@
   </view>
   <view class="lesson_detail">
     <view wx:for="{{lesson_list}}" wx:key="index" class="all_back">
-      <image src="{{item.img}}" bindload="imageLoad_01" style="height:{{imgHeight_01}}rpx" lazy-load></image>
+    <navigator url = "../detail/detail?fenlei={{item.url}}">
+      <image src="{{item.img}}" bindload="imageLoad_01" style="height:{{imgHeight_01}}rpx"></image>
       <view class="layout_class">
           <view class="title_style">
             <view>{{item.name}}</view>
@@ -27,7 +28,8 @@
             </view>
           </view>
           <view class="describe">{{item.describe}}</view>
-      </view> 
+      </view>
+     </navigator> 
     </view>
   </view>
   <view class="action_01">
@@ -46,5 +48,8 @@
             {{item.describe}}
           </view>
       </view>
+  </view>
+  <view>
+      
   </view>
 </view>

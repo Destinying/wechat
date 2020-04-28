@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/shouye/shouye",
+    "pages/detail/detail",
     "pages/index/index",
-    "pages/back/back",
     "pages/playvideo/playvideo",
     "pages/allpages/allpages",
     "pages/mycode/mycode",
