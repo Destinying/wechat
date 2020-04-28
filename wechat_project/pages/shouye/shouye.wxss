@@ -64,3 +64,22 @@
   margin-top: 10rpx;
   margin-bottom: 10rpx;
 }
+.online_class{
+  background: #f7f8f8;
+  margin: 30rpx 0;
+}
+.online_title{
+  font-size: 30rpx;
+  color:#ec6444;
+  font-weight:bold;
+  text-align: center;
+  margin-top: 30rpx;
+}
+.online_par{
+  font-size: 24rpx;
+  padding: 30rpx 0;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  color: #adadad
+}

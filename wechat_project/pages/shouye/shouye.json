@@ -1,3 +1,33 @@
 {
-  "usingComponents": {}
+  "usingComponents": {},
+  "tabBar": {
+    "color": "red",
+    "selectedColor": "#d81e06",
+    "list": [
+      {
+        "pagePath": "pages/shouye/shouye",
+        "text": "首页",
+        "iconPath": "image/select_shouye.png",
+        "selectedIconPath": "image/shouye_origin.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "列表",
+        "iconPath": "image/mycode_origin.png",
+        "selectedIconPath": "image/select_mycode.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "订阅1",
+        "iconPath": "image/select_shouye.png",
+        "selectedIconPath": "image/select_mycode.png"
+      },
+      {
+        "pagePath": "pages/mycode/mycode",
+        "text": "我的1",
+        "iconPath": "image/mycode_origin.png",
+        "selectedIconPath": "image/select_mycode.png"
+      }
+    ]
+  }
 }

@@ -3,9 +3,10 @@ App({
   onLaunch: function () {
 
     let that = this;
-    //that.app_login();
+    that.app_login();
     //that.defaultImg();
-    //that.webSiteInfo();
+    that.webSiteInfo();
+
 
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -509,9 +510,9 @@ App({
       }
     })
   },
-  /**
- * 图片路径处理
- */
+    /**
+   * 图片路径处理
+   */
   IMG: function (img) {
     let base = this.globalData.siteBaseUrl;
     let directory = this.globalData.secondDirectory;
@@ -642,7 +643,9 @@ App({
   },
 
   //值是否为空判断函数
-  isNull: function (data) {
-    return (data == "" || data == undefined || data == null) ? true : false;
+
+  isNull:function (data) {
+    return(data == "" || data == undefined || data == null) ? true : false;
   }
 })
+

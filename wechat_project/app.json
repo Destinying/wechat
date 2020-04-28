@@ -15,7 +15,7 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "red",
+    "color": "#000",
     "selectedColor": "#d81e06",
     "list": [
       {
@@ -27,18 +27,18 @@
       {
         "pagePath": "pages/index/index",
         "text": "列表",
-        "iconPath": "image/select_shouye.png",
-        "selectedIconPath": "image/shouye_origin.png"
+        "iconPath": "image/mycode_origin.png",
+        "selectedIconPath": "image/select_mycode.png"
       },
       {
         "pagePath": "pages/index/index",
-        "text": "订阅1",
+        "text": "订阅",
         "iconPath": "image/select_shouye.png",
         "selectedIconPath": "image/select_mycode.png"
       },
       {
         "pagePath": "pages/mycode/mycode",
-        "text": "我的1",
+        "text": "我的",
         "iconPath": "image/mycode_origin.png",
         "selectedIconPath": "image/select_mycode.png"
       }

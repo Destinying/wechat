@@ -37,12 +37,12 @@
       </view>
   </view>
   <view class="lesson_detail">
-      <view wx:for="{{live_lesson}}" wx:key="index">
+      <view wx:for="{{live_lesson}}" wx:key="index" class="online_class">
           <image src="{{item.img}}" bindload="imageLoad_01" style="height:{{imgHeight_01}}rpx"></image>
-          <view>
+          <view class="online_title">
             {{item.name}}
           </view>
-          <view>
+          <view class="online_par">
             {{item.describe}}
           </view>
       </view>
