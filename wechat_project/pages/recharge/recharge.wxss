@@ -1,0 +1,77 @@
+/* pages/recharge/recharge.wxss */
+.layout_class{
+  width: 96%;
+  margin: 0 auto
+}
+.season_recharge{
+  border:1px solid #ee8124;
+  box-shadow: 0px 0px 6px 4px #dcdcdc;
+  color: #ee8124;
+  font-size: 24rpx;
+  margin-bottom: 30rpx;
+}
+.season_recharge view text:nth-child(2){
+  margin-left: 30rpx;
+}
+.season_par_class{
+  width: 85%;
+  color: #cdcdcf
+}
+.season_par_class_01{
+  display: flex;
+  flex-direction: row;
+}
+.season_par_class_02{
+  width: 85%;
+}
+.ma{
+  padding: 30rpx 0 15rpx 30rpx; 
+}
+.ma_01{
+  padding:0 0 30rpx 0; 
+  padding-left:30rpx; 
+}
+.radio_class{
+  width: 15%;
+}
+.member{
+  text-align: center;
+  font-size: 35rpx;
+  font-weight: bold;
+  margin-bottom: 30rpx;
+}
+.fix_pos{
+  position: fixed;
+  bottom: 0;
+  border-top: 1px solid #d9d9d9;
+  width: 100%;
+}
+.pay_now{
+  width: 50%;
+  background: #fc5d02;
+  color: #fff;
+  text-align: center;
+  font-size: 35rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+}
+.pay_dis{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center
+} 
+.pay_dis view text{
+  color:#fc5d02;
+  font-size: 35rpx;
+}
+.pay_dis>view{
+  margin-left: 20rpx;
+}
+.pay_dis view text:nth-child(2){
+  font-size: 25rpx;
+  margin-left: 30rpx;
+}
+.pay_dis view text:nth-child(3){
+  margin-left: 10rpx;
+}
