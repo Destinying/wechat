@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/playvideo/playvideo",
     "pages/index/index",
+    "pages/playvideo/playvideo",
     "pages/allpages/allpages",
     "pages/mycode/mycode",
     "pages/logs/logs"
