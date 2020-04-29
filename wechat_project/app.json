@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/recharge/recharge",
     "pages/shouye/shouye",
     "pages/detail/detail",
     "pages/index/index",
@@ -31,7 +32,7 @@
         "selectedIconPath": "image/list_select.png"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/recharge/recharge",
         "text": "订阅",
         "iconPath": "image/dingyue.png",
         "selectedIconPath": "image/select_dingyue.png"
