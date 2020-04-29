@@ -128,6 +128,9 @@
   margin-top: 20rpx;
   text-align: center
 }
+.intro_two{
+  font-weight: bold
+}
 .describe_item{
   font-size: 24rpx;
   margin-top: 20rpx;
@@ -135,7 +138,7 @@
 }
 .intro_img_two{
   text-align: center;
-  margin-top: 20rpx;
+  margin-top: 30rpx;
 }
 .menu_title{
   font-size: 30rpx;

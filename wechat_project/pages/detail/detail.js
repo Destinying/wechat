@@ -116,6 +116,39 @@ Page({
       }
     })
   },
+  getinukami_designList: function () {
+    var _this = this;
+    wx.request({
+      url: 'https://cloud.meshmellow.cn/tpl/default/static/js/inukami_design.json',
+      dataType: 'GET',
+      success(res) {
+         var res = JSON.parse(res.data);
+        console.log(res)
+        _this.setData({
+          video_post: res.video,
+          video_img: res.img,
+          info: res.info,
+          money: res.money,
+          erweima: res.erweima,
+          intro: res.intro,
+          canshu: res.canshu,
+          dibu: res.dibu
+        })
+      }
+    })
+  },
+  getinukami_designmenuList: function () {
+    var _this = this;
+    wx.request({
+      url: 'https://cloud.meshmellow.cn/tpl/default/static/live/inukami_animation.json',
+      success(res) {
+        var res = res.data.data
+        _this.setData({
+          menuList: res
+        })
+      }
+    })
+  },
   onLoad: function (options) {
     var _this=this;
     if (options.fenlei=="king"){
@@ -127,6 +160,9 @@ Page({
     } else if (options.fenlei == "inukami_animation"){
       _this.getinukami_animationList();
       _this.getinukami_animationmenuList()
+    } else if (options.fenlei == "inukami_design"){
+      _this.getinukami_designList();
+      _this.getinukami_designmenuList()
     }
   },
   /**
