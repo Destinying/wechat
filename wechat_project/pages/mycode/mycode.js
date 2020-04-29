@@ -31,7 +31,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    wx.setNavigationBarTitle({
+      title: "个人中心",
+    })
   },
 
   /**
@@ -45,7 +47,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+
   },
 
   /**
@@ -104,7 +106,7 @@ Page({
         app.showBox(that, '登录失败!');
         return false;
       }
-      app.wechatLogin();
+      //app.wechatLogin();
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       if (this.userInfoReadyCallback) {
@@ -223,12 +225,6 @@ Page({
           });
         //temp新增用户信息处理---*******************************************************************************************************
 
-      console.log(app.globalData.wx_info);
-      //let member_info = that.data.member_info;
-
-          that.setData({
-            member_info: member_info,
-          })
         }
         console.log(res)
       }

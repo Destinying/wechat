@@ -21,9 +21,11 @@
             <image id='user_head_img' src="{{member_info.headimgurl == '' ? 1 : member_info.headimgurl}}" mode='widthFix' catchtap='listClick' data-url="/pages/member/personaldata/personaldata" binderror='errorHeadImg'>
             </image>
           </view>
+          <!--
           <text class='account_management' catchtap='listClick' data-url="/pages/member/personaldata/personaldata">
             账户管理
           </text>
+          -->
         </view>
       </view>
       <view class='info-content-top'>
@@ -184,11 +186,11 @@
     <view class='ul'>
       <view class='li'>
         <view class="a member_list_item" catchtap='listClick' data-url="/pages/member/personaldata/personaldata">
-          <image src='/images/member/icon_personal.png' />
-          <view class='span'>个人资料</view>
+          <image src='/images/member/username.png' />
+          <view class='span'>个人设置</view>
         </view>
       </view>
-
+      <!--
       <block wx:if='{{is_support_pintuan == 1}}'>
         <view class='li'>
           <view class="a member_list_item" catchtap='listClick' data-url="/pagesother/pages/pintuanorder/myspellingorderlist/myspellingorderlist">
@@ -197,21 +199,22 @@
           </view>
         </view>
       </block>
-
+      -->
       <view class='li'>
         <view class="a member_list_item" catchtap='listClick' data-url="/pages/member/memberaddress/memberaddress?flag=1      ">
-          <image src='/images/member/icon_address.png' />
-          <view class='span'>收货地址</view>
+          <image src='/images/member/icon_virtualGoods.png' />
+          <view class='span'>我的课程</view>
         </view>
       </view>
 
       <view class='li'>
         <view class="a member_list_item" catchtap='listClick' data-url="/pages/member/getappletqrcode/getappletqrcode">
-          <image src='/images/member/icon_qr_code.png' />
-          <view class='span'>推广二维码</view>
+          <image src='/images/member/icon_virtual_orders.png' />
+          <view class='span'>我的订阅</view>
         </view>
       </view>
 
+      <!--
       <block wx:if='{{is_open_virtual_goods == 1}}'>
         <view class='li'>
           <view class="a member_list_item" catchtap='listClick' data-url="/pagesother/pages/order/myvirtualorderlist/myvirtualorderlist">
@@ -220,14 +223,16 @@
           </view>
         </view>
       </block>
+      -->
 
       <view class='li'>
         <view class="a member_list_item" catchtap='listClick' data-url="/pages/member/membercoupon/membercoupon">
-          <image src='/images/member/icon_memberCoupon.png' />
-          <view class='span'>优惠券</view>
+          <image src='/images/member/reback.png' />
+            <view class='span'>购买记录</view>
         </view>
       </view>
 
+      <!--
       <block wx:if='{{is_open_virtual_goods == 1}}'>
         <view class='li'>
           <view class="a member_list_item" catchtap='listClick' data-url="/pagesother/pages/verification/myVirtualCode/myVirtualCode">
@@ -236,22 +241,14 @@
           </view>
         </view>
       </block>
+      -->
 
       <view class='li'>
         <view class="a member_list_item" catchtap='listClick' data-url="/pages/member/mycollection/mycollection">
-          <image src='/images/member/icon_myCollection.png' />
-          <view class='span'>我的收藏</view>
+          <image src='/images/member/icon_personal.png' />
+          <view class='span'>线下订阅绑定</view>
         </view>
       </view>
-
-      <block wx:if='{{is_verification == 1}}'>
-        <view class='li'>
-          <view class="a member_list_item" catchtap='listClick' data-url="/pagesother/pages/verification/verificationplatform/verificationplatform">
-            <image src='/images/member/icon_virtualGoods.png' />
-            <view class='span'>核销台</view>
-          </view>
-        </view>
-      </block>
 
       <view class='li'>
         <view class="a member_list_item" catchtap='listClick' data-url="/pages/member/newmypath/newmypath">
@@ -260,14 +257,6 @@
         </view>
       </view>
 
-      <block wx:if='{{is_support_bargain == 1}}'>
-        <view class='li'>
-          <view class="a member_list_item" catchtap='listClick' data-url="/pagesother/pages/bargain/mybargain/mybargain">
-            <image src='/images/member/icon_my_bargain.png' />
-            <view class='span'>我的砍价</view>
-          </view>
-        </view>
-      </block>
 
     </view>
   </view>

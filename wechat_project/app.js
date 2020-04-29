@@ -501,9 +501,11 @@ App({
           that.globalData.webSiteInfo = data;
           if (data.title != '' && data.title != undefined) {
             that.globalData.title = data.title;
+            /*
             wx.setNavigationBarTitle({
               title: data.title,
             })
+            */
           }
         }
         //console.log(res);
