@@ -1,0 +1,6 @@
+<!--pages/myself/myself.wxml-->
+<view>
+    <view>
+          <input></input>
+    </view>
+</view>

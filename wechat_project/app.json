@@ -1,18 +1,20 @@
 {
   "pages": [
-    "pages/recharge/recharge",
     "pages/shouye/shouye",
+    "pages/myself/myself",
+    "pages/mycode/mycode",
+    "pages/recharge/recharge",
+    
     "pages/detail/detail",
     "pages/index/index",
     "pages/playvideo/playvideo",
     "pages/allpages/allpages",
-    "pages/mycode/mycode",
     "pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "Meshmellow",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
