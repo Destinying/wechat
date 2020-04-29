@@ -70,12 +70,10 @@ App({
     current_address: '', //保存当前地址
     //原有配置
     userInfo: null,
-    /*
     header: {
       "content-type": "application/x-www-form-urlencoded",
       'Cookie': ''
     },
-    */
     public_time: function (res_add_time) {
       var add_time = new Date(res_add_time * 1000);
       var Y = add_time.getFullYear();
@@ -152,15 +150,16 @@ App({
     let that = this;
     let openid = that.globalData.openid;
     let wx_info = that.globalData.wx_info;
-    let sourceid = that.globalData.sourceid;      //推广员标识
+    let sourceid = that.globalData.sourceid;
     //防止重复请求登录/注册
     let is_login_request = that.globalData.is_login_request;
     if (is_login_request == 1) {
       return false;
     }
+    console.log(sourceid)
     that.setLoginRequest(1);
     that.sendRequest({
-      url: "wechatapi/wechatLogin.html",
+      url: "api.php?s=login/wechatLogin",
       data: {
         openid: openid,
         wx_info: wx_info,
@@ -285,7 +284,7 @@ App({
             showCancel: false,
             success: function (res) {
               wx.reLaunch({
-                url: '/pages/mycode/mycode',
+                url: '/pages/mine/mine',
               })
             }
           });
@@ -299,7 +298,7 @@ App({
         } else if (code == -20) {
           //越权行为
           wx.switchTab({
-            url: '/pages/mycode/mycode',
+            url: '/pages/mine/mine',
           })
         } else if (code == -10) {
           //数据异常
@@ -439,7 +438,7 @@ App({
       wx_info.unionid = default_wx_info.unionid;
     }
     this.globalData.wx_info = JSON.stringify(wx_info);
-    //console.log(this.globalData);
+    console.log(this.globalData);
   },
 
   setToken: function (token) {
