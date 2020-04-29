@@ -12,9 +12,6 @@ Page({
     Base: '',
     defaultImg: '',
     member_info: {
-      user_info:{
-        user_headimg:'',
-      },
       level_name: '未登录...'
     },
     integralConfig: {}, //积分赠送配置
@@ -100,18 +97,7 @@ Page({
     } else if (res.detail.errMsg == 'getUserInfo:ok') {
       app.app_login();
       app.webSiteInfo();
-      app.setWxInfo(res.detail.userInfo);
-      //temp新增用户信息处理---*******************************************************************************************************
-
-      console.log(app.globalData.wx_info);
-      let member_info = that.data.member_info;
-      let _wx_info = JSON.parse(app.globalData.wx_info);
-      member_info.user_info.user_headimg = _wx_info.avatarUrl; //图片路径处理
-      that.setData({
-        member_info: member_info,
-      });
-      console.log(that.data.member_info);
-      //temp新增用户信息处理---*******************************************************************************************************
+      //app.setWxInfo(res.detail.userInfo);
       //参数检测
       let session_key = app.globalData.session_key;
       if (session_key == '' || session_key == undefined) {
@@ -140,6 +126,7 @@ Page({
         that.setData({
           is_login: is_login
         })
+        //加载用户信息
         that.loadingMemberInfo(that);
         app.isNotLogin(1);
       } else {
@@ -209,12 +196,38 @@ Page({
         let code = res.code;
         let data = res.data;
         if (code == 0) {
+          /**新增用户处理流程*/
           let member_info = data;
-          let img = member_info.user_info.user_headimg;
-          member_info.user_info.user_headimg = app.IMG(img); //图片路径处理
+          if(!app.isNull(data)){
+            //返回用户数据
+            member_info.level_name = "普通会员";
+            if(member_info.isVip){
+              member_info.level_name = "VIP订阅会员";
+            }
+
+            app.globalData.userInfo = member_info;
+          }else{
+            //无用户数据赋值小程序微信信息
+            let _wx_info = JSON.parse(app.globalData.wx_info);
+            member_info.id = 0;
+            member_info.isVip = false;
+            member_info.nickname = _wx_info.nickName;
+            member_info.headimgurl = _wx_info.avatarUrl;
+            member_info.level_name = "普通用户";
+
+            //member_info.user_info.user_headimg = _wx_info.avatarUrl; //图片路径处理
+          }
 
           that.setData({
-            member_info: res.data,
+            member_info: member_info,
+          });
+        //temp新增用户信息处理---*******************************************************************************************************
+
+      console.log(app.globalData.wx_info);
+      //let member_info = that.data.member_info;
+
+          that.setData({
+            member_info: member_info,
           })
         }
         console.log(res)
