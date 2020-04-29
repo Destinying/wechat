@@ -1,0 +1,84 @@
+<view>
+      <view>
+          <video class="video_class" src="{{video_post}}" poster="{{video_img}}"></video>
+      </view>
+      <view class="layout_class">
+        <view>
+          <text class="info_type">{{info.type}}</text>
+          <text class="info_name">{{info.name}}</text>
+        </view>
+        <view>
+          <text class="info_long">{{info.long}}</text>
+          <text class="info_video">{{info.video}}</text>
+        </view>
+        <view class="border_class"></view>
+      </view>
+      <view class="layout_class">
+        <view class="flex_class">
+          <view>
+              <view>
+                  <text class="yuanjia">{{money.yuanjia}}<text>价</text></text>
+                  <text class="yuanmoney">{{money.yuanmoney}}</text>
+              </view>
+              <view>
+                  <text class="yushou">{{money.yushou}}</text>
+                  <text class="money">{{money.money}}</text>
+              </view>
+              <view>
+                  <text class="time">{{money.time}}</text>
+              </view>
+          </view>
+          <view class="hot_sail">
+              火热销售中
+          </view>
+        </view>
+      </view>
+      <view class="border_class_01"></view>
+      <view>
+          <view class="erweima_name"><text>{{erweima.name}}</text></view>
+          <view class="erweima_img">
+            <view><image src="{{erweima.qq}}"></image><view>QQ</view></view>
+            <view><image src="{{erweima.weixin}}"></image><view>微信</view></view>
+          </view>
+          <view class="erweima_name">
+              <view>{{erweima.detail1}}</view>
+              <view>{{erweima.detail2}}</view>
+          </view>
+      </view>
+      <view class="lesson_introduction">课程简介</view>
+      <view class="layout_class">
+          <view class="intro_one">{{intro.one.name}}</view>
+          <view class="intro_enname">{{intro.one.enname}}</view>
+          <view wx:for="{{intro.one.describe}}" wx:key="index">
+              <view class="describe_item">{{item}}</view>
+          </view>
+      </view>
+      <view class="layout_class">
+        <view class="intro_img_two">
+          <view class="intro_two">{{intro.two.name}}</view>
+          <view class="intro_enname">{{intro.two.enname}}</view>
+          <view class="intro_img_two">
+          <view wx:for="{{intro.two.describe}}" wx:key="index">
+              <image src="{{item}}" mode="widthFix" style="width:100%"></image>
+          </view>
+          </view>        
+        </view>
+      </view>
+       <view class="lesson_introduction">课程目录</view>
+       <view class="layout_class_other">
+          <view wx:for="{{menuList}}" wx:key="index">
+              <view class="menu_title">{{item.title}}</view>
+              <view class="menu_pargroup" wx:for="{{item.pargroup}}" wx:key="index">{{item}}</view>
+          </view>
+       </view>
+       <view class="lesson_introduction">课程参数</view>
+       <view class="lesson_params">
+          <view class="canshu_01" wx:for="{{canshu}}" wx:key="index">
+              <view class="canshu_name canshu_class {{item.name==='项目'?'active':''}}">{{item.name}}</view>
+              <view class="canshu_describe canshu_class {{item.name==='项目'?'active':''}}">{{item.describe}}</view>
+          </view>
+       </view>
+       <view class="dibu">
+            <image src="{{dibu.img1.img}}" mode="widthFix" style="width:100%;"></image>
+       </view>  
+</view>

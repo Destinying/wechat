@@ -19,7 +19,10 @@ Page({
     recom_list:'',
     enable:true,
     controls: true,
-    gesture: true
+    gesture: true,
+    deviceTotal: 0,    //投诉建议总数
+    devicePages: 0,     //投诉建议总页数
+    deviceIndex: 1,      //投诉建议当前页
   },
 
   /**
@@ -45,7 +48,7 @@ Page({
       url: 'https://cloud.meshmellow.cn/wechatapi/course_play.html',
       data:{
         // id: id,
-        id:572,
+        id:id,
       },
       success(res){
         var res_01 =res.data.data;
@@ -56,7 +59,7 @@ Page({
           _this.bool=false;
         }else{
           res_01.videoSet;
-          _this.bool=true
+          _this.bool=true;
         }
         var res = res.data.data.videoInfo;
         var add_time = new Date(res.add_time*1000);

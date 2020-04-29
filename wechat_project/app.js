@@ -3,9 +3,10 @@ App({
   onLaunch: function () {
 
     let that = this;
-    that.app_login();
+    //that.app_login();
     //that.defaultImg();
-    that.webSiteInfo();
+    //that.webSiteInfo();
+
 
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -232,13 +233,13 @@ App({
     }
 
     if (!param.hideLoading) {
-      
+
       this.showToast({
         title: 'Loading...',
         icon: 'loading',
         duration: 20000,
       });
-      
+
       /** 修改 loading...延时显示
       setTimeout(function () {
         //要延时执行的代码
@@ -643,7 +644,9 @@ App({
   },
 
   //值是否为空判断函数
+
   isNull:function (data) {
     return(data == "" || data == undefined || data == null) ? true : false;
   }
 })
+
