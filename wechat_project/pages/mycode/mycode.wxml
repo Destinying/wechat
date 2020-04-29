@@ -6,6 +6,7 @@
   <block wx:if='{{mask_status == 1}}'>
     <view class='mask-layer'></view>
   </block>
+
   <view class='member_top'>
     <block wx:if='{{is_login == 0}}'>
       <button id='login_button' open-type='getUserInfo' bindgetuserinfo='getwechatUserInfo'>立即登录</button>
@@ -17,7 +18,7 @@
             <view class="span signin {{isSign==1?'yes':'no'}}" catchtap="{{isSign==1?'':'signIn'}}">{{isSign==1?'已签到':'签到'}}</view>
           </block>
           <view class="member_info_face">
-            <image id='user_head_img' src="{{member_info.user_info.user_headimg == '' ? 1 : member_info.user_info.user_headimg}}" mode='widthFix' catchtap='listClick' data-url="/pages/member/personaldata/personaldata" binderror='errorHeadImg'>
+            <image id='user_head_img' src="{{member_info.headimgurl == '' ? 1 : member_info.headimgurl}}" mode='widthFix' catchtap='listClick' data-url="/pages/member/personaldata/personaldata" binderror='errorHeadImg'>
             </image>
           </view>
           <text class='account_management' catchtap='listClick' data-url="/pages/member/personaldata/personaldata">
@@ -26,9 +27,9 @@
         </view>
       </view>
       <view class='info-content-top'>
-        <text catchtap='listClick' data-url="/pages/member/balancewater/balancewater">余额</text>
-        <text>{{member_info.user_info.nick_name}}</text>
-        <text catchtap='listClick' data-url="/pages/member/integralwater/integralwater">积分</text>
+        <text catchtap='listClick' data-url="/pages/member/balancewater/balancewater"><!--余额--></text>
+        <text>{{member_info.nickname}}</text>
+        <text catchtap='listClick' data-url="/pages/member/integralwater/integralwater"><!--积分--></text>
       </view>
       <view class='info-content-bottom'>
         <view catchtap='listClick' data-url="/pages/member/balancewater/balancewater">
@@ -42,8 +43,19 @@
         </view>
       </view>
     </block>
+
+    <view class="member_foott"></view>
+
   </view>
-  <image src='/images/member/member_foot.png' class='member_foot' />
+
+
+  <!--
+  <image src="https://cloud.meshmellow.cn/static/images/info-bg.png" class='member_foot' />
+  <image src='/images/member/member_foot.png' class='member_foot' />-->
+
+
+
+  <!--
   <block wx:if='{{is_login == 1 && promoter_info != undefined}}'>
     <block wx:if='{{promoter_info.promoter_center == ""}}'>
       <view class='control' catchtap='listClick' data-url="/pagesnfx/pages/distribution/distributioncenter/distributioncenter" data-flag="promoter">
@@ -95,6 +107,9 @@
       </view>
     </block>
   </block>
+-->
+  
+<!---
   <view class='control'>
     <view class='control_l_content'>
       普通订单
@@ -163,6 +178,8 @@
   </view>
 
   <view class='member_middle_spac'></view>
+-->
+
   <view class='member_list'>
     <view class='ul'>
       <view class='li'>
