@@ -12,6 +12,9 @@ Page({
     Base: '',
     defaultImg: '',
     member_info: {
+      user_info:{
+        user_headimg:'',
+      },
       level_name: '未登录...'
     },
     integralConfig: {}, //积分赠送配置
@@ -95,7 +98,20 @@ Page({
       })
       return false;
     } else if (res.detail.errMsg == 'getUserInfo:ok') {
+      app.app_login();
+      app.webSiteInfo();
       app.setWxInfo(res.detail.userInfo);
+      //temp新增用户信息处理---*******************************************************************************************************
+
+      console.log(app.globalData.wx_info);
+      let member_info = that.data.member_info;
+      let _wx_info = JSON.parse(app.globalData.wx_info);
+      member_info.user_info.user_headimg = _wx_info.avatarUrl; //图片路径处理
+      that.setData({
+        member_info: member_info,
+      });
+      console.log(that.data.member_info);
+      //temp新增用户信息处理---*******************************************************************************************************
       //参数检测
       let session_key = app.globalData.session_key;
       if (session_key == '' || session_key == undefined) {
@@ -187,7 +203,7 @@ Page({
   loadingMemberInfo: function (that) {
     //会员详情
     app.sendRequest({
-      url: 'api.php?s=member/getMemberDetail',
+      url: 'wechatapi/getMemberInfo.html',
       data: {},
       success: function (res) {
         let code = res.code;
