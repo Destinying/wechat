@@ -242,18 +242,17 @@
         </view>
       </block>
       -->
+      <view class='li'>
+        <view class="a member_list_item icon-zuji-copy iconfont" catchtap='listClick' data-url="/pages/myself/myself">
+          
+          <view class='span'>我的足迹</view>
+        </view>
+      </view>
 
       <view class='li'>
         <view class="a member_list_item icon-icon_dingyue-copy iconfont" catchtap='listClick' data-url="/pages/myself/myself">
           
           <view class='span'>线下订阅绑定</view>
-        </view>
-      </view>
-
-      <view class='li'>
-        <view class="a member_list_item icon-zuji-copy iconfont" catchtap='listClick' data-url="/pages/myself/myself">
-          
-          <view class='span'>我的足迹</view>
         </view>
       </view>
 
