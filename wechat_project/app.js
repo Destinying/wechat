@@ -232,7 +232,6 @@ App({
     }
 
     if (!param.hideLoading) {
-      
       this.showToast({
         title: 'Loading...',
         icon: 'loading',

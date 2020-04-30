@@ -13,9 +13,9 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  getpersonInfo:function(){
-    app.sendRequest({
-      url: 'Wechatapi/get_member',
+  getpersonInfo(){
+    wx.request({
+      url: 'https://cloud.meshmellow.cn/Wechatapi/get_member',
       method:"POST",
       data:{
          token: app.globalData.token
@@ -23,12 +23,13 @@ Page({
       success(res){
         console.log(res)
         var _this=this;
-        var res=res.data;
+        var res=res.data.data;
+        var nickname = res.nickname
         var out_time = app.globalData.public_time(res.out_time);
         console.log(typeof(out_time))
-        console.log(typeof(res.nickname))
+        console.log(typeof(nickname))
         _this.setData({
-          nickname: res.nickname,
+          nickname: nickname,
           out_time: out_time
         })
       }
