@@ -322,13 +322,13 @@ Page({
   listClick: function (event) {
     let that = this;
     let url = event.currentTarget.dataset.url;
+    /*
     let listClickFlag = that.data.listClickFlag;
-
     if (listClickFlag == 1) {
       return false;
     }
     app.clicked(that, 'listClickFlag');
-
+    */
     wx.navigateTo({
       url: url
     });

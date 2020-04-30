@@ -18,29 +18,29 @@
             <view class="span signin {{isSign==1?'yes':'no'}}" catchtap="{{isSign==1?'':'signIn'}}">{{isSign==1?'已签到':'签到'}}</view>
           </block>
           <view class="member_info_face">
-            <image id='user_head_img' src="{{member_info.headimgurl == '' ? 1 : member_info.headimgurl}}" mode='widthFix' catchtap='listClick' data-url="/pages/member/personaldata/personaldata" binderror='errorHeadImg'>
+            <image id='user_head_img' src="{{member_info.headimgurl == '' ? 1 : member_info.headimgurl}}" mode='widthFix' catchtap='listClick' data-url="/pages/myself/myself" binderror='errorHeadImg'>
             </image>
           </view>
           <!--
-          <text class='account_management' catchtap='listClick' data-url="/pages/member/personaldata/personaldata">
+          <text class='account_management' catchtap='listClick' data-url="/pages/myself/myself">
             账户管理
           </text>
           -->
         </view>
       </view>
       <view class='info-content-top'>
-        <text catchtap='listClick' data-url="/pages/member/balancewater/balancewater"><!--余额--></text>
+        <text catchtap='listClick' data-url="/pages/myself/myself"><!--余额--></text>
         <text>{{member_info.nickname}}</text>
-        <text catchtap='listClick' data-url="/pages/member/integralwater/integralwater"><!--积分--></text>
+        <text catchtap='listClick' data-url="/pages/myself/myself"><!--积分--></text>
       </view>
       <view class='info-content-bottom'>
-        <view catchtap='listClick' data-url="/pages/member/balancewater/balancewater">
+        <view catchtap='listClick' data-url="/pages/myself/myself">
           <view>{{member_info.balance}}</view>
         </view>
         <view>
           <view class="level">{{member_info.level_name}}</view>
         </view>
-        <view catchtap='listClick' data-url="/pages/member/integralwater/integralwater">
+        <view catchtap='listClick' data-url="/pages/myself/myself">
           <view>{{member_info.point}}</view>
         </view>
       </view>
@@ -185,7 +185,7 @@
   <view class='member_list'>
     <view class='ul'>
       <view class='li'>
-        <view class="a member_list_item icon-gerenshezhi-copy iconfont" catchtap='listClick' data-url="/pages/member/personaldata/personaldata">
+        <view class="a member_list_item icon-gerenshezhi-copy iconfont" catchtap='listClick' data-url="/pages/myself/myself">
           
           <view class='span'>个人设置</view>
         </view>
@@ -201,14 +201,14 @@
       </block>
       -->
       <view class='li'>
-        <view class="a member_list_item icon-wodekecheng-copy iconfont" catchtap='listClick' data-url="/pages/member/memberaddress/memberaddress?flag=1      ">
+        <view class="a member_list_item icon-wodekecheng-copy iconfont" catchtap='listClick' data-url="/pages/myself/myself">
           
           <view class='span'>我的课程</view>
         </view>
       </view>
 
       <view class='li'>
-        <view class="a member_list_item icon-tianjiadingyue-copy iconfont" catchtap='listClick' data-url="/pages/member/getappletqrcode/getappletqrcode">
+        <view class="a member_list_item icon-tianjiadingyue-copy iconfont" catchtap='listClick' data-url="/pages/myself/myself">
          
           <view class='span'>我的订阅</view>
         </view>
@@ -226,7 +226,7 @@
       -->
 
       <view class='li'>
-        <view class="a member_list_item icon-5-copy iconfont" catchtap='listClick' data-url="/pages/member/membercoupon/membercoupon">
+        <view class="a member_list_item icon-5-copy iconfont" catchtap='listClick' data-url="/pages/myself/myself">
           
             <view class='span'>购买记录</view>
         </view>
@@ -244,14 +244,14 @@
       -->
 
       <view class='li'>
-        <view class="a member_list_item icon-icon_dingyue-copy iconfont" catchtap='listClick' data-url="/pages/member/mycollection/mycollection">
+        <view class="a member_list_item icon-icon_dingyue-copy iconfont" catchtap='listClick' data-url="/pages/myself/myself">
           
           <view class='span'>线下订阅绑定</view>
         </view>
       </view>
 
       <view class='li'>
-        <view class="a member_list_item icon-zuji-copy iconfont" catchtap='listClick' data-url="/pages/member/newmypath/newmypath">
+        <view class="a member_list_item icon-zuji-copy iconfont" catchtap='listClick' data-url="/pages/myself/myself">
           
           <view class='span'>我的足迹</view>
         </view>
