@@ -409,4 +409,6 @@ scroll-view{
 .hide{
   display: none !important;
 }
-
+/* .span{
+  color: #3b9eff
+} */

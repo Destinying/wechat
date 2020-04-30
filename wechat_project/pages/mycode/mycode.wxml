@@ -185,8 +185,8 @@
   <view class='member_list'>
     <view class='ul'>
       <view class='li'>
-        <view class="a member_list_item" catchtap='listClick' data-url="/pages/member/personaldata/personaldata">
-          <image src='/images/member/username.png' />
+        <view class="a member_list_item icon-gerenshezhi-copy iconfont" catchtap='listClick' data-url="/pages/member/personaldata/personaldata">
+          
           <view class='span'>个人设置</view>
         </view>
       </view>
@@ -201,15 +201,15 @@
       </block>
       -->
       <view class='li'>
-        <view class="a member_list_item" catchtap='listClick' data-url="/pages/member/memberaddress/memberaddress?flag=1      ">
-          <image src='/images/member/icon_virtualGoods.png' />
+        <view class="a member_list_item icon-wodekecheng-copy iconfont" catchtap='listClick' data-url="/pages/member/memberaddress/memberaddress?flag=1      ">
+          
           <view class='span'>我的课程</view>
         </view>
       </view>
 
       <view class='li'>
-        <view class="a member_list_item" catchtap='listClick' data-url="/pages/member/getappletqrcode/getappletqrcode">
-          <image src='/images/member/icon_virtual_orders.png' />
+        <view class="a member_list_item icon-tianjiadingyue-copy iconfont" catchtap='listClick' data-url="/pages/member/getappletqrcode/getappletqrcode">
+         
           <view class='span'>我的订阅</view>
         </view>
       </view>
@@ -226,8 +226,8 @@
       -->
 
       <view class='li'>
-        <view class="a member_list_item" catchtap='listClick' data-url="/pages/member/membercoupon/membercoupon">
-          <image src='/images/member/reback.png' />
+        <view class="a member_list_item icon-5-copy iconfont" catchtap='listClick' data-url="/pages/member/membercoupon/membercoupon">
+          
             <view class='span'>购买记录</view>
         </view>
       </view>
@@ -244,15 +244,15 @@
       -->
 
       <view class='li'>
-        <view class="a member_list_item" catchtap='listClick' data-url="/pages/member/mycollection/mycollection">
-          <image src='/images/member/icon_personal.png' />
+        <view class="a member_list_item icon-icon_dingyue-copy iconfont" catchtap='listClick' data-url="/pages/member/mycollection/mycollection">
+          
           <view class='span'>线下订阅绑定</view>
         </view>
       </view>
 
       <view class='li'>
-        <view class="a member_list_item" catchtap='listClick' data-url="/pages/member/newmypath/newmypath">
-          <image src='/images/member/icon_newMyPath.png' />
+        <view class="a member_list_item icon-zuji-copy iconfont" catchtap='listClick' data-url="/pages/member/newmypath/newmypath">
+          
           <view class='span'>我的足迹</view>
         </view>
       </view>
