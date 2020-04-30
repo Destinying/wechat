@@ -58,7 +58,7 @@ Page({
       d = _this.data.obj_year
     }
     app.sendRequest({
-      url: 'https://cloud.meshmellow.cn/system_pay/subscribe.html',
+      url: 'Wechatapi/subscribe.html',
       data:d,
       success(res){
         console.log(res)

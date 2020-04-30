@@ -1,6 +1,9 @@
 <!--pages/myself/myself.wxml-->
 <view>
     <view>
-          <input></input>
+          {{nickname}}
+    </view>
+    <view>
+          {{out_time}}
     </view>
 </view>
