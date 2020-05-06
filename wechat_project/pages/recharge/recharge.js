@@ -62,8 +62,13 @@ Page({
       data:d,
       success(res){
         console.log(res)
+        var res=res;
+        wx.navigateTo({
+          url: '../confirmorder/confirmorder?orderid='+ res,
+        })
       }
     })
+    wx.hideToast();
   },
   onLoad: function (options) {
     var _this=this;

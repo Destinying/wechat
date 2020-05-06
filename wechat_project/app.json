@@ -1,9 +1,10 @@
 {
   "pages": [
+    "pages/recharge/recharge",
+    "pages/confirmorder/confirmorder",
     "pages/shouye/shouye",
     "pages/myself/myself",
     "pages/mycode/mycode",
-    "pages/recharge/recharge",
     "pages/detail/detail",
     "pages/index/index",
     "pages/playvideo/playvideo",

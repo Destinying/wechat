@@ -1,9 +1,41 @@
 <!--pages/myself/myself.wxml-->
 <view>
-    <view>
-          {{nickname}}
-    </view>
-    <view>
-          {{out_time}}
-    </view>
+  <view class="back_style">
+      <view class="mount_info">账户信息</view>
+  </view>
+      <view class="nickname">
+          <text>昵称：</text>
+          <text>{{nickname}}</text>
+      </view>
+      <view class="nickname">
+          <text>性别：</text>
+          <text>{{sex}}</text>
+      </view>
+      <view class="nickname">
+          <text>会员类型：</text>
+          <text>{{isVip}}</text>
+      </view>
+      <view class="nickname">
+          <text>会员日期：</text>
+          <text>{{out_time}}</text>
+      </view>
+     <view class="back_style">
+      <view class="mount_info">账户信息</view>
+  </view>
+      <view class="nickname">
+          <text>昵称：</text>
+          <text>{{nickname}}</text>
+      </view>
+      <view class="nickname">
+          <text>性别：</text>
+          <text>{{sex}}</text>
+      </view>
+      <view class="nickname">
+          <text>会员类型：</text>
+          <text>{{isVip}}</text>
+      </view>
+      <view class="nickname">
+          <text>会员日期：</text>
+          <text>{{out_time}}</text>
+      </view>
 </view>

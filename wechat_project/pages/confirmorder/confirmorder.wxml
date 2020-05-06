@@ -1,0 +1,34 @@
+<!--pages/confirmorder/confirmorder.wxml-->
+<view>
+  <view>
+      <view class="vip_lesson_title">VIP精品课程购买</view>
+  </view>
+  <view>
+      <view class="box_style">
+          <view class="line_style">
+              <view>产品：</view>
+              <view>3D犬神角色制作 · 建模班</view>           
+          </view>
+           <view class="line_style">
+              <view>数量：</view>
+              <view>1</view>           
+          </view>
+           <view class="line_style">
+              <view>单价：</view>
+              <view>￥299.00</view>           
+          </view>
+           <view class="line_style line_style_last">
+              <view>合计：</view>
+              <view>￥299.00</view>           
+          </view>
+      </view>
+  </view>
+  <view class="font_total"><text>总计：</text></view>
+  <view class="total"></view>
+  <view class="order_count">￥299.00</view>
+  <view class="radio_group">
+      <radio-group>
+          <radio class="radio">我同意和接受条款及条件</radio>
+      </radio-group>
+  </view>
+</view>

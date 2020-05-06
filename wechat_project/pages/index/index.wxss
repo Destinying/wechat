@@ -40,16 +40,15 @@
   width:100%
 }
 .tab-box{
-  height: 100%;
   position: relative;
   top: 95rpx;
-
+  overflow-y: hidden;
 }
 .lay_new{
   position: fixed;
   height: 95rpx;
   background: #fff;
-  width: 98%;
+  width: 98%; 
   left: 50%;
   margin-left: -48%;
   padding: 0rpx 0;

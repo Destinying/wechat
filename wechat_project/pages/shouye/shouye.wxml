@@ -18,7 +18,7 @@
   <view class="lesson_detail">
     <view wx:for="{{lesson_list}}" wx:key="index" class="all_back">
     <navigator url = "../detail/detail?fenlei={{item.url}}">
-      <image src="{{item.img}}" bindload="imageLoad_01" style="height:{{imgHeight_01}}rpx"></image>
+      <image src="{{item.img}}" bindload="imageLoad_01" style="height:{{imgHeight_01}}rpx" mode="widthFix"></image>
       <view class="layout_class">
           <view class="title_style">
             <view>{{item.name}}</view>
