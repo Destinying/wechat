@@ -27,8 +27,14 @@
   <view class="total"></view>
   <view class="order_count">￥299.00</view>
   <view class="radio_group">
-      <radio-group>
+      <radio-group class="radio_group_01">
           <radio class="radio">我同意和接受条款及条件</radio>
       </radio-group>
+  </view>
+  <view style="clear:both"></view>
+  <view class="block_class">
+    <block>
+        去支付
+    </block>
   </view>
 </view>

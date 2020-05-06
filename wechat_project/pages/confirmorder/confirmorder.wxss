@@ -61,18 +61,29 @@
   font-size: 35rpx;
   font-weight: bold;
   width: 96%;
-  margin: 0 auto;
+  margin: 0 2%;
   padding-left: 30rpx;
 }
 .radio{
   font-size: 60rpx;
   transform:scale(0.5);
 }
-.radio_group{
-  position: relative;
-  right: 30rpx;
+.radio_group_01{
+  text-align: right;
+  width: 25%;
+  white-space: nowrap;
+  float: right;
+  margin-right: 50%;
 }
-.radio_group radio_group{
-  position: relative;
-  right: 30rpx;
+.block_class{
+  font-size: 30rpx;
+  background: #ee8124;
+  margin: 0 3%;
+  display: inline-block;
+  white-space: nowrap;
+  padding: 10rpx 25rpx;
+  color: #fff;
+  border-radius: 5rpx;
+  float: right;
+  margin-top: 20rpx;
 }
