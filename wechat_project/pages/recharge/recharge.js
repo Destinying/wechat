@@ -12,13 +12,15 @@ Page({
       price:"599.00",
       payCode:"nativePay|wxPay",
       packageId:"3",
-      buyType:"2"
+      buyType:"2",
+      token: app.globalData.token
     },
     obj_season:{
       price: "199.00",
       payCode: "nativePay|wxPay",
       packageId: "2",
-      buyType: "2"
+      buyType: "2",
+      token: app.globalData.token
     },
     price:"199.00"
   },
@@ -47,7 +49,7 @@ Page({
     })
     console.log(_this.data.obj_year)
   },
-  liji_pay:function(){
+  liji_pay(){
     var _this = this;
     var d="";
     if (_this.data.checkout_params){
@@ -57,12 +59,15 @@ Page({
       _this.data.obj_year.token = app.globalData.token;
       d = _this.data.obj_year
     }
-    app.sendRequest({
-      url: 'Wechatapi/subscribe.html',
+    wx.request({
+      url: 'https://cloud.meshmellow.cn/Wechatapi/subscribe.html',
       data:d,
+      method:"POST",
+      dataType:"json",
+      responseType: 'text',
       success(res){
         console.log(res)
-        var res=res;
+        var res=res.data.data.orderSn
         wx.navigateTo({
           url: '../confirmorder/confirmorder?orderid='+ res,
         })

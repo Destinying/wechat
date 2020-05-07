@@ -7,7 +7,7 @@
       <view class="box_style">
           <view class="line_style">
               <view>产品：</view>
-              <view>3D犬神角色制作 · 建模班</view>           
+              <view>{{buy_vip_info}}</view>           
           </view>
            <view class="line_style">
               <view>数量：</view>
@@ -15,20 +15,20 @@
           </view>
            <view class="line_style">
               <view>单价：</view>
-              <view>￥299.00</view>           
+              <view>￥{{price}}</view>           
           </view>
            <view class="line_style line_style_last">
               <view>合计：</view>
-              <view>￥299.00</view>           
+              <view>￥{{price}}</view>           
           </view>
       </view>
   </view>
   <view class="font_total"><text>总计：</text></view>
   <view class="total"></view>
-  <view class="order_count">￥299.00</view>
+  <view class="order_count">￥{{price}}</view>
   <view class="radio_group">
       <radio-group class="radio_group_01">
-          <radio class="radio" checked="{{radio_check}}">我同意和接受条款及条件</radio>
+          <radio class="radio" checked="{{radio_check}}" bindtap="judgment_check">我同意和接受条款及条件</radio>
       </radio-group>
   </view>
   <view style="clear:both"></view>

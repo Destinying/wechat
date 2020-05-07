@@ -1,4 +1,5 @@
 // pages/confirmorder/confirmorder.js
+const app=getApp()
 Page({
 
   /**
@@ -6,7 +7,10 @@ Page({
    */
   data: {
     radio_check:true,
-    orderid:""
+    orderid:"",
+    buy_vip_info:"",
+    price:"",
+    count:0
   },
 
   /**
@@ -17,18 +21,40 @@ Page({
     wx.request({
       url: 'https://cloud.meshmellow.cn/wechatapi/confirmOrder.html',
       method:"POST",
+      dataType:"json",
       data:{
-        orderSn: _this.data.orderid
+        orderSn: _this.data.orderid,
+        token: app.globalData.token
       },
       success(res){
-        console.log(res)
+        var res=res.data.data;
+        _this.setData({
+          buy_vip_info: res.buy_vip_info,
+          price: res.price
+        })
       }
     })
   },
+  judgment_check(){
+    var _this=this;
+    var count = _this.data.count;
+    count++
+    if(count%2==0){
+      _this.setData({
+        radio_check:true,
+        count: count
+      })
+    }else{
+      _this.setData({
+        radio_check:false,
+        count: count
+      })
+    }
+  },
   onLoad: function (options) {
     var _this=this;
-    console.log(options)
-    _this.data.orderid = options.orderid
+    _this.data.orderid = options.orderid;
+    console.log(_this.data.orderid)
     if(_this.data.orderid!=null){
       _this.get_order_list()
     }
