@@ -22,12 +22,12 @@
       <view class="layout_class">
           <view class="title_style">
             <view>{{item.name}}</view>
-            <view class="title_style_01">
-              <view>{{item.oldmoney}}</view>
-              <view>{{item.nowmoney}}</view>
-            </view>
           </view>
           <view class="describe">{{item.describe}}</view>
+          <view class="title_style_01">
+              <view wx:if="{{item.oldmoney!=''}}">原价{{item.oldmoney}}</view>
+              <view>推广价{{item.nowmoney}}</view>
+            </view>
       </view>
      </navigator> 
     </view>
