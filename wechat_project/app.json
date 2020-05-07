@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/shouye/shouye",
     "pages/recharge/recharge",
     "pages/confirmorder/confirmorder",
-    "pages/shouye/shouye",
     "pages/myself/myself",
     "pages/mycode/mycode",
     "pages/detail/detail",

@@ -83,7 +83,7 @@
   white-space: nowrap;
   padding: 10rpx 25rpx;
   color: #fff;
-  border-radius: 5rpx;
-  float: right;
+  border-radius:5rpx;
+  float:right;
   margin-top: 20rpx;
 }
