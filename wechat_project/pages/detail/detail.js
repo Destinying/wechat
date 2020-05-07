@@ -169,7 +169,7 @@ Page({
         })
       }
     })
-  },
+  }, 
   getcourse_01:function(){
     var _this = this;
     wx.request({
@@ -200,6 +200,7 @@ Page({
       _this.getcourse();
       _this.getcourse_01()
     }
+    //根据shouye传来的参数不同运行不同的程序
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

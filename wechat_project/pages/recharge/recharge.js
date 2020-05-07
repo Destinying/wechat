@@ -47,8 +47,7 @@ Page({
       checkout_params_year: checkout_params_year,
       price: "599.00"
     })
-    console.log(_this.data.obj_year)
-  },
+  }, 
   liji_pay(){
     var _this = this;
     var d="";
@@ -66,19 +65,18 @@ Page({
       dataType:"json",
       responseType: 'text',
       success(res){
-        console.log(res)
         var res=res.data.data.orderSn
         wx.navigateTo({
           url: '../confirmorder/confirmorder?orderid='+ res,
-        })
+        }) 
+        // 传参至comfirmorder页面，获取订单号
       }
     })
     wx.hideToast();
   },
   onLoad: function (options) {
     var _this=this;
-   var a= app.globalData.token;
-   console.log(a)
+   var a= app.globalData.token; //获取taken值
   },
 
   /**

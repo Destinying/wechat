@@ -17,9 +17,9 @@
                   </view>
                 </view>
                 <view class="radio_class ma">
-                    <radio-group>
-                        <radio checked="{{checkout_params}}" value="{{obj_season}}" ></radio>
-                    </radio-group>
+                    <checkbox-group>
+                        <checkbox color="#fff" checked="{{checkout_params}}" value="{{obj_season}}" ></checkbox>
+                    </checkbox-group>
                 </view>
             </view>
           </view>
@@ -38,9 +38,9 @@
                   </view>
                 </view>
                 <view class="radio_class ma">
-                    <radio-group>
-                        <radio checked="{{checkout_params_year}}" value="{{obj_year}}" ></radio>
-                    </radio-group>
+                    <checkbox-group>
+                        <checkbox color="#fff" checked="{{checkout_params_year}}" value="{{obj_year}}" ></checkbox>
+                    </checkbox-group>
                 </view>
             </view>
           </view>

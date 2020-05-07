@@ -75,3 +75,7 @@
 .pay_dis view text:nth-child(3){
   margin-left: 10rpx;
 }
+wx-checkbox .wx-checkbox-input{
+  background: #d6000f;
+  border: 1px solid #d6000f;
+}

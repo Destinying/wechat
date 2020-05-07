@@ -25,8 +25,8 @@
           </view>
           <view class="describe">{{item.describe}}</view>
           <view class="title_style_01">
-              <view wx:if="{{item.oldmoney!=''}}">原价{{item.oldmoney}}</view>
-              <view>推广价{{item.nowmoney}}</view>
+              <view class="title_style_02" wx:if="{{item.oldmoney!=''}}">原价{{item.oldmoney}}</view>
+              <view class="title_style_03">推广价{{item.nowmoney}}</view>
             </view>
       </view>
      </navigator> 
@@ -42,12 +42,15 @@
       <view wx:for="{{live_lesson}}" wx:key="index" class="online_class">
         <navigator url = "../playvideo/playvideo?id={{item.id}}"> 
           <image src="{{item.img}}" bindload="imageLoad_01" style="height:{{imgHeight_01}}rpx" mode="widthFix"></image>
-          <view class="online_title">
-            {{item.name}}
-          </view>
-          <view class="online_par">
-            {{item.describe}}
-          </view>
+            <view class="add_border_class">
+              <view class="online_title">
+                {{item.name}}
+              </view>
+              <view class="online_par">
+                {{item.describe}}
+              </view>
+              <view class="subscribe">马上订阅会员，享无限观看！</view>
+            </view>
         </navigator>
       </view>
   </view>

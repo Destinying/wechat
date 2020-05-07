@@ -47,7 +47,7 @@ Page({
     this.setData({
       imgHeight: imgHeight
     })
-  },
+  }, //根据图片宽度动态给高度
   imageLoad_01: function (e) {
     var imgwidth = e.detail.width;
     var imgheight = e.detail.height;
