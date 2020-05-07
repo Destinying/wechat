@@ -6,20 +6,21 @@
 .lesson_tuijian{
   text-align: center;
   font-size: 35rpx;
-  color: #333;
-  font-weight: bold
+  font-weight: bold;
+  background: #c90915;
+  color: #fff;
+  padding: 20rpx 0;
+  letter-spacing: 5rpx
 }
-.action_01{
-  margin-top: 30rpx;
-}
+
 .font_border{
-  background: #ec6444;
+  background: #fff;
   height: 2px;
-  width: 100rpx;
-  margin: 0 auto 30rpx;
+  width: 150rpx;
+  margin: 10rpx auto 10rpx;
 }
 .lesson_detail{
-  width: 96%;
+  width: 100%;
   margin: 0 auto 30rpx;
 }
 .lesson_detail image{

@@ -51,30 +51,50 @@ Page({
       }
     })
   },
-  onLoad: function (options) {
-    var _this = this;
-    _this.getpersonInfo()
-    _this.get_base_info()
-    wx.setNavigationBarTitle({
-      title: "个人信息",
-    })
-  },
-  get_base_info(){
+  getaccountinfo(){
     var _this=this;
     wx.request({
       url: 'https://cloud.meshmellow.cn/Wechatapi/get_baseuser_info',
+      dataType:"json",
+      method:"POST",
       data: {
         token: app.globalData.token
       },
-      header: {},
-      method: 'POST',
-      dataType: 'json',
-      responseType: 'text',
-      success: function(res) {
-        console.log(res)
-      },
-      fail: function(res) {},
-      complete: function(res) {},
+      success(res){
+        var res=res.data.data;
+        var res_birthmonth="";
+        var res_birthday = "";
+        if (res.birthmonth<10){
+          res_birthmonth = '0' + res.birthmonth;
+        }else{
+          res_birthmonth = res.birthmonth;
+        };
+        if (res.birthday < 10) {
+          res_birthday = '0' + res.birthday;
+        } else {
+          res_birthday = res.birthday;
+        };
+        var birth = res.birthyear + '-' + res_birthmonth  + '-' + res_birthday
+        var mobile = res.mobile;
+        var mobile_01=mobile.split("");
+        mobile_01.splice(3,4,"****");
+        mobile = mobile_01.join("")
+        _this.setData({
+          realname: res.realname,
+          birth: birth,
+          graduateschool: res.graduateschool,
+          mobile: mobile,
+          email: res.email
+        })
+      }
+    })
+  },
+  onLoad: function (options) {
+    var _this = this;
+    _this.getpersonInfo()
+    _this.getaccountinfo()
+    wx.setNavigationBarTitle({
+      title: "个人信息",
     })
   },
   /**

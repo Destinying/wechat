@@ -140,7 +140,40 @@ Page({
   getinukami_designmenuList: function () {
     var _this = this;
     wx.request({
-      url: 'https://cloud.meshmellow.cn/tpl/default/static/live/inukami_animation.json',
+      url: 'https://cloud.meshmellow.cn/tpl/default/static/live/inukami_design_01.json',
+      success(res) {
+        var res = res.data.data
+        _this.setData({
+          menuList: res
+        })
+      }
+    })
+  },
+  getcourse:function(){
+    var _this = this;
+    wx.request({
+      url: 'https://cloud.meshmellow.cn/Wechatapi/model_logic',
+      dataType: 'GET',
+      success(res) {
+        var res = JSON.parse(res.data);
+        console.log(res)
+        _this.setData({
+          video_post: res.video,
+          video_img: res.img,
+          info: res.info,
+          money: res.money,
+          erweima: res.erweima,
+          intro: res.intro,
+          canshu: res.canshu,
+          dibu: res.dibu
+        })
+      }
+    })
+  },
+  getcourse_01:function(){
+    var _this = this;
+    wx.request({
+      url: 'https://cloud.meshmellow.cn/tpl/default/static/live/model_logic.json',
       success(res) {
         var res = res.data.data
         _this.setData({
@@ -163,6 +196,9 @@ Page({
     } else if (options.fenlei == "inukami_design"){
       _this.getinukami_designList();
       _this.getinukami_designmenuList()
+    } else if (options.fenlei=="course"){
+      _this.getcourse();
+      _this.getcourse_01()
     }
   },
   /**

@@ -23,19 +23,23 @@
       <view class="mount_info">账户信息</view>
   </view>
       <view class="nickname">
-          <text>昵称：</text>
-          <text>{{nickname}}</text>
+          <text>真实姓名：</text>
+          <text>{{realname}}</text>
       </view>
       <view class="nickname">
-          <text>性别：</text>
-          <text>{{sex}}</text>
+          <text>出生年月：</text>
+          <text>{{birth}}</text>
       </view>
       <view class="nickname">
-          <text>会员类型：</text>
-          <text>{{isVip}}</text>
+          <text>所在学校：</text>
+          <text>{{graduateschool}}</text>
       </view>
       <view class="nickname">
-          <text>会员日期：</text>
-          <text>{{out_time}}</text>
+          <text>联系方式：</text>
+          <text>{{mobile}}</text>
+      </view>
+      <view class="nickname">
+          <text>联系邮箱：</text>
+          <text>{{email}}</text>
       </view>
 </view>
