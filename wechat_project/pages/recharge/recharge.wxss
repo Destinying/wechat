@@ -50,7 +50,7 @@
 }
 .pay_now{
   width: 50%;
-  background: #d6000f;
+  background: #bb0611;
   color: #fff;
   text-align: center;
   font-size: 35rpx;
@@ -65,7 +65,7 @@
   background: #fff
 } 
 .pay_dis view text{
-  color:#d6000f;
+  color:#bb0611;
   font-size: 35rpx;
 }
 .pay_dis>view{
@@ -79,11 +79,11 @@
   margin-left: 10rpx;
 }
 wx-checkbox .wx-checkbox-input{
-  background: #d6000f;
-  border: 1px solid #d6000f;
+  background: #bb0611;
+  border: 1px solid #bb0611;
 }
 .member_subscription{
-  background: #d6000f;
+  background: #bb0611;
   color: #fff;
   font-size: 35rpx;
   text-align: center;

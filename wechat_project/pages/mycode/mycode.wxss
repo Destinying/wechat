@@ -1,5 +1,5 @@
 scroll-view{
-  background: #F3F3F3;
+  background:#dcdddd;
 }
 
 .member_top {
@@ -37,7 +37,7 @@ scroll-view{
 }
 
 .member_info_face {
-  border: 2px solid #fff;
+  /* border: 2px solid #fff; */
   top: 6px;
   height: 60px;
   border-radius: 50%;
@@ -51,6 +51,7 @@ scroll-view{
 
 .member_info_face image{
   vertical-align: middle;
+  border-radius: 50%;
 }
 
 #user_head_img{
@@ -362,7 +363,22 @@ scroll-view{
   -o-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
-
+.ul .li:nth-child(1){
+  border-right: 2px solid #dcdddd
+}
+.ul .li:nth-child(2){
+  border-right: 2px solid #dcdddd
+}
+.ul .li:nth-child(5){
+  border-right: 2px solid #dcdddd
+}
+.ul .li:nth-child(6){
+  border-right: 2px solid #dcdddd
+}
+.ul .li{
+  box-sizing: border-box;
+  margin-bottom: 20rpx
+}
 .mask-layer {
   position: fixed;
   top: 0;

@@ -8,11 +8,7 @@
   </block>
 
   <view class='member_top'>
-    <block wx:if='{{is_login == 0}}'>
-      <button id='login_button' open-type='getUserInfo' bindgetuserinfo='getwechatUserInfo'>立即登录</button>
-    </block>
-    <block wx:else>
-      <view class='member_head'>
+  <view class='member_head'>
         <view class="member_info_head">
           <block wx:if='{{integralConfig.sign_integral == 1}}'>
             <view class="span signin {{isSign==1?'yes':'no'}}" catchtap="{{isSign==1?'':'signIn'}}">{{isSign==1?'已签到':'签到'}}</view>
@@ -27,7 +23,12 @@
           </text>
           -->
         </view>
-      </view>
+  </view>
+    <block wx:if='{{is_login == 0}}'>
+      <button id='login_button' open-type='getUserInfo' bindgetuserinfo='getwechatUserInfo'>立即登录</button>
+    </block>
+    <block>
+      
       <view class='info-content-top'>
         <text catchtap='listClick' data-url="/pages/myself/myself"><!--余额--></text>
         <text>{{member_info.nickname}}</text>
@@ -37,8 +38,8 @@
         <view catchtap='listClick' data-url="/pages/myself/myself">
           <view>{{member_info.balance}}</view>
         </view>
-        <view>
-          <view class="level">{{member_info.level_name}}</view>
+        <view >
+          <view class="level"  wx:if='{{member_info.level_name == "VIP订阅会员"}}'>{{member_info.level_name}}</view>
         </view>
         <view catchtap='listClick' data-url="/pages/myself/myself">
           <view>{{member_info.point}}</view>
@@ -181,12 +182,11 @@
 
   <view class='member_middle_spac'></view>
 -->
-
   <view class='member_list'>
     <view class='ul'>
       <view class='li'>
-        <view class="a member_list_item icon-gerenshezhi-copy iconfont" catchtap='listClick' data-url="/pages/myself/myself">
-          
+        <view class="a member_list_item" catchtap='listClick' data-url="/pages/myself/myself">
+            <image src="../../image/person_set_center_01.png"></image>
           <view class='span'>个人设置</view>
         </view>
       </view>
@@ -201,15 +201,15 @@
       </block>
       -->
       <view class='li'>
-        <view class="a member_list_item icon-wodekecheng-copy iconfont" catchtap='listClick' data-url="/pages/myself/myself">
-          
+        <view class="a member_list_item" catchtap='listClick' data-url="/pages/mylesson/mylesson">
+            <image src="../../image/person_set_center_02.png"></image>
           <view class='span'>我的课程</view>
         </view>
       </view>
 
       <view class='li'>
-        <view class="a member_list_item icon-tianjiadingyue-copy iconfont" catchtap='listClick' data-url="/pages/myself/myself">
-         
+        <view class="a member_list_item" catchtap='listClick' data-url="/pages/myself/myself">
+         <image src="../../image/person_set_center_03.png"></image>
           <view class='span'>我的订阅</view>
         </view>
       </view>
@@ -224,10 +224,10 @@
         </view>
       </block>
       -->
-
+      <view style="height:2px;background:#dcdddd;width:80%;clear:both;margin: 20rpx 10%;"></view>
       <view class='li'>
-        <view class="a member_list_item icon-5-copy iconfont" catchtap='listClick' data-url="/pages/myself/myself">
-          
+        <view class="a member_list_item" catchtap='listClick' data-url="/pages/myself/myself">
+          <image src="../../image/person_set_center_04.png"></image>
             <view class='span'>购买记录</view>
         </view>
       </view>
@@ -243,15 +243,15 @@
       </block>
       -->
       <view class='li'>
-        <view class="a member_list_item icon-zuji-copy iconfont" catchtap='listClick' data-url="/pages/myself/myself">
-          
+        <view class="a member_list_item" catchtap='listClick' data-url="/pages/myself/myself">
+          <image src="../../image/person_set_center_05.png"></image>
           <view class='span'>我的足迹</view>
         </view>
       </view>
 
       <view class='li'>
-        <view class="a member_list_item icon-icon_dingyue-copy iconfont" catchtap='listClick' data-url="/pages/myself/myself">
-          
+        <view class="a member_list_item" catchtap='listClick' data-url="/pages/myself/myself">
+          <image src="../../image/person_set_center_06.png"></image>
           <view class='span'>线下订阅绑定</view>
         </view>
       </view>

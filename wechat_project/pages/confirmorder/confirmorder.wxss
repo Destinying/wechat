@@ -6,7 +6,7 @@
   margin: 0rpx 0 10rpx 0;
   padding-bottom: 20rpx;
   padding-top: 20rpx;
-  background: #d6000f;
+  background: #bb0611;
   color: #fff;
   letter-spacing:5rpx;
 }
@@ -14,7 +14,7 @@
   background: #fff;
   height: 2px;
   width: 150rpx;
-  margin: 0rpx auto 10rpx;
+  margin: 10rpx auto 10rpx;
 }
 .box_style{
   /* border: 1px solid #ee8124; */
@@ -93,8 +93,8 @@ wx-radio .wx-radio-input{
   height: 30rpx;
   width: 30rpx;
   border-radius: 0;
-  background-color: #d6000f!important;
-  border-color: #d6000f!important;
+  background-color: #bb0611!important;
+  border-color: #bb0611!important;
 }
 .radio text{
   margin-left: 20rpx;
@@ -114,7 +114,7 @@ wx-radio .wx-radio-input{
 }
 .pay_now{
   width: 50%;
-  background: #d6000f;
+  background: #bb0611;
   color: #fff;
   text-align: center;
   font-size: 35rpx;
@@ -122,7 +122,7 @@ wx-radio .wx-radio-input{
   line-height: 120rpx;
 }
 .pay_dis view text{
-  color:#d6000f;
+  color:#bb0611;
   font-size: 35rpx;
 }
 .pay_dis>view{

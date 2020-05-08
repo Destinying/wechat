@@ -7,7 +7,7 @@
   text-align: center;
   font-size: 35rpx;
   font-weight: bold;
-  background: #c90915;
+  background: #bb0611;
   color: #fff;
   padding: 20rpx 0;
   letter-spacing: 5rpx
@@ -43,7 +43,7 @@
 }
 .title_style_03{
   color: #fff;
-  background: #d6000f;
+  background: #bb0611;
   padding: 0 10rpx;
 }
 .title_style_01{
@@ -55,7 +55,7 @@
 }
 .layout_class{
   padding: 0% 0 0% 4%;
-  border-left: 15rpx solid #d6000f;
+  border-left: 15rpx solid #bb0611;
   width: 90%;
   margin: 20rpx 0;
 }
@@ -65,7 +65,7 @@
   padding-bottom: 10rpx;
 }
 .describe{
-  color: #adadad;
+  color: #898989;
   font-weight: 400;
   font-size: 25rpx;
   margin-top: 10rpx;
@@ -86,16 +86,16 @@
 .online_par{
   font-size: 25rpx;
   padding: 10rpx 0 0rpx 0;
-  color: #adadad
+  color: #898989
 }
 .add_border_class{
-  border-left: 15rpx solid #d6000f;
+  border-left: 15rpx solid #bb0611;
   padding: 0% 0 0% 4%;
   width: 90%
 }
 .subscribe{
   font-size: 28rpx;
-  color: #d6000f;
+  color: #bb0611;
   font-weight: bold;
   padding: 10rpx 0 0 0;
 }

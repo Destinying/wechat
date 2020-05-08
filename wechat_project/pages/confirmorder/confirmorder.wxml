@@ -55,7 +55,7 @@
               <text>{{price}}</text>
             </view>
             <view class="pay_now" bindtap="liji_pay">
-                立即购买
+                去支付
             </view>
         </view>
   </view>

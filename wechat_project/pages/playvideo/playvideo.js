@@ -141,10 +141,16 @@ Page({
       success(res) {
         console.log(res.data.data)
         _this.video_list=res.data.data.videoInfo.url;
-        _this.thumbnail = res.data.data.videoInfo.thumbnail
+        _this.thumbnail = res.data.data.videoInfo.thumbnail;
+        _this.page_title = res.data.data.videoInfo.title;
+        _this.click = res.data.data.videoInfo.click;
+        _this.add_time = app.globalData.public_time(res.data.data.videoInfo.add_time)
         _this.setData({
           video_list:_this.video_list,
-          thumbnail: _this.thumbnail
+          thumbnail: _this.thumbnail,
+          page_title: _this.page_title,
+          click: _this.click,
+          add_time: _this.add_time
         })
       },
     })
@@ -162,10 +168,16 @@ Page({
       success(res) {
         console.log(res.data.data)
         _this.video_list = res.data.data.videoInfo.url;
-        _this.thumbnail = res.data.data.videoInfo.thumbnail
+        _this.thumbnail = res.data.data.videoInfo.thumbnail;
+        _this.page_title = res.data.data.videoInfo.title;
+        _this.click = res.data.data.videoInfo.click;
+        _this.add_time = app.globalData.public_time(res.data.data.videoInfo.add_time)
         _this.setData({
           video_list: _this.video_list,
-          thumbnail: _this.thumbnail
+          thumbnail: _this.thumbnail,
+          page_title: _this.page_title,
+          click: _this.click,
+          add_time: _this.add_time
         })
       },
     })
