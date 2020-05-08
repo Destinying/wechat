@@ -11,8 +11,18 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+  getlesson_list(){
+    var _this = this;
+    wx.request({
+      url: 'https://cloud.meshmellow.cn/Wechatapi/getMyCourse',
+      success(res){
+        console.log(res)
+      }
+    })
+  },
   onLoad: function (options) {
-
+    var _this=this;
+    _this.getlesson_list()
   },
 
   /**

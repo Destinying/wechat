@@ -11,7 +11,8 @@
 }
 .layout_class{
   width: 98%;
-  margin: 0 auto
+  margin: 0 auto;
+  padding: 10rpx 0;
 }
 .info_name{
   margin-left: 30rpx;
@@ -19,11 +20,11 @@
   font-size: 30rpx;
 }
 .info_long{
-  color: #999;
+  color: #898989;
   font-size: 24rpx;
 }
 .info_video{
-  color: #999;
+  color: #898989;
   font-size: 24rpx;
   margin-left: 30rpx
 }
@@ -39,26 +40,26 @@
 }
 .yuanjia{
   font-size: 24rpx;
-  color: #999;
+  color: #898989;
 }
 .yuanmoney{
   font-size: 35rpx;
   text-decoration: line-through;
-  color: rgb(236, 82, 82);
-  margin-left: 60rpx;
+  color: #bb0611;
+  margin-left: 40rpx;
 }
 .yushou{
   font-size: 24rpx;
-  color: #999;
+  color: #898989;
 }
 .money{
   font-size: 35rpx;
-  color: rgb(236, 82, 82);
-  margin-left:60rpx;
+  color: #bb0611;
+  margin-left:40rpx;
 }
 .time{
   font-size: 24rpx;
-  color: #999;
+  color: #898989;
 }
 .flex_class{
   flex-direction: row;
@@ -67,7 +68,7 @@
   justify-content: space-between
 }
 .hot_sail{
-  background: rgb(236, 82, 82);
+  background: #bb0611;
   color: #fff;
   padding: 15rpx 25rpx;
   margin-right: 30rpx;
@@ -80,18 +81,15 @@
   align-items: center;
   margin-top: 20rpx;
 }
-.border_class_01{
-  height: 12rpx;
-  margin-top: 30rpx;
-  background:rgb(242, 242, 242);
-}
+
 .yuanjia text{
   opacity: 0
 }
 .erweima_name{
   text-align: center;
   font-size: 24rpx;
-  margin-top: 30rpx;
+  margin-top: 10rpx;
+  padding-top: 15rpx;
 }
 .erweima_img image{
   width: 300rpx;
@@ -112,8 +110,8 @@
   margin-top: 30rpx;
 }
 .lesson_introduction{
-  border-left: 10rpx solid rgb(236, 82, 82);
-  margin-top: 30rpx;
+  border-left: 10rpx solid #bb0611;
+  padding-top: 30rpx;
   font-size: 30rpx;
   padding-left: 15rpx;
 }
@@ -167,10 +165,10 @@
   align-content: center;
 }
 .canshu_class{
-  background: #ddd
+  background: #dcdddd
 }
 .active{
-  background:rgb(236, 82, 82)!important;
+  background:#bb0611!important;
   border-top-left-radius:10rpx;
   border-top-right-radius: 10rpx;
 }
