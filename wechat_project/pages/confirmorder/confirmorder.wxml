@@ -1,9 +1,12 @@
 <!--pages/confirmorder/confirmorder.wxml-->
 <view>
   <view>
-      <view class="vip_lesson_title">VIP精品课程购买</view>
+      <view class="vip_lesson_title">
+       <view>购买确认</view>
+       <view></view> 
+      </view>
   </view>
-  <view>
+  <view style="background:#fff;width:96%;margin:0 auto">
       <view class="box_style">
           <view class="line_style">
               <view>产品：</view>
@@ -23,7 +26,7 @@
           </view>
       </view>
   </view>
-  <view class="font_total"><text>总计：</text></view>
+  <!-- <view class="font_total"><text>总计：</text></view>
   <view class="total"></view>
   <view class="order_count">￥{{price}}</view>
   <view class="radio_group">
@@ -36,5 +39,24 @@
     <block>
         去支付
     </block>
+  </view> -->
+  <view class="radio_group">
+    <view>
+      <radio-group class="radio_group_01">
+          <radio class="radio" checked="{{radio_check}}" bindtap="judgment_check"><text>我同意和接受条款及条件</text></radio>
+      </radio-group>
+    </view>
+  </view>
+  <view class="fix_pos">
+        <view class="pay_dis">
+            <view>
+              <text>合计</text>
+              <text>￥</text>
+              <text>{{price}}</text>
+            </view>
+            <view class="pay_now" bindtap="liji_pay">
+                立即购买
+            </view>
+        </view>
   </view>
 </view>

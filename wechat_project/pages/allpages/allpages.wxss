@@ -4,8 +4,9 @@
   margin: 0 auto;
   display: flex;
   align-items: center;
-  border-bottom:1px solid #f9f9f9;
+  border-bottom:2px solid #dcdddd;
   padding: 15rpx 0;
+  background: #fff
 }
 .all_pages_img{
   width: 100%;

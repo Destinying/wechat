@@ -1,5 +1,9 @@
 <!--pages/recharge/recharge.wxml-->
-<view>
+<view class="global_style">
+  <view class="member_subscription">
+    <view>会员订阅</view>
+    <view></view>
+  </view>
     <view class="layout_class">
         <view class="member"></view>
           <view class="season_recharge">
@@ -53,7 +57,7 @@
               <text>{{price}}</text>
             </view>
             <view class="pay_now" bindtap="liji_pay">
-                立即购买
+                去支付
             </view>
         </view>
     </view>

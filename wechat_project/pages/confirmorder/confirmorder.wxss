@@ -3,8 +3,18 @@
   text-align: center;
   font-size: 36rpx;
   font-weight: bold;
-  margin: 10rpx 0;
+  margin: 0rpx 0 10rpx 0;
   padding-bottom: 20rpx;
+  padding-top: 20rpx;
+  background: #d6000f;
+  color: #fff;
+  letter-spacing:5rpx;
+}
+.vip_lesson_title view:nth-child(2){
+  background: #fff;
+  height: 2px;
+  width: 150rpx;
+  margin: 0rpx auto 10rpx;
 }
 .box_style{
   /* border: 1px solid #ee8124; */
@@ -13,7 +23,7 @@
 }
 .line_style{
   width: 100%;
-  border-bottom: 1px solid #ee8124;
+  border-bottom: 1px solid #dcdddd;
   display: flex;
   flex-flow: row;
 }
@@ -65,25 +75,63 @@
   padding-left: 30rpx;
 }
 .radio{
-  font-size: 60rpx;
-  transform:scale(0.5);
-}
-.radio_group_01{
-  text-align: right;
-  width: 25%;
-  white-space: nowrap;
-  float: right;
-  margin-right: 50%;
-}
-.block_class{
   font-size: 30rpx;
-  background: #ee8124;
-  margin: 0 3%;
-  display: inline-block;
-  white-space: nowrap;
-  padding: 10rpx 25rpx;
+  width: 100%;
+}
+.radio_group{
+  width: 96%;
+  margin: 10rpx auto;
+  background: #fff;
+  padding: 30rpx 0;
+}
+.radio_group view{
+  width: 100%;
+  padding-left: 30rpx;
+  margin: 0 2%;
+}
+wx-radio .wx-radio-input{
+  height: 30rpx;
+  width: 30rpx;
+  border-radius: 0;
+  background-color: #d6000f!important;
+  border-color: #d6000f!important;
+}
+.radio text{
+  margin-left: 20rpx;
+}
+.fix_pos{
+  position: fixed;
+  bottom: 0;
+  border-top: 1px solid #d9d9d9;
+  width: 100%;
+}
+.pay_dis{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff
+}
+.pay_now{
+  width: 50%;
+  background: #d6000f;
   color: #fff;
-  border-radius:5rpx;
-  float:right;
-  margin-top: 20rpx;
+  text-align: center;
+  font-size: 35rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+}
+.pay_dis view text{
+  color:#d6000f;
+  font-size: 35rpx;
+}
+.pay_dis>view{
+  margin-left: 20rpx;
+}
+.pay_dis view text:nth-child(2){
+  font-size: 25rpx;
+  margin-left: 30rpx;
+}
+.pay_dis view text:nth-child(3){
+  margin-left: 10rpx;
 }

@@ -196,7 +196,7 @@ Page({
     } else if (options.fenlei == "inukami_design"){
       _this.getinukami_designList();
       _this.getinukami_designmenuList()
-    } else if (options.fenlei=="course"){
+    } else if (options.fenlei=="course"){ 
       _this.getcourse();
       _this.getcourse_01()
     }

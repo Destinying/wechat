@@ -33,7 +33,7 @@
   color: #555;
 }
 .tab-content{
-    overflow-y: scroll;
+  overflow-y: scroll;
 }
 .container{
   height: 100%;
@@ -48,9 +48,9 @@
   position: fixed;
   height: 95rpx;
   background: #fff;
-  width: 98%; 
+  width: 100%; 
   left: 50%;
-  margin-left: -48%;
+  margin-left: -50%;
   padding: 0rpx 0;
   top: 0;
   z-index: 99;

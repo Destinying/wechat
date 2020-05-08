@@ -77,13 +77,17 @@ Page({
   onLoad: function (options) {
     var _this=this;
    var a= app.globalData.token; //获取taken值
+    // wx.setNavigationBarColor({
+    //   backgroundColor: '#d6000f',
+    //   frontColor:'#ffffff'
+    // })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**

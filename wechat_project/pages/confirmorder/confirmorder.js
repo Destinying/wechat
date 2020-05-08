@@ -51,6 +51,12 @@ Page({
       })
     }
   },
+  liji_pay(){
+    var _this=this;
+    wx.request({
+      url: 'https://cloud.meshmellow.cn/system_pay/pay/orderSn/' + _this.data.orderid,
+    })
+  },
   onLoad: function (options) {
     var _this=this;
     _this.data.orderid = options.orderid;

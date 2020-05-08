@@ -4,18 +4,18 @@
   margin: 0 auto
 }
 .season_recharge{
-  border:1px solid #ee8124;
   box-shadow: 0px 0px 6px 4px #dcdcdc;
-  color: #ee8124;
+  color: #000;
   font-size: 24rpx;
   margin-bottom: 30rpx;
+  background: #fff
 }
 .season_recharge view text:nth-child(2){
   margin-left: 30rpx;
 }
 .season_par_class{
   width: 85%;
-  color: #cdcdcf
+  color: #000
 }
 .season_par_class_01{
   display: flex;
@@ -25,7 +25,9 @@
   width: 85%;
 }
 .ma{
-  padding: 30rpx 0 15rpx 30rpx; 
+  padding: 30rpx 0 15rpx 30rpx;
+  font-size: 35rpx;
+  font-weight: bold
 }
 .ma_01{
   padding:0 0 30rpx 0; 
@@ -48,7 +50,7 @@
 }
 .pay_now{
   width: 50%;
-  background: #fc5d02;
+  background: #d6000f;
   color: #fff;
   text-align: center;
   font-size: 35rpx;
@@ -59,10 +61,11 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center
+  align-items: center;
+  background: #fff
 } 
 .pay_dis view text{
-  color:#fc5d02;
+  color:#d6000f;
   font-size: 35rpx;
 }
 .pay_dis>view{
@@ -79,3 +82,21 @@ wx-checkbox .wx-checkbox-input{
   background: #d6000f;
   border: 1px solid #d6000f;
 }
+.member_subscription{
+  background: #d6000f;
+  color: #fff;
+  font-size: 35rpx;
+  text-align: center;
+  font-weight: bold;
+  padding: 20rpx 0;
+  letter-spacing: 5rpx;
+}
+.member_subscription view:nth-child(2){
+  background: #fff;
+  height: 2px;
+  width: 150rpx;
+  margin: 10rpx auto 10rpx;
+}
+/* .global_style{
+  background: #dcdddd
+} */ 
