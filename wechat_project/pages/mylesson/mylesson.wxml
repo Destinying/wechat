@@ -1,8 +1,18 @@
 <!--pages/mylesson/mylesson.wxml-->
+<wxs src="../../utils/filter_time.wxs" module="filter"></wxs>
 <view>
   <view>
       <view class="my_lesson_layout" wx:for="{{my_lesson_arr}}" wx:key="index">
-        <image src="{{item.thumbnail}}"></image>
+        <view>
+          <image src="{{item.thumbnail}}" class="my_lesson_image" mode="widthFix"></image>
+        </view>
+        <view class="my_lesson_font">
+          <view>{{item.title}}</view>
+          <view>更新时间：{{filter.time_change(item.add_time)}}</view>
+          <view wx:if="{{item.buy_type==3}}">直播课</view>
+          <view wx:elif="{{item.buy_type==4}}">精品课</view>
+          <view wx:else></view>
+        </view>
       </view>
   </view>
 </view>
