@@ -1,6 +1,8 @@
 <!--pages/mylesson/mylesson.wxml-->
 <view>
   <view>
-      
+      <view class="my_lesson_layout" wx:for="{{my_lesson_arr}}" wx:key="index">
+        <image src="{{item.thumbnail}}"></image>
+      </view>
   </view>
 </view>

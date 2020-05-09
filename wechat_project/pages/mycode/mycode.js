@@ -25,6 +25,7 @@ Page({
     is_login: 0,
     mask_status: 0,
     listClickFlag: 0,
+    defalut_image:"../../image/person_image.png"
   },
 
   /**

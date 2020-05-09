@@ -389,6 +389,7 @@ scroll-view{
 }
 
 #login_button {
+  /*
   width: 40%;
   line-height: 1.5;
   font-size: 16px;
@@ -399,6 +400,17 @@ scroll-view{
   height: 30px;
   background: transparent;
   padding:2px 24px;
+  */
+  background: transparent;
+  /*display: inline;*/
+  padding: 5rpx 10rpx;
+  border: 1px solid yellow;
+  border-radius: 3px;
+  background: none;
+  color: yellow;
+  font-size: 13px;
+  margin-top: 60rpx;
+  width: 210rpx!important;
 }
 
 .promoter_detail {

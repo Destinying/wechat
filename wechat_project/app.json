@@ -1,11 +1,11 @@
 {
   "pages": [
+    "pages/mycode/mycode",
     "pages/shouye/shouye",
     "pages/mylesson/mylesson",
     "pages/recharge/recharge",
     "pages/confirmorder/confirmorder",
     "pages/myself/myself",
-    "pages/mycode/mycode",
     "pages/detail/detail",
     "pages/index/index",
     "pages/playvideo/playvideo",
