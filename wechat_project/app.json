@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/mycode/mycode",
+    "pages/record_pay/record_pay",
+    "pages/myrecharge/myrecharge",
     "pages/shouye/shouye",
     "pages/mylesson/mylesson",
     "pages/recharge/recharge",

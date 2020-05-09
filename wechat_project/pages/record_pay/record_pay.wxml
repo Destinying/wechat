@@ -1,0 +1,13 @@
+<!--pages/record_pay/record_pay.wxml-->
+<view>
+    <view style="background:#b90611;padding: 20rpx 0;font-size: 35rpx;text-align: center;font-weight: bold;letter-spacing:5rpx;color:#fff">
+      <view>个人中心</view>
+      <view style="background:#fff;height:2px;width:150rpx;margin:10rpx auto 10rpx;"></view>
+      </view>
+    <view style="background:#fff;width:100%;padding:20rpx 0;text-align:center;font-size:30rpx;">
+      <text>购物记录</text>
+    </view>
+    <view>
+      
+    </view>
+</view>

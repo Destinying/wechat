@@ -181,7 +181,6 @@
       </block>
     </view>
   </view>
-
   <view class='member_middle_spac'></view>
 -->
   <view class='member_list'>
@@ -210,7 +209,7 @@
       </view>
 
       <view class='li'>
-        <view class="a member_list_item" catchtap='listClick' data-url="/pages/mylesson/mylesson">
+        <view class="a member_list_item" catchtap='listClick' data-url="/pages/myrecharge/myrecharge?out_time={{res}}">
          <image src="../../image/person_set_center_03.png"></image>
           <view class='span'>我的订阅</view>
         </view>
@@ -226,14 +225,13 @@
         </view>
       </block>
       -->
-      <view style="height:2px;background:#dcdddd;width:80%;clear:both;margin: 20rpx 10%;"></view>
-      <view class='li'>
-        <view class="a member_list_item" catchtap='listClick' data-url="/pages/mylesson/mylesson">
-          <image src="../../image/person_set_center_04.png"></image>
-            <view class='span'>购买记录</view>
+      <view style="height:2px;background:#dcdddd;width:90%;clear:both;margin: 20rpx 5%;"></view>
+        <view class='li'>
+          <view class="a member_list_item" catchtap='listClick' data-url="/pages/record_pay/record_pay">
+            <image src="../../image/person_set_center_04.png"></image>
+              <view class='span'>购买记录</view>
         </view>
       </view>
-
       <!--
       <block wx:if='{{is_open_virtual_goods == 1}}'>
         <view class='li'>
@@ -257,8 +255,6 @@
           <view class='span'>线下订阅绑定</view>
         </view>
       </view>
-
-
     </view>
   </view>
 </scroll-view>

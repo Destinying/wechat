@@ -54,7 +54,25 @@ Page({
   liji_pay(){
     var _this=this;
     wx.request({
-      url: 'https://cloud.meshmellow.cn/system_pay/pay/orderSn/' + _this.data.orderid,
+      method:"POST",
+      data:{
+        token:app.globalData.token,
+        orderSn: _this.data.orderid
+      },
+      url: 'https://cloud.meshmellow.cn/wechatapi/pay.html',
+      success(res){
+        var res=res.data.data.data
+        wx.requestPayment({
+          appId: res.appId,
+          nonceStr: res.nonceStr,
+          package: res.package,
+          paySign: res.paySign,
+          signType: res.signType,
+          timeStamp: res.timeStamp,
+          success(res){
+          }
+        })
+      }
     })
   },
   onLoad: function (options) {

@@ -8,7 +8,8 @@ Page({
   data: {
     live:[],
     purchase:[],
-    my_lesson_arr:[]
+    my_lesson_purchase:[],
+    my_lesson_live:[]
   },
 
   /**
@@ -27,49 +28,45 @@ Page({
       success(res){
         _this.data.purchase = res.data.data;
         console.log(_this.data.purchase)
-        wx.request({
-          url: 'https://cloud.meshmellow.cn/Wechatapi/getMyCourse',
-          method: "POST",
-          dataType: "json",
-          data: {
-            token: app.globalData.token,
-            coursetype: "live"
-          },
-          success(res) {
-            _this.data.live = res.data.data;
-            _this.data.my_lesson_arr = _this.data.live.concat(_this.data.purchase);
-            console.log(_this.data.my_lesson_arr)
-            _this.setData({
-              my_lesson_arr: _this.data.my_lesson_arr
-            })
-          }
+        _this.setData({
+          my_lesson_purchase: _this.data.purchase
         })
       }
     })
   },
-  // get_list(){
-  //   var _this = this;
-  //   wx.request({
-  //     url: 'https://cloud.meshmellow.cn/wechatapi/pay.html',
-  //     method: "POST",
-  //     dataType: "json",
-  //     data: {
-  //       token: app.globalData.token,
-  //       orderSn:"2020050818444577587"
-  //     },
-  // })
-  // },
+  get_live_list(){
+    var _this=this;
+    wx.request({
+      url: 'https://cloud.meshmellow.cn/Wechatapi/getMyCourse',
+      method: "POST",
+      dataType: "json",
+      data: {
+        token: app.globalData.token,
+        coursetype: "live"
+      },
+      success(res) {
+        _this.data.live = res.data.data;
+        console.log(_this.data.live)
+        _this.setData({
+          my_lesson_live: _this.data.live
+        })
+      }
+    })
+  },
   onLoad: function (options) {
     var _this=this;
     _this.get_purchase_list();
-    // _this.get_list()
+    _this.get_live_list()
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    // wx.setNavigationBarColor({
+    //   backgroundColor: '#b90611',
+    //   frontColor:"#ffffff"
+    // })
   },
 
   /**
