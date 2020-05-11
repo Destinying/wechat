@@ -67,13 +67,15 @@
     <view wx:else>
       <view class="not_out_time">
           <view class="not_add_time_01" wx:for="{{not_out_list}}" wx:key="index"  wx:for-item="item">
-            <view>
-                <view>订单编号：{{item.order_sn}}</view>
-                <view>{{item.name}}</view>
-                <view>到期日期：{{}}</view>
+            <view class="left_lay">
+                <view class="s_num">订单编号：{{item.order_sn}}</view>
+                <view class="s_name">订单类型：{{item.name}}</view>
+                <view wx:if="{{item.status==1}}" class="s_date">到期日期：<text>{{item.b}}</text></view>
+                <view wx:else class="s_date">下单日期：<text>{{item.b}}</text></view>
             </view>
-            <view>
-                b
+            <view class="pay_status">
+                <view wx:if="{{item.status==1}}">已支付</view>
+                <view wx:else class="not_pay_status" bindtap="na_go">去支付</view>
             </view> 
           </view>
       </view>
