@@ -77,14 +77,13 @@ Page({
       wx.showToast({ //如果全部加载完成了也弹一个框
         title: '我也是有底线的~',
         icon: 'none',
-        duration: 1500,
+        duration: 1000,
       });
       return false;
     } else {
       wx.showLoading({ //期间为了显示效果可以添加一个过度的弹出框提示“加载中”  
         title: '加载中',
         icon: 'loading',
-        duration: 1500,
       });
       setTimeout(() => {
         _this.setData({
