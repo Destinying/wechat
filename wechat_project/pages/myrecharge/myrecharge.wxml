@@ -64,5 +64,18 @@
         </view>
     </view>
     </view>
-    <view wx:else>我是没订阅</view>
+    <view wx:else>
+      <view class="not_out_time">
+          <view class="not_add_time_01" wx:for="{{not_out_list}}" wx:key="index"  wx:for-item="item">
+            <view>
+                <view>订单编号：{{item.order_sn}}</view>
+                <view>{{item.name}}</view>
+                <view>到期日期：{{}}</view>
+            </view>
+            <view>
+                b
+            </view> 
+          </view>
+      </view>
+    </view>
 </view>

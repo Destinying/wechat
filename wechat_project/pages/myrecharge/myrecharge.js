@@ -23,7 +23,9 @@ Page({
       token: app.globalData.token
     },
     price: "199.00",
-    out_time:""
+    out_time:"",
+    not_out_list:[],
+    buy_vip_info:[],
   },
 
   /**
@@ -75,6 +77,42 @@ Page({
     })
     wx.hideToast();
   },
+  get_outdata(){
+    var _this=this;
+    wx.request({
+      url: 'https://cloud.meshmellow.cn/wechatapi/get_record_pay.html',
+      dataType:"json",
+      method:"POST",
+      data:{
+        token:app.globalData.token,
+        type:2
+      },
+      success(res){
+        console.log(res)
+        var res=res.data.data;
+        var out_time=""
+        // _this.data.buy_vip_info = JSON.parse(res.buy_vip_info);
+        var time="";
+        res.forEach(function(val,index){
+          _this.data.buy_vip_info.push(JSON.parse(val.buy_vip_info));
+          for (var val_01 of _this.data.buy_vip_info) {
+            res[index].name = val_01.name
+          }
+          out_time = app.globalData.public_time(val.add_time);
+          console.log(out_time)
+          res[index].time = out_time;
+          if(val.price=="599"){
+           var splice_data=out_time.split("")
+           console.log(split)
+          }
+        })
+        console.log(res)
+        _this.setData({
+          not_out_list: res,
+        })
+      }
+    })
+  },
   onLoad: function (options) {
     var _this = this;
     var a = app.globalData.token; //获取taken值
@@ -86,6 +124,7 @@ Page({
     _this.setData({
       out_time: options.out_time
     })
+    _this.get_outdata()
   },
 
   /**
