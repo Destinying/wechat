@@ -1,4 +1,5 @@
 // pages/record_pay/record_pay.js
+const app=getApp()
 Page({
 
   /**
@@ -11,8 +12,22 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+  record_pay:function(){
+    wx.request({
+      url: 'https://cloud.meshmellow.cn/Wechatapi/get_record_pay',
+      dataType:"json",
+      data:{
+        token:app.globalData.token,
+      },
+      method:"POST",
+      success(res){
+        console.log(res)
+      }
+    })
+  },
   onLoad: function (options) {
-
+    var _this=this;
+    _this.record_pay()
   },
 
   /**

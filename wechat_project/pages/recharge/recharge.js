@@ -29,7 +29,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   get_checkout:function(){
-    var _this=this;
+    var _this=this;     
     var  checkout_params=true;
     var checkout_params_year=false;
     _this.setData({
