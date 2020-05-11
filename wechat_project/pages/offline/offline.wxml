@@ -1,0 +1,30 @@
+<!--pages/offline/offline.wxml-->
+<wxs src="../../utils/filter_time.wxs" module="filter"></wxs>
+<view>
+  <view style="background:#b90611;padding: 20rpx 0;font-size: 35rpx;text-align: center;font-weight: bold;letter-spacing:5rpx;color:#fff">
+    <view>个人中心</view>
+    <view style="background:#fff;height:2px;width:150rpx;margin:10rpx auto 10rpx;"></view>
+  </view>
+  <view style="background:#fff;width:100%;padding:20rpx 0;text-align:center;font-size:30rpx;"><text>线下订阅绑定</text></view>
+  <view>
+  <form catchsubmit="formSubmit">
+      <view style="background:#fff;width:100%;padding:20rpx 0;text-align:center;font-size:30rpx;">
+      <label>姓名</label>
+      <input type="text" style="background:#fff;width:100%;padding:20rpx 0;text-align:center;font-size:30rpx;" placeholder="请输入真实姓名" name="name" bindinput="getNameValue"></input>
+      </view>
+
+      <view style="background:#fff;width:100%;padding:20rpx 0;text-align:center;font-size:30rpx;">
+      <label for="" class="font14">手机号</label>
+      <input type="text" style="background:#fff;width:100%;padding:20rpx 0;text-align:center;font-size:30rpx;" placeholder="请输入手机号码" name="phone" bindinput="getPhoneValue"></input>
+      </view>
+
+      <view style="background:#fff;width:100%;padding:20rpx 0;text-align:center;font-size:30rpx;">
+      <label for="" class="font14">邮箱</label>
+      <input type="text" style="background:#fff;width:100%;padding:20rpx 0;text-align:center;font-size:30rpx;" placeholder="邮箱地址" name="email" bindinput="getEmailValue"></input>
+      </view>
+      <button class='btn1'  formType="submit">
+      确定
+      </button>
+</form>
+  </view>
+</view>

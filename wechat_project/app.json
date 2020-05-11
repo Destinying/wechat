@@ -12,7 +12,8 @@
     "pages/index/index",
     "pages/playvideo/playvideo",
     "pages/allpages/allpages",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/offline/offline"
   ],
   "window": {
     "backgroundTextStyle": "light",

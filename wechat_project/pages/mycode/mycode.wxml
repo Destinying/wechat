@@ -250,7 +250,7 @@
       </view>
 
       <view class='li'>
-        <view class="a member_list_item" catchtap='listClick' data-url="/pages/mylesson/mylesson">
+        <view class="a member_list_item" catchtap='listClick' data-url="/pages/offline/offline">
           <image src="../../image/person_set_center_06.png"></image>
           <view class='span'>线下订阅绑定</view>
         </view>
