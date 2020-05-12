@@ -1,0 +1,36 @@
+<!--pages/footprint/footprint.wxml-->
+<wxs src="../../utils/filter_time.wxs" module="filter"></wxs>
+<view>
+    <view style="background:#b90611;padding: 20rpx 0;font-size: 35rpx;text-align: center;font-weight: bold;letter-spacing:5rpx;color:#fff">
+    <view>个人中心</view>
+    <view style="background:#fff;height:2px;width:150rpx;margin:10rpx auto 10rpx;"></view>
+  </view>
+  <view style="background:#fff;width:100%;padding:20rpx 0;text-align:center;font-size:30rpx;"><text>我的足迹</text></view>
+    <view class="footprint_layout">
+        <view class="footprint_class" id="{{index}}" wx:for="{{res}}" wx:key="index" bindtap="click_toggle">
+            <view class="foot_lay">
+              <view class="item_title">{{item.title}}</view>
+              <view class="item_name"><image src="../../image/jingping_lesson.png" mode="widthFix"></image><view>{{item.name}}</view></view>
+              <view wx:if="{{judgment_toggle}}" class="xiala_class"><image src="../../image/xiala.png" class="xiala" mode="widthFix"></image></view>
+              <view wx:else class="xiala_class"><image src="../../image/shangla.png" class="shangla" mode="widthFix"></image></view>
+            </view>
+            <view>
+                <view style="height:2px;width:96%;margin:20rpx auto 20rpx;background:#dcdddd"></view>
+                <view>
+                    <view class="title_class">
+                      <view>标题：</view>
+                      <view>{{item.title}}</view>
+                    </view>
+                    <view class="title_class title_class_01">
+                      <view>时间：</view>
+                      <view>{{filter.time_change(item.view_time)}}</view>
+                    </view>
+                    <view class="title_class">
+                      <view>分类：</view>
+                      <view>{{item.name}}</view>
+                    </view>
+                </view>
+              </view>
+            </view>
+    </view>
+</view>

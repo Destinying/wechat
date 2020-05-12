@@ -1,0 +1,68 @@
+/* pages/footprint/footprint.wxss */
+.footprint_class{
+  background: #fff;
+  margin-bottom: 10rpx;
+  padding: 15rpx 0;
+}
+.footprint_layout{
+  width: 98%;
+  margin: 0 auto 0rpx;
+  padding: 10rpx 0;
+}
+.foot_lay{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.xiala{
+  width: 30rpx;
+}
+.shangla{
+  width: 30rpx;
+}
+.item_title{
+  font-size: 28rpx;
+  margin-left: 15rpx;
+  width: 50%;
+  font-weight: bold;
+}
+.item_name{
+  font-size: 25rpx;
+  color: #bb0611;
+  display: flex;
+  flex-direction: row;
+  width:30%;
+  align-items: center;
+}
+.item_name image{
+  width: 25rpx;
+  margin-right: 5rpx;
+}
+.xiala_class{
+  margin-right: 15rpx;
+}
+.title_class{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #898989;
+}
+.title_class view:nth-child(1){
+  margin-left: 15rpx;
+  font-size: 25rpx;
+}
+.title_class view:nth-child(2){
+  margin-right: 15rpx;
+  font-size: 25rpx;
+}
+.title_class_01{
+  margin: 20rpx 0
+}
+.slide_toggle_class_01{
+  display: block
+}
+.slide_toggle_class_02{
+  display: none
+}
