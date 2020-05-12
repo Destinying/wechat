@@ -13,21 +13,7 @@ Page({
   /**
    * 线下订阅确定按钮
    */
-    getNameValue:function(e){
-        this.setData({
-        name: e.detail.value
-        })          
-    },
-    getPhioneValue:function(e){
-      this.setData({
-      phone: e.detail.value
-      })          
-  },
-  getEmaidValue:function(e){
-    this.setData({
-    email: e.detail.value
-    })          
-},
+    
 formSubmit(e) {
   console.log('form发生了submit事件，携带数据为：', e.detail.value)
   let is_login = app.globalData.is_login;
