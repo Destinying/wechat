@@ -7,7 +7,9 @@ Page({
    */
   data: {
     judgment_toggle:true,
-    hide_list:[]
+    hide_list:[],
+    slide_toggle:[],
+    data_count:""
   },
 
   /**
@@ -20,39 +22,44 @@ Page({
       method:"POST",
       dataType:"json",
       data:{
-        token:app.globalData.token
+        token:app.globalData.token,
       },
       success(res){
         var res=res.data.data.data
         _this.data.hide_list=res;
-        _this.data.hide_list.forEach(function (val, index) {
-            val.slide_toggle = 0;
+        res.forEach(function (val, index) {
+          _this.data.slide_toggle.push(false)
         })
-        console.log(res)
+        console.log(_this.data.slide_toggle)
+        _this.data.data_count=1
         _this.setData({
-          res:res
+          res:res,
+          slide_toggle: _this.data.slide_toggle,
+          data_count:_this.data.data_count
         })
       }
     })
   },
   click_toggle(event){
     var _this=this;
-    var currentTarget = event.currentTarget.id
+    console.log(event)
+    var currentTarget = event.currentTarget.id;
     var hide_list=_this.data.hide_list;
-    var slide_toggle1="";
-    var slide_toggle2 = "";
-    var slide_toggle=""
     hide_list.forEach(function(val,index){
-      if (currentTarget==index){
-        val.slide_toggle = 1;
-      }else{
-        val.slide_toggle = 0;
+      if (currentTarget == index) {
+        if (event.currentTarget.dataset.count[index]%2!=0){
+          _this.data.slide_toggle[index] = !_this.data.slide_toggle[index]
+        }else{
+          _this.data.slide_toggle[index] = !_this.data.slide_toggle[index]
+        }
       }
     })
-    console.log(hide_list)
+    _this.data.data_count += 1
     _this.setData({
-      
+      slide_toggle: _this.data.slide_toggle,
+      data_count: _this.data.data_count
     })
+    console.log(hide_list)
   },
   onLoad: function (options) {
     var _this=this;

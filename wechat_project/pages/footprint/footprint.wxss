@@ -60,9 +60,3 @@
 .title_class_01{
   margin: 20rpx 0
 }
-.slide_toggle_class_01{
-  display: block
-}
-.slide_toggle_class_02{
-  display: none
-}
