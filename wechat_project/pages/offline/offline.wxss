@@ -9,4 +9,11 @@
   align-items: center;
   justify-content: center;
 }
-
+.form_class{
+  width: 98%;
+  margin: 0 auto;
+  padding: 10rpx 0;
+  background: #fff;
+  text-align: center;
+  font-size: 30rpx;
+}

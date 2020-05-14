@@ -5,25 +5,23 @@
     <view>个人中心</view>
     <view style="background:#fff;height:2px;width:150rpx;margin:10rpx auto 10rpx;"></view>
   </view>
-  <view style="background:#fff;width:100%;padding:20rpx 0;text-align:center;font-size:30rpx;"><text>线下订阅绑定</text></view>
+  <view style="margin-bottom:10rpx;background:#fff;width:100%;padding:20rpx 0;text-align:center;font-size:30rpx;"><text>线下订阅</text></view>
   <view>
-  <form catchsubmit="formSubmit">
-      <view style="background:#fff;width:100%;padding:20rpx 0;text-align:center;font-size:30rpx;">
-      <label>姓名</label>
-      <input type="text" style="background:#fff;width:100%;padding:20rpx 0;text-align:center;font-size:30rpx;" placeholder="请输入真实姓名" name="name" bindinput="getNameValue"></input>
+  <form catchsubmit="formSubmit" class="form_class">
+      <view>
+      <!-- <label>姓名</label> -->
+      <input type="text" placeholder="请输入真实姓名" name="name" bindinput="getNameValue"></input>
       </view>
-
-      <view style="background:#fff;width:100%;padding:20rpx 0;text-align:center;font-size:30rpx;">
-      <label>手机号</label>
-      <input type="text" style="background:#fff;width:100%;padding:20rpx 0;text-align:center;font-size:30rpx;" placeholder="请输入手机号码" name="phone" bindinput="getPhoneValue"></input>
+      <view>
+      <!-- <label>手机号</label> -->
+      <input type="text" placeholder="请输入手机号码" name="phone" bindinput="getPhoneValue"></input>
       </view>
-
-      <view style="background:#fff;width:100%;padding:20rpx 0;text-align:center;font-size:30rpx;">
-      <label>邮箱</label>
-      <input type="text" style="background:#fff;width:100%;padding:20rpx 0;text-align:center;font-size:30rpx;" placeholder="邮箱地址" name="email" bindinput="getEmailValue"></input>
+      <view>
+      <!-- <label>邮箱</label> -->
+      <input type="text"  placeholder="邮箱地址" name="email" bindinput="getEmailValue"></input>
       </view>
       <button class='btn1'  formType="submit">
-      确定
+      线下订阅绑定
       </button>
 </form>
   </view>
