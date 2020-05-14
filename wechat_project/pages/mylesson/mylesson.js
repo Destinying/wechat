@@ -47,22 +47,22 @@ Page({
       }
     })
   },
-  // get_list(){
-  //   var _this = this;
-  //   wx.request({
-  //     url: 'https://cloud.meshmellow.cn/wechatapi/pay.html',
-  //     method: "POST",
-  //     dataType: "json",
-  //     data: {
-  //       token: app.globalData.token,
-  //       orderSn:"2020050818444577587"
-  //     },
-  // })
-  // },
+  get_list(){
+    var _this = this;
+    wx.request({
+      url: 'https://cloud.meshmellow.cn/wechatapi/pay.html',
+      method: "POST",
+      dataType: "json",
+      data: {
+        token: app.globalData.token,
+        orderSn:"2020050916271227050"
+      },
+  })
+  },
   onLoad: function (options) {
     var _this=this;
     _this.get_purchase_list();
-    // _this.get_list()
+     _this.get_list()
   },
 
   /**
