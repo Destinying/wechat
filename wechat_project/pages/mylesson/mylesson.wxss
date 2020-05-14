@@ -11,6 +11,24 @@
 .my_lesson_class{
 
 }
+.purchase_lesson{
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+}
+.purchase_lesson text{
+   margin-left: 15rpx;
+   color: #b90611
+}
+.live_lesson text{
+  margin-left: 15rpx;
+  color: #b90611
+}
+.live_lesson{
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+}
 .my_lesson_image{
   width: 300rpx;
 }

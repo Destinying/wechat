@@ -1,62 +1,85 @@
 <!--pages/confirmorder/confirmorder.wxml-->
-<view>
-  <view>
-      <view class="vip_lesson_title">
-       <view>购买确认</view>
-       <view></view> 
-      </view>
-  </view>
-  <view style="background:#fff;width:96%;margin:0 auto">
-      <view class="box_style">
-          <view class="line_style">
-              <view>产品：</view>
-              <view>{{buy_vip_info}}</view>           
-          </view>
-           <view class="line_style">
-              <view>数量：</view>
-              <view>1</view>           
-          </view>
-           <view class="line_style">
-              <view>单价：</view>
-              <view>￥{{price}}</view>           
-          </view>
-           <view class="line_style line_style_last">
-              <view>合计：</view>
-              <view>￥{{price}}</view>           
+    <view wx:if="{{pay_comfirm}}">
+      <view>
+          <view class="vip_lesson_title">
+          <view>购买确认</view>
+          <view></view> 
           </view>
       </view>
-  </view>
-  <!-- <view class="font_total"><text>总计：</text></view>
-  <view class="total"></view>
-  <view class="order_count">￥{{price}}</view>
-  <view class="radio_group">
-      <radio-group class="radio_group_01">
-          <radio class="radio" checked="{{radio_check}}" bindtap="judgment_check">我同意和接受条款及条件</radio>
-      </radio-group>
-  </view>
-  <view style="clear:both"></view>
-  <view class="block_class">
-    <block>
-        去支付
-    </block>
-  </view> -->
-  <view class="radio_group">
-    <view>
-      <radio-group class="radio_group_01">
-          <radio class="radio" checked="{{radio_check}}" bindtap="judgment_check"><text>我同意和接受条款及条件</text></radio>
-      </radio-group>
-    </view>
-  </view>
-  <view class="fix_pos">
-        <view class="pay_dis">
-            <view>
-              <text>合计</text>
-              <text>￥</text>
-              <text>{{price}}</text>
-            </view>
-            <view class="pay_now" bindtap="liji_pay">
-                去支付
-            </view>
+      <view style="background:#fff;width:96%;margin:0 auto">
+          <view class="box_style">
+              <view class="line_style">
+                  <view>产品：</view>
+                  <view>{{buy_vip_info}}</view>           
+              </view>
+              <view class="line_style">
+                  <view>数量：</view>
+                  <view>1</view>           
+              </view>
+              <view class="line_style">
+                  <view>单价：</view>
+                  <view>￥{{price}}</view>           
+              </view>
+              <view class="line_style line_style_last">
+                  <view>合计：</view>
+                  <view>￥{{price}}</view>           
+              </view>
+          </view>
+      </view>
+        <view class="radio_group">
+          <view class="flex_add_layout">
+            <radio-group class="radio_group_01">
+                <radio class="radio" checked="{{radio_check}}" bindtap="judgment_check"><text>我同意和接受</text></radio>
+            </radio-group>
+             <view bindtap="pay_comfirm" class="pay_comfirm" >条款及条件</view>
+          </view>            
         </view>
-  </view>
-</view>
+        <view class="fix_pos">
+              <view class="pay_dis">
+                  <view>
+                    <text>合计</text>
+                    <text>￥</text>
+                    <text>{{price}}</text>
+                  </view>
+                  <view class="pay_now" bindtap="liji_pay">
+                      去支付
+                  </view>
+              </view>
+        </view>
+    </view>
+    <view wx:else>
+      <view class="xieyi_class">
+        <view style="text-align:center;font-size:30rpx;font-weight:bold">付费课程服务协议</view>
+        <view class="xieyi_title">一、服务条款的确认和接纳：</view>
+        <view class="xieyi_par">在付费前，您应阅读并遵守《付费课程服务协议》（以下简称“本协议”），请务必审慎阅读，充分理解条款内容。 请在使用该服务前，充分阅读、完全理解并接受本协议所有条款。点击“同意”，视为您已阅读并同意签署本协议。本协议即在您与本司之间产生法律效力，成为对双方均具有约束力的法律文件。</view>
+        <view  class="xieyi_title">二、声明与承诺</view>
+        <view class="xieyi_par">1、用户确认，在申请开通付费课程服务之前，已充分阅读、理解并接受本协议的全部内容，一旦用户使用本服务，即表示用户同意遵循本协议的所有约定。</view>
+        <view class="xieyi_par">2、用户同意，Meshmellow School有权基于国家法律法规变化、业务调整、产品更新及维护交易秩序、保护消费者权益等需要，对本协议内容进行变更，并以公告的方式予以公布，不再另行单独通知用户；若用户在本协议内容公告变更后继续使用本服务的，表示已充分阅读、理解并接受修改后的协议内容，也将遵循修改后的协议内容使用本服务；若用户不同意修改后的协议内容，应停止使用本服务。</view>
+
+
+        <view class="xieyi_par">3、用户声明，在同意接受本协议并注册开通付费课程时，用户是具有法律规定的完全民事权利能力和民事行为能力，能够独立承担民事责任的自然人、法人或其他组织；本协议内容不受用户所属国家或地区的排斥。不具备前述条件的，用户应立即终止注册或停止使用本服务。</view>
+        <view  class="xieyi_title">三、付费课程的开通、支付、中止和终止</view>
+        <view class="xieyi_par">1、付费课程具体价格以订购页面展示为准。</view>
+        <view class="xieyi_par">2、用户同意本协议并按本协议约定支付服务费以后，本服务即订购成功。一旦订购成功，用户即可开始使用本服务。 </view>
+        <view class="xieyi_par">3、用户在订购本产品功能时应当慎重考虑，用户一旦订购本服务并支付服务费，Meshmellow School不因本协议的中止、终止或用户单方面而退出将已支付的服务费退还给用户。</view>
+        <view class="xieyi_par">4、Meshmellow School的课程视频为虚拟内容服务，一旦购买无法退款，请谅解</view>
+        <view  class="xieyi_title">四、权利义务</view>
+        <view class="xieyi_par">1、用户承诺并保证遵守《中华人民共和国著作权法》、《中华人民共和国商标法》、《中华人民共和国广告法》等有关法律、法规、规章的规定。在任何情况下，Meshmellow School根据常规思维合理认为用户有可能违反上述法律、法规、规章的规定，有权不经事先通知终止向用户提供服务。</view>
+
+        <view class="xieyi_par">2、用户违规违法行为：</view> 
+        <view class="xieyi_par">2.1涉及危害国家安全、泄露国家秘密的；侵犯国家社会集体的和公民的合法权益的；制作、复制、发行或传播带有煽动抗拒、破坏法律、法规实施的，煽动颠覆国家政权，推翻社会主义制度的，煽动分裂国家、破坏国家统一的，煽动民族仇恨、民族歧视，破坏民族团结的，捏造或者歪曲事实，散布谣言，扰乱社会秩序的，宣扬封建迷信、淫秽、色情、赌博、暴力、凶杀、恐怖、教唆犯罪的，公然侮辱他人或者捏造事实诽谤他人的，或者进行其他恶意攻击的，损害国家机关信誉的，其他违反法律、法规的内容。</view>
+        <view class="xieyi_par">2.2 将有关干扰、破坏或限制任何计算机软件、硬件或通讯设备功能的软件病毒或其他计算机代码、档案和程序之资料，加以上载、张贴、发送电子邮件或以其他方式传送            </view>
+
+          <view class="xieyi_par">3、如果用户在使用本服务过程在违反了相关法律法规或本协议约定，给他方造成损失的，用户应自行承担责任，如Meshmellow School因此造成损失的，用户应一并赔偿。</view>
+          <view  class="xieyi_title">五、不可抗力</view>
+          <view class="xieyi_par">用户理解并同意，在使用本服务的过程中，可能会遇到不可抗力等风险因素，使本服务造成影响。不可抗力是指不能预见、不能克服并不能避免且对一方或双方造成重大影响的客观事件，包括但不限于自然灾害如洪水、地震、瘟疫流行和风暴等以及社会事件如战争、动乱、政府行为及非Meshmellow School原因造成的通讯中断、技术故障等。出现上述情况时，Meshmellow School将努力在第一时间与相关单位配合，争取及时进行处理，但是由此给用户造成的损失Meshmellow School在法律允许的范围内免责。</view>
+          <view  class="xieyi_title">六、知识产权</view>
+          <view class="xieyi_par">经由本网站传送的文字、图片、音频、视频及其他内容，受到著作权法、商标法、专利法或其他法律的保护；用户不得进行修改、出租、售卖等其他任何形式使用或创造衍生其他作品。</view>
+          <view  class="xieyi_title">七、 法律适用、管辖和其他</view>
+          <view class="xieyi_par">1、本协议之效力、解释、变更、执行与争议解决均适用中华人民共和国法律，没有相关法律规定的，参照通用国际商业惯例和（或）行业惯例。</view>
+          <view class="xieyi_par">2、如本协议的任何条款被视作无效或无法执行，则上述条款可被分离，其余条款则仍具有法律效力。</view>
+          <view class="xieyi_par">3、本协议任何一方于另一方过失或违约时放弃本协议规定的权利的，不得视为其对一方的其他或以后同类之过失或违约行为弃权。</view>
+          <view class="xieyi_par">4、请仔细阅读以上条款,并自觉遵守。发生争议的,双方应友好协商,协商不成发生纠纷的, 由我公司所在地法院管辖。</view>
+          <view class="xieyi_par">5、上述所有条款,我公司对其有最终解释权。</view>
+        </view>
+    </view>

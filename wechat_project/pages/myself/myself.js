@@ -93,9 +93,6 @@ Page({
     var _this = this;
     _this.getpersonInfo()
     _this.getaccountinfo()
-    wx.setNavigationBarTitle({
-      title: "个人信息",
-    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

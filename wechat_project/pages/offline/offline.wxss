@@ -1,0 +1,28 @@
+.btn1 {
+  margin-top: 30rpx;
+  background-color: #b90611;
+  color: white;
+  display: flex;
+  padding: 30rpx 40rpx;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0
+}
+.form_class{
+  width: 98%;
+  margin: 0 auto;
+  padding: 60rpx 0 80rpx;
+  background: #fff;
+  font-size: 30rpx;
+}
+.form_class view{
+  width: 75%;
+  margin: 20rpx auto;
+}
+.form_class input{
+  background: #dcdddd;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 15rpx;
+}

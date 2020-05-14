@@ -10,7 +10,8 @@ Page({
     orderid:"",
     buy_vip_info:"",
     price:"",
-    count:0
+    count:0,
+    pay_comfirm:true
   },
 
   /**
@@ -51,11 +52,44 @@ Page({
       })
     }
   },
+  pay_comfirm:function(){
+    var _this=this;
+    _this.data.pay_comfirm=false
+    _this.setData({
+      pay_comfirm: _this.data.pay_comfirm
+    })
+  },
   liji_pay(){
     var _this=this;
-    wx.request({
-      url: 'https://cloud.meshmellow.cn/system_pay/pay/orderSn/' + _this.data.orderid,
-    })
+    if (_this.data.radio_check==true){
+      wx.request({
+        method: "POST",
+        data: {
+          token: app.globalData.token,
+          orderSn: _this.data.orderid
+        },
+        url: 'https://cloud.meshmellow.cn/wechatapi/pay.html',
+        success(res) {
+          var res = res.data.data.data
+          wx.requestPayment({
+            appId: res.appId,
+            nonceStr: res.nonceStr,
+            package: res.package,
+            paySign: res.paySign,
+            signType: res.signType,
+            timeStamp: res.timeStamp,
+            success(res) {
+            }
+          })
+        }
+      })
+    }else{
+      wx.showToast({
+        title: '请同意协议后才能购买！',
+        icon: 'none',
+        duration: 1000
+      })
+    }
   },
   onLoad: function (options) {
     var _this=this;

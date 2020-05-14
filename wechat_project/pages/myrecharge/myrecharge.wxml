@@ -1,0 +1,83 @@
+<!--pages/recharge/recharge.wxml-->
+<view class="global_style">
+  <view style="background:#b90611;padding: 20rpx 0;font-size: 35rpx;text-align: center;font-weight: bold;letter-spacing:5rpx;color:#fff">
+    <view>个人中心</view>
+    <view style="background:#fff;height:2px;width:150rpx;margin:10rpx auto 10rpx;"></view>
+  </view>
+  <view style="background:#fff;width:100%;padding:20rpx 0;text-align:center;font-size:30rpx;"><text>我的订阅</text></view>
+  <view wx:if="{{out_time<0}}">
+    <view class="layout_class">
+        <view class="member"></view>
+          <view class="season_recharge">
+            <view class="season_par_class_01" bindtap="get_checkout">
+                <view class="season_par_class_02">
+                  <view class="ma">
+                  <text>季度订阅</text>
+                  <text>￥</text>
+                  <text>199.00/VIP  90天</text>
+                  </view>
+                  <view class="season_par_class ma_01">
+                      <view>1. 普通会员基本权益 </view>
+                      <view>2. 免费观看所有教程 </view>
+                      <view>（不含翻译字幕版全球艺术家教程， 为期3个月，期满需续订， 退订则仅享普通会员</view>
+                  </view>
+                </view>
+                <view class="radio_class ma">
+                    <checkbox-group>
+                        <checkbox color="#fff" checked="{{checkout_params}}" value="{{obj_season}}" ></checkbox>
+                    </checkbox-group>
+                </view>
+            </view>
+          </view>
+          <view class="season_recharge">
+            <view class="season_par_class_01" bindtap="get_checkout_year">
+                <view class="season_par_class_02">
+                  <view class="ma">
+                  <text>年度订阅</text>
+                  <text>￥</text>
+                  <text>599.00/VIP  365天</text>
+                  </view>
+                  <view class="season_par_class ma_01">
+                      <view>1. 普通会员基本权益 </view>
+                      <view>2. 免费观看所有教程 </view>
+                      <view>（为期12个月，期满需续订， 退订则仅享普通会员基本权益）</view>
+                  </view>
+                </view>
+                <view class="radio_class ma">
+                    <checkbox-group>
+                        <checkbox color="#fff" checked="{{checkout_params_year}}" value="{{obj_year}}" ></checkbox>
+                    </checkbox-group>
+                </view>
+            </view>
+          </view>
+    </view>
+    <view class="fix_pos">
+        <view class="pay_dis">
+            <view>
+              <text>合计</text>
+              <text>￥</text>
+              <text>{{price}}</text>
+            </view>
+            <view class="pay_now" bindtap="liji_pay">
+                立即购买
+            </view>
+        </view>
+    </view>
+    </view>
+    <view wx:else>
+      <view class="not_out_time">
+          <view class="not_add_time_01" wx:for="{{not_out_list}}" wx:key="index"  wx:for-item="item">
+            <view class="left_lay">
+                <view class="s_num">订单编号：{{item.order_sn}}</view>
+                <view class="s_name">订单类型：{{item.name}}</view>
+                <view wx:if="{{item.status==1}}" class="s_date">到期日期：<text>{{item.b}}</text></view>
+                <view wx:else class="s_date">下单日期：<text>{{item.b}}</text></view>
+            </view>
+            <view class="pay_status">
+                <view wx:if="{{item.status==1}}">已支付</view>
+                <view wx:else class="not_pay_status" bindtap="na_go">去支付</view>
+            </view> 
+          </view>
+      </view>
+    </view>
+</view>

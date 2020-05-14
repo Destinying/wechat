@@ -31,9 +31,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.setNavigationBarTitle({
-      title: "个人中心",
-    })
+    
   },
 
   /**
@@ -219,9 +217,10 @@ Page({
 
             //member_info.user_info.user_headimg = _wx_info.avatarUrl; //图片路径处理
           }
-
+          console.log(app.globalData.userInfo)
           that.setData({
             member_info: member_info,
+            res: app.globalData.userInfo.out_time
           });
         //temp新增用户信息处理---*******************************************************************************************************
 

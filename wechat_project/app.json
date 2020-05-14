@@ -1,6 +1,9 @@
 {
   "pages": [
     "pages/mycode/mycode",
+    "pages/footprint/footprint",
+    "pages/record_pay/record_pay",
+    "pages/myrecharge/myrecharge",
     "pages/shouye/shouye",
     "pages/mylesson/mylesson",
     "pages/recharge/recharge",
@@ -10,7 +13,8 @@
     "pages/index/index",
     "pages/playvideo/playvideo",
     "pages/allpages/allpages",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/offline/offline"
   ],
   "window": {
     "backgroundTextStyle": "light",

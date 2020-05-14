@@ -1,0 +1,25 @@
+<!--pages/record_pay/record_pay.wxml-->
+<wxs src="../../utils/filter_time.wxs" module="filter"></wxs>
+<view>
+    <view style="background:#b90611;padding: 20rpx 0;font-size: 35rpx;text-align: center;font-weight: bold;letter-spacing:5rpx;color:#fff">
+      <view>个人中心</view>
+      <view style="background:#fff;height:2px;width:150rpx;margin:10rpx auto 10rpx;"></view>
+      </view>
+    <view style="margin-bottom:10rpx;background:#fff;width:100%;padding:20rpx 0;text-align:center;font-size:30rpx;">
+      <text>购物记录</text>
+    </view>
+    <view class="record_pay">
+      <view class="record_pay_class" wx:for="{{res}}" wx:key="index">
+        <view style="margin-left:10rpx;">
+            <view class="order_sn">订单编号：{{item.order_sn}}</view>
+            <view class="uesrinfo">{{uesrinfo}}</view>
+            <view class="add_time">下单时间：{{filter.time_change(item.add_time)}}</view>
+            <view class="price">￥{{item.price}}</view>
+        </view>
+        <view class="pay_status">
+            <view wx:if="{{item.status==1}}">已支付</view>
+            <view wx:else class="pay_01">未支付</view>
+        </view>
+      </view>
+    </view>
+</view>
