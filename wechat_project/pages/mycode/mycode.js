@@ -10,7 +10,7 @@ Page({
   data: {
     prompt: '',
     Base: '',
-    //defaultImg: '',
+    defaultImg: '',
     member_info: {
       level_name: '未登录...'
     },
