@@ -1,3 +1,7 @@
+<view style="background:#b90611;padding: 20rpx 0;font-size: 35rpx;text-align: center;font-weight: bold;letter-spacing:5rpx;color:#fff">
+    <view>个人中心</view>
+    <view style="background:#fff;height:2px;width:150rpx;margin:10rpx auto 10rpx;"></view>
+</view>
 <scroll-view>
   <view class="motify {{prompt==''?'hide':''}}">
     <icon class="i show_type warning" type='warn' size='25' color='#FFF'></icon>

@@ -25,13 +25,59 @@ Page({
     is_login: 0,
     mask_status: 0,
     listClickFlag: 0,
+    defalut_image:"../../image/person_image.png",
+    a:"",
+    a_0:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    let that = this;
+    //会员详情--新增登录
+    app.sendRequest({
+      url: 'wechatapi/getMemberInfo.html',
+      data: {},
+      success: function (res) {
+        let code = res.code;
+        let data = res.data;
+        if (code == 0) {
+          /**新增用户处理流程*/
+          let member_info = data;
+          if(!app.isNull(data)){
+            //返回用户数据
+            member_info.level_name = "普通会员";
+            if(member_info.isVip){
+              member_info.level_name = "VIP订阅会员";
+            }
+
+            app.globalData.userInfo = member_info;
+          }else{
+            //无用户数据赋值小程序微信信息
+            let _wx_info = JSON.parse(app.globalData.wx_info);
+            member_info.id = 0;
+            member_info.isVip = false;
+            member_info.nickname = _wx_info.nickName;
+            member_info.headimgurl = _wx_info.avatarUrl;
+            member_info.level_name = "普通用户";
+            app.globalData.is_login = 1;
+            //member_info.user_info.user_headimg = _wx_info.avatarUrl; //图片路径处理
+          }
+          console.log(app.globalData.userInfo)
+          that.setData({
+            is_login: 1
+          })
+          that.setData({
+            member_info: member_info,
+            res: app.globalData.userInfo.out_time
+          });
+        //temp新增用户信息处理---*******************************************************************************************************
+
+        }
+        console.log(res)
+      }
+    })
   },
 
   /**

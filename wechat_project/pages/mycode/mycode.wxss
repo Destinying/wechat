@@ -1,17 +1,20 @@
 scroll-view{
   background:#dcdddd;
+  width: 98%;
+  margin: 10rpx auto 0;
 }
 
 .member_top {
   min-height: 400rpx;
   /*background-color: #ff4e00;*/
-  background: url("https://cloud.meshmellow.cn/static/images/bg.jpg") no-repeat center;
+  /* background: url("https://cloud.meshmellow.cn/static/images/bg.jpg") no-repeat center; */
   width: 100%;
   overflow: hidden;
   border: none;
   background-size: 100% auto;
   height: auto;
   position: relative;
+  background:#fff
 }
 
 .signin {
@@ -95,7 +98,8 @@ scroll-view{
 .member_foott {
   background: url("https://cloud.meshmellow.cn/static/images/info-bg.png") no-repeat;
   background-size: 100% 50px;
-  height: 50px;
+  border-top:8rpx solid #dcdddd;
+  height: 25rpx;
   position: absolute;
   width: 100%;
   bottom: 0;
@@ -401,13 +405,13 @@ scroll-view{
   background: transparent;
   padding:2px 24px;
   */
-  background: transparent;
+  background: #bb0611!important;
   /*display: inline;*/
-  padding: 5rpx 10rpx;
-  border: 1px solid yellow;
-  border-radius: 3px;
+  padding: 30rpx 50rpx;
+  border: 1px solid #bb0611;
+  border-radius: 0px;
   background: none;
-  color: yellow;
+  color: #fff;
   font-size: 13px;
   margin-top: 60rpx;
   width: 210rpx!important;
