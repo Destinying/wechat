@@ -53,29 +53,10 @@ Page({
       }
     })
   },
-<<<<<<< HEAD
-  get_list(){
-    var _this = this;
-    wx.request({
-      url: 'https://cloud.meshmellow.cn/wechatapi/pay.html',
-      method: "POST",
-      dataType: "json",
-      data: {
-        token: app.globalData.token,
-        orderSn:"2020050916271227050"
-      },
-  })
-  },
-  onLoad: function (options) {
-    var _this=this;
-    _this.get_purchase_list();
-     _this.get_list()
-=======
   onLoad: function (options) {
     var _this=this;
     _this.get_purchase_list();
     _this.get_live_list()
->>>>>>> 4c3036bd4f0376d9fa911618327dc60118e0988a
   },
 
   /**
