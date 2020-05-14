@@ -13,11 +13,10 @@
           <block wx:if='{{integralConfig.sign_integral == 1}}'>
             <view class="span signin {{isSign==1?'yes':'no'}}" catchtap="{{isSign==1?'':'signIn'}}">{{isSign==1?'已签到':'签到'}}</view>
           </block>
-
           <block wx:if='{{is_login != 0}}'>
           <view class="member_info_face">
             <image id='user_head_img' src="{{member_info.headimgurl == '' ? defalut_image : member_info.headimgurl}}" mode='widthFix' data-url="/pages/myself/myself">
-            </image>`
+            </image>
           </view>
           </block>
         </view>

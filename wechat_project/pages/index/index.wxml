@@ -3,7 +3,7 @@
 <view style="height:100%">
   
     <view class="title_lay lay_new">
-      <view class="fenlei_layout">
+      <view class="fenlei_layout" style="margin-left: 2%;">
           <text>分类：</text>
           <view class="fenlei">
             <view  class="title_data {{currentTab_01 == item.id?'active':''}}" wx:for="{{title_data}}" wx:key="index" bindtap="clicktitle" id="{{item.id}}">
@@ -12,7 +12,7 @@
           </view>
       </view>
   
-      <view  class="flex_view">
+      <view  class="flex_view" style="margin-left: 2%;">
       <text style="display:block">标签：</text>
       <view class="title_inline">
           <scroll-view scroll-x  class="scroll_class" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
