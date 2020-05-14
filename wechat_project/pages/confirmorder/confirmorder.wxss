@@ -76,7 +76,6 @@
 }
 .radio{
   font-size: 30rpx;
-  width: 100%;
 }
 .radio_group{
   width: 96%;
@@ -84,8 +83,10 @@
   background: #fff;
   padding: 30rpx 0;
 }
-.radio_group view{
-  width: 100%;
+radio-group{
+  display: inline-block
+}
+.flex_add_layout{
   padding-left: 30rpx;
   margin: 0 2%;
 }
@@ -134,4 +135,24 @@ wx-radio .wx-radio-input{
 }
 .pay_dis view text:nth-child(3){
   margin-left: 10rpx;
+}
+.pay_comfirm{
+  font-size: 30rpx;
+  display: inline-block;
+  vertical-align: bottom;
+  color: #bb0611
+}
+.xieyi_class{
+  background: #fff;
+  width: 98%;
+  margin: 1% auto;
+  padding: 0 10rpx;
+}
+.xieyi_title{
+  font-size: 28rpx;
+  font-weight: bold
+}
+.xieyi_par{
+  text-indent: 2rem;
+  font-size: 25rpx;
 }

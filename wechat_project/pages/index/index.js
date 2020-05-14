@@ -277,6 +277,7 @@ Page({
     // },1000)
   },
   switchTab(event){
+    console.log(event)
     var cur = event.detail.current;
     var cur_id = event.detail.currentItemId
     var _this=this;

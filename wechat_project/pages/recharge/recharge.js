@@ -51,28 +51,50 @@ Page({
   liji_pay(){
     var _this = this;
     var d="";
-    if (_this.data.checkout_params){
-      _this.data.obj_season.token = app.globalData.token;
-      d = _this.data.obj_season
+    let is_login = app.globalData.is_login;
+    is_login = app.globalData.is_login;
+    if (is_login != 1) {
+      wx.showToast({
+        title: '请登录之后操作',
+        icon: 'none',
+        duration: 1000,
+        success:function(){
+          setTimeout(function () {
+            wx.switchTab({
+              url: '../mycode/mycode',
+            })
+          },1000)  
+        }
+      }) 
+      // setTimeout(function(){
+      //   wx.navigateTo({
+      //     url: '../mycode/mycode',
+      //   })
+      // },2000)     
     }else{
-      _this.data.obj_year.token = app.globalData.token;
-      d = _this.data.obj_year
-    }
-    wx.request({
-      url: 'https://cloud.meshmellow.cn/Wechatapi/subscribe.html',
-      data:d,
-      method:"POST",
-      dataType:"json",
-      responseType: 'text',
-      success(res){
-        var res=res.data.data.orderSn
-        wx.navigateTo({
-          url: '../confirmorder/confirmorder?orderid='+ res,
-        }) 
-        // 传参至comfirmorder页面，获取订单号
+      if (_this.data.checkout_params) {
+        _this.data.obj_season.token = app.globalData.token;
+        d = _this.data.obj_season
+      } else {
+        _this.data.obj_year.token = app.globalData.token;
+        d = _this.data.obj_year
       }
-    })
-    wx.hideToast();
+      wx.request({
+        url: 'https://cloud.meshmellow.cn/Wechatapi/subscribe.html',
+        data: d,
+        method: "POST",
+        dataType: "json",
+        responseType: 'text',
+        success(res) {
+          var res = res.data.data.orderSn
+          wx.navigateTo({
+            url: '../confirmorder/confirmorder?orderid=' + res,
+          })
+          // 传参至comfirmorder页面，获取订单号
+        }
+      })
+      wx.hideToast();
+    }
   },
   onLoad: function (options) {
     var _this=this;
