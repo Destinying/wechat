@@ -6,8 +6,8 @@
     <view style="background:#fff;height:2px;width:150rpx;margin:10rpx auto 10rpx;"></view>
   </view>
   <view style="margin-bottom:10rpx;background:#fff;width:100%;padding:20rpx 0;text-align:center;font-size:30rpx;"><text>线下订阅</text></view>
-  <view>
-  <form catchsubmit="formSubmit" class="form_class">
+  <view class="form_class">
+  <form catchsubmit="formSubmit">
       <view>
       <!-- <label>姓名</label> -->
       <input type="text" placeholder="请输入真实姓名" name="name" bindinput="getNameValue"></input>
@@ -18,11 +18,19 @@
       </view>
       <view>
       <!-- <label>邮箱</label> -->
-      <input type="text"  placeholder="邮箱地址" name="email" bindinput="getEmailValue"></input>
+      <input type="text"  placeholder="请输入邮箱地址" name="email" bindinput="getEmailValue"></input>
       </view>
       <button class='btn1'  formType="submit">
       线下订阅绑定
       </button>
 </form>
+  </view>
+  <view style="width:98%;margin:20rpx auto 0;">
+      <view style="background:#fff;"> 
+          <view style="padding:30rpx;font-size:25rpx;color:#898989">
+            <view>备注:</view>
+            <view>本页面绑定的规则和使用规则。各种的说明文字，以及用户说明等等内容。</view>
+          </view> 
+      </view>
   </view>
 </view>
