@@ -108,10 +108,11 @@ Page({
       success(res) {
         // console.log(res)
         var title_data=res.data.class_list; //分类
-        title_data.splice(0,0,{id:0,name:"全部"}) //分类添加全部
+        title_data.splice(0,0,{id:0,name:"全部课程"}) //分类添加全部
+        title_data.splice(3,0, { id: -1, name: "免费课程" })
         var title_Classification = res.data.tag_list; //标签
-        title_Classification.splice(0, 0, { id: 0, name: "全部" })
-        title_Classification.splice(16, 1)
+        title_Classification.splice(0, 0, { id: 0, name: "所有内容" })
+        title_Classification.splice(15, 1)
         _this.total = res.data.data.total //获取所有数据
         var res_data = res.data.data.data; //20个图片加文字
         _this.per_page = res.data.data.per_page //获取当前页面数据数量
@@ -154,7 +155,6 @@ Page({
   //   })
     
   // },
-
   onLoad: function (options) {
     this.getallpages();
     // this.queryMultipleNodes();
@@ -192,7 +192,7 @@ Page({
           pixelRatio: res.pixelRatio,
           windowHeight: res.windowHeight,
           windowWidth: res.windowWidth,
-          height:res.windowHeight
+          height:res.windowHeight-60
         })
        
       },

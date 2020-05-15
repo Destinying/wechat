@@ -37,6 +37,7 @@ Page({
     _this.getListdata();
   },
   imageLoad:function(e){
+    console.log(e)
     var imgwidth = e.detail.width;
     var  imgheight = e.detail.height;
     var  ratio = imgwidth / imgheight;

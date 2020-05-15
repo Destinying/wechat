@@ -1,6 +1,6 @@
 <view>
       <view>
-          <video class="video_class" src="{{video_post}}" poster="{{video_img}}"></video>
+          <video class="video_class" objectFit="cover"   src="{{video_post}}" poster="{{video_img}}"></video>
       </view>
       <view style="background:#fff;width:100%;">
         <view class="layout_class">

@@ -13,7 +13,9 @@ Page({
     erweima:"",
     menuList:"",
     canshu:"",
-    fenlei:""
+    fenlei:"",
+    imgHeight:[],
+    imgwidth:""
   },
 
   /**
@@ -40,6 +42,19 @@ Page({
       }
     })
   },
+  // imageLoad: function (e) {
+  //   console.log(e)
+  //   var imgwidth = e.detail.width;
+  //   var imgheight = e.detail.height;
+  //   var ratio = imgwidth / imgheight;
+  //   var viewHeight = 750 / ratio;
+  //   var imgHeight = this.data.imgHeight;
+  //   //把每一张图片的对应的高度记录到数组里  
+  //   imgHeight = viewHeight;
+  //   this.setData({
+  //     imgHeight: imgHeight
+  //   })
+  // },
   getmenuList:function(){
     var _this = this;
     wx.request({
@@ -200,6 +215,7 @@ Page({
       _this.getcourse();
       _this.getcourse_01()
     }
+   
     //根据shouye传来的参数不同运行不同的程序
   },
   /**

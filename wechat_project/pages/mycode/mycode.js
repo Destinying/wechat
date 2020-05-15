@@ -374,9 +374,18 @@ Page({
     }
     app.clicked(that, 'listClickFlag');
     */
-    wx.navigateTo({
-      url: url
-    });
+    if(app.globalData.is_login==1){
+      wx.navigateTo({
+        url: url
+      });
+    }else{
+      wx.showToast({
+        title: '请登录之后操作',
+        icon: 'none',
+        duration: 1000
+      })
+    }
+   
   },
   /**
  * 退出登录

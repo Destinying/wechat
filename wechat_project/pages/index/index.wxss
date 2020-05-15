@@ -6,27 +6,42 @@
   white-space:nowrap;
 }
 .scroll_view{
-  display: inline-block;
+  /* display: inline-block; */
   margin:0 40rpx 0 0rpx;
   font-size: 24rpx;
-  background: #dcdddd;
-  padding: 5rpx 10rpx;
-  border-radius: 15rpx;
+  background: #fff;
+}
+.scroll_view_01{
+  /* display: inline-block; */
+  /* margin:0 40rpx 0 0rpx; */
+  font-size: 24rpx;
+  background: #fff;
+  text-align: center;
+  width: 160rpx;
+  border-bottom:3rpx solid #989898;
+  height: 170rpx;
+  line-height: 170rpx;
+  border-left: 16rpx solid #fff;
+  /* transform: rotate(90deg); */
+  writing-mode: tb-rl;
+
 }
 .title_lay view{
  
 }
 .flex_view{
-  display: flex;
+  /* display: flex; */
   margin-top: 10rpx;
 }
 .title_data{
   display: inline-block;
-  margin: 0 40rpx 0 0;
-  font-size: 24rpx;
-   background: #dcdddd;
-  padding: 5rpx 10rpx;
-  border-radius: 15rpx;
+  margin: 0 20rpx 0 0;
+  font-size: 25rpx;
+  background: #fff;
+  width: 160rpx;
+  height: 110rpx;
+  line-height: 110rpx;
+  text-align: center;
 }
 .title_inline{
   width: 85%;
@@ -36,7 +51,9 @@
   width: 15%;
 }
 .title_lay view{
-  color: #555;
+  color: #000;
+  font-weight: bold
+  
 }
 .tab-content{
   overflow-y: scroll;
@@ -47,12 +64,16 @@
 }
 .tab-box{
   position: relative;
-  top: 95rpx;
+  top: 115rpx;
   overflow-y: hidden;
+  width:75%;
+  right: 10rpx;
+  box-sizing: border-box;
+  float: right;
 }
 .lay_new{
   position: fixed;
-  height: 95rpx;
+  height: 105rpx;
   background: #fff;
   width: 100%; 
   left: 50%;
@@ -66,8 +87,27 @@ page{
   width: 100%;
 }
 .nav-item,.active{
-  color: red!important;
-  background: #dcdddd
+  background: #bb0611;
+  color: #fff!important;
+  width: 160rpx;
+  height: 110rpx;
+  line-height: 110rpx;
+  white-space: nowrap;
+  text-align: center
+}
+.active_01{
+  color: #fff!important;
+  background: #898989;
+  font-size: 25rpx;
+  text-align: center;
+  margin: 0rpx;
+  width: 160rpx;
+  border-bottom:3rpx solid #dcdddd;
+  height: 170rpx;
+  line-height: 170rpx;
+  border-left: 16rpx solid #bb0611;
+  transform: translate(0,0,0);
+  writing-mode: tb-rl;
 }
 .allpages_class{
   width: 100%
@@ -76,7 +116,7 @@ page{
   display: none
 }
 .fenlei{
-  width: 85%
+  width: 100%;
 }
 .fenlei_layout{
   display: flex;

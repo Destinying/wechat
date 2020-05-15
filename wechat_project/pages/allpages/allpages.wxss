@@ -11,26 +11,26 @@
 .all_pages_img{
   width: 100%;
   height: 100%;
-  border-radius: 15rpx
+  /* border-radius: 15rpx */
 }
 .layout_img{
   width: 40%;
-  height:180rpx;
+  /* height:180rpx; */
   margin-left:2% 
 }
 .layout_text{
   width: 54%;
   margin-right:2%;
   margin-left:2%;
-  font-size:30rpx;
+  font-size:28rpx;
 }
 .layout_text text{
-  margin-bottom: 10rpx;
-  display: block;
+  display: inline-block;
+  margin-left: 5rpx;
 }
 .layout_text text:nth-child(2){
-  color: #a6a6a6;
   font-size: 24rpx;
+  color: #bb0611
 }
 .layout_text text:nth-child(1){
   text-overflow: ellipsis;
@@ -39,6 +39,7 @@
   -webkit-line-clamp: 2;
   display: -webkit-box;
   -webkit-box-orient: vertical;
+  font-weight: bold;
 }
 .layout_text text:nth-child(3){
   color: #a6a6a6;

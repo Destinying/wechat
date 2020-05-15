@@ -141,17 +141,18 @@ scroll-view{
 .info-content-bottom view .level {
   display: inline;
   padding: 0 5px;
-  border: 1px solid yellow;
+  border: 1px solid #bb0611;
   border-radius: 3px;
   background: none;
-  color: yellow;
-  font-size: 13px;
+  color: #bb0611;
+  font-size: 13px; 
 }
 
 .info-content-top text {
   width: 30%;
   height: 20px;
   line-height: 20px;
+  color: #bb0611;
   text-align: center;
   display: inline-block;
   font-size: 13px;
