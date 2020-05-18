@@ -257,7 +257,7 @@ Page({
       title: '加载中...',
       showstate: false
     })
-    // setTimeout(function () {
+   setTimeout(function () {
     wx.request({
         url:"https://cloud.meshmellow.cn/wechatapi/course_lists.html",
         data:{
@@ -274,7 +274,7 @@ Page({
           })
         }
       })
-    // },1000)
+   },3000)
   },
   switchTab(event){
     console.log(event)
@@ -308,7 +308,7 @@ Page({
             wx.hideLoading()
           }
         })
-      },1000)
+      },3000)
         
      
     

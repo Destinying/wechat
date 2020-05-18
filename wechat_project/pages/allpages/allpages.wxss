@@ -27,6 +27,9 @@
 .layout_text text{
   display: inline-block;
   margin-left: 5rpx;
+  vertical-align: middle;
+  margin-top: 5rpx;
+  margin-bottom: 5rpx;
 }
 .layout_text text:nth-child(2){
   font-size: 24rpx;
