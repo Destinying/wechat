@@ -66,8 +66,9 @@
   position: relative;
   top: 115rpx;
   overflow-y: hidden;
-  width:75%;
-  right: 10rpx;
+  /* width:74%; */
+  /* left: 12rpx;
+  right:12rpx; */
   box-sizing: border-box;
   float: right;
 }

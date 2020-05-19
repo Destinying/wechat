@@ -23,7 +23,7 @@ Page({
       url: 'https://cloud.meshmellow.cn/Wechatapi/AppletIndex',
       success(res){
         var res=res.data;
-        console.log(res)
+       
         _this.setData({
           swiper_img: res.swiper,
           lesson_list: res.tuijian,
@@ -37,7 +37,7 @@ Page({
     _this.getListdata();
   },
   imageLoad:function(e){
-    console.log(e)
+   
     var imgwidth = e.detail.width;
     var  imgheight = e.detail.height;
     var  ratio = imgwidth / imgheight;

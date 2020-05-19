@@ -6,12 +6,12 @@
       <view class="layout_text">
         <text>{{item.title}}</text>
         <view wx:if="{{item.class==103}}" style="font-size:20rpx;display:flex;flex:row;justify-content:space-between;align-items:center">
-          <view><image src='../../image/shoujia_05_15.png' style="width:24rpx;height:24rpx;vertical-align:middle"></image><text>售价:￥{{item.present_price}}</text></view>
+          <view><image src='../../image/shoujia_05_15.png' style="width:24rpx;height:24rpx;vertical-align:middle"></image><text>￥{{item.present_price}}</text></view>
           <view><image src='../../image/jingping_lesson.png' style="width:24rpx;height:24rpx;vertical-align:middle"></image><text>精品课程</text></view>
         </view>
         <view wx:else>
           <view wx:if="{{item.gold!=0}}" style="font-size:20rpx;display:flex;flex:row;justify-content:space-between;align-items:center">
-            <view><image src='../../image/shoujia_05_15.png' style="width:24rpx;height:24rpx;vertical-align:middle"></image><text>售价:￥{{item.present_price}}</text></view>
+            <view><image src='../../image/shoujia_05_15.png' style="width:24rpx;height:24rpx;vertical-align:middle"></image><text>￥{{item.present_price}}</text></view>
             <view><image src='../../image/shoujia_05_15.png' style="width:24rpx;height:24rpx;vertical-align:middle"></image><text>订阅课程</text></view>
           </view>
           <view wx:else>
