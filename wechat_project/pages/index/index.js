@@ -78,7 +78,9 @@ Page({
    per_page:1,
    cont:'',
    result:[],
-   dif_title:[]
+   dif_title:[],
+    hidden_01:true,
+    hidden:false
   },
 lower(event){
   console.log(event)
@@ -89,7 +91,8 @@ lower(event){
   var value = _this.data.value;
   var switchNav = _this.data.switchNav_01;
   _this.setData({
-    hidden:false
+    hidden:false,
+    hidden_01:true
   });
   wx.request({
     header: getApp().globalData.header,
@@ -110,20 +113,19 @@ lower(event){
       resArr = res.data.data.data;  //存的现在最新的20个数据
       // console.log(resArr)
       var total = res.data.data.total; //页面数据总数量
+      
       resArr_01 = _this.result.concat(resArr);
       var cont = resArr_01;
       _this.data.per_page = res.data.data.current_page;
       //算出当前页数      
       // console.log(_this.data.per_page)
       // console.log(resArr_01.length);
-      // if (cont.length >= total) {
-      //   wx.showToast({ //如果全部加载完成了也弹一个框
-      //     title: '我也是有底线的~',
-      //     icon: 'none',
-      //     duration: 1000,
-      //   });
-      //   return false;
-      // } else {
+      if (cont.length >= total || res.length < 5) {
+        _this.setData({
+          hidden:true,
+          hidden_01:false
+        })
+      } else {
         wx.showLoading({ //期间为了显示效果可以添加一个过度的弹出框提示“加载中”  
           title: '加载中...',
           icon: 'loading',
@@ -133,9 +135,9 @@ lower(event){
            getallpages: resArr_01
          });
          wx.hideLoading();
-        }, 1000)
+        }, 500)
       }
-    
+    }
   })
     console.log("lower");
   },
@@ -166,6 +168,10 @@ lower(event){
       },
       success(res) {
         // console.log(res)
+        if (res.data.data.data.length<5) {
+          _this.data.hidden = true;
+          _this.data.hidden_01 = false
+        }
         var title_data=res.data.class_list; //分类
         title_data.splice(0,0,{id:0,name:"全部课程"}) //分类添加全部
         title_data.splice(3,0, { id: -1, name: "免费课程" })
@@ -190,7 +196,9 @@ lower(event){
           getallpages: res_data,
           title_data: title_data,
           showstate:true,
-          title_Classification: title_Classification
+          title_Classification: title_Classification,
+          hidden: _this.data.hidden,
+          hidden_01: _this.data.hidden_01
         })
       }
     })
@@ -327,15 +335,23 @@ lower(event){
         },
         method:"POST",
         success(res){
+          if (res.data.data.data.length <5){
+            _this.data.hidden=true;
+            _this.data.hidden_01=false
+          }
           _this.dif_title=res.data.data.data;
           // console.log(_this.dif_title)
+          
           _this.setData({
             getallpages: _this.dif_title,
-          showstate:true
+            showstate:true,
+            hidden: _this.data.hidden,
+            hidden_01: _this.data.hidden_01
           })
         }
       })
-   },1000)
+     wx.hideLoading();
+   },500)
   },
   switchTab(event){
     
@@ -369,7 +385,7 @@ lower(event){
             wx.hideLoading()
           }
         })
-      },1000)
+      },5000)
         
      
     

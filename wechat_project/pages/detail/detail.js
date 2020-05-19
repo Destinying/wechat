@@ -1,5 +1,6 @@
 // pages/detail/detail.js
 var WxParse=require('../../wxParse/wxParse.js')
+const app=getApp()
 Page({
 
   /**
@@ -15,7 +16,10 @@ Page({
     canshu:"",
     fenlei:"",
     imgHeight:[],
-    imgwidth:""
+    imgwidth:"",
+    video_id:"",
+    price:"",
+    product_name:""
   },
 
   /**
@@ -28,6 +32,9 @@ Page({
       dataType:'GET',
       success(res){
         var res = JSON.parse(res.data);
+        _this.data.video_id = res.money.video_id
+        _this.data.price = res.money.money;
+        _this.data.product_name = res.money.product_name
         console.log(res)
         _this.setData({
           video_post:res.video,
@@ -74,6 +81,9 @@ Page({
       dataType: 'GET',
       success(res) {
         var res = JSON.parse(res.data);
+        _this.data.price=res.money.money;
+        _this.data.video_id = res.money.video_id;
+        _this.data.product_name = res.money.product_name
         _this.setData({
           video_post: res.video,
           video_img: res.img,
@@ -99,6 +109,52 @@ Page({
       }
     })
   },
+  liji_pay() {
+    var _this = this;
+    var d = "";
+    let is_login = app.globalData.is_login;
+    is_login = app.globalData.is_login;
+    if (is_login != 1) {
+      wx.showToast({
+        title: '请登录之后操作',
+        icon: 'none',
+        duration: 1000,
+        success: function () {
+          setTimeout(function () {
+            wx.switchTab({
+              url: '../mycode/mycode',
+            })
+          }, 1000)
+        }
+      })
+    } else {
+        d = app.globalData.token; 
+      wx.request({
+        url: 'https://cloud.meshmellow.cn/Wechatapi/subscribe.html',
+        data: {
+          token:d,
+          payCode: "nativePay|wxPay",
+          buyType: 4,
+          price: _this.data.price,
+          video_id:_this.data.video_id,
+          coursename: _this.data.product_name
+        },
+        method: "POST",
+        dataType: "json",
+        responseType: 'text',
+        success(res) {
+          console.log(res)
+          console.log(res)
+          var res = res.data.data.orderSn
+          wx.navigateTo({
+            url: '../confirmorder/confirmorder?orderid=' + res,
+          })
+          // 传参至comfirmorder页面，获取订单号
+        }
+      })
+      wx.hideToast();
+    }
+  },
   getinukami_animationList: function () {
     var _this = this;
     wx.request({
@@ -106,6 +162,9 @@ Page({
       dataType: 'GET',
       success(res) {
         var res = JSON.parse(res.data);
+        _this.data.price = res.money.money;
+        _this.data.video_id = res.money.video_id;
+        _this.data.product_name = res.money.product_name
         _this.setData({
           video_post: res.video,
           video_img: res.img,
@@ -138,6 +197,9 @@ Page({
       dataType: 'GET',
       success(res) {
          var res = JSON.parse(res.data);
+        _this.data.price = res.money.money;
+        _this.data.video_id = res.money.video_id;
+        _this.data.product_name = res.money.product_name
         console.log(res)
         _this.setData({
           video_post: res.video,
@@ -147,7 +209,8 @@ Page({
           erweima: res.erweima,
           intro: res.intro,
           canshu: res.canshu,
-          dibu: res.dibu
+          dibu: res.dibu,
+          video_id:res.video_id
         })
       }
     })
@@ -171,6 +234,9 @@ Page({
       dataType: 'GET',
       success(res) {
         var res = JSON.parse(res.data);
+        _this.data.price = res.money.money;
+        _this.data.video_id = res.money.video_id;
+        _this.data.product_name = res.money.product_name
         console.log(res)
         _this.setData({
           video_post: res.video,

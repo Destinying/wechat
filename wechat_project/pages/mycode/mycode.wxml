@@ -46,6 +46,7 @@
         </view>
         <view >
           <view class="level"  wx:if='{{member_info.level_name == "VIP订阅会员"}}'>{{member_info.level_name}}</view>
+          <view class="level"  wx:elif='{{member_info.level_name == "普通用户"}}'>普通会员</view>
         </view>
         <view catchtap='listClick' data-url="/pages/myself/myself">
           <view>{{member_info.point}}</view>

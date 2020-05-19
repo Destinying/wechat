@@ -11,11 +11,11 @@
         </view>
         <view wx:else>
           <view wx:if="{{item.gold!=0}}" style="font-size:20rpx;display:flex;flex:row;justify-content:space-between;align-items:center">
-            <view><image src='../../image/shoujia_05_15.png' style="width:24rpx;height:24rpx;vertical-align:middle"></image><text>￥{{item.present_price}}</text></view>
             <view><image src='../../image/shoujia_05_15.png' style="width:24rpx;height:24rpx;vertical-align:middle"></image><text>订阅课程</text></view>
+            <view><image src='../../image/member_05_15.png' style="width:24rpx;height:24rpx;vertical-align:middle"></image><text>会员免费</text></view>
           </view>
           <view wx:else>
-            <view><image src='../../image/shoujia_05_15.png' style="width:24rpx;height:24rpx;vertical-align:middle"></image><text>免费课程</text></view>
+            <view><image src='../../image/free_lesson_05_15.png' style="width:24rpx;height:24rpx;vertical-align:middle"></image><text>免费课程</text></view>
           </view>
         </view>
         <text>更新时间：{{item.res_name}}</text>

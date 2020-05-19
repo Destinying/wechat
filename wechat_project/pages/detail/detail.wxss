@@ -194,3 +194,39 @@
   margin: 30rpx auto;
   text-align: center
 }
+.fix_pos{
+  position: fixed;
+  bottom: 0;
+  border-top: 1px solid #d9d9d9;
+  width: 100%;
+}
+.pay_now{
+  width: 50%;
+  background: #bb0611;
+  color: #fff;
+  text-align: center;
+  font-size: 35rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+}
+.pay_dis{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff
+} 
+.pay_dis view text{
+  color:#bb0611;
+  font-size: 35rpx;
+}
+.pay_dis>view{
+  margin-left: 20rpx;
+}
+.pay_dis view text:nth-child(2){
+  font-size: 25rpx;
+  margin-left: 30rpx;
+}
+.pay_dis view text:nth-child(3){
+  margin-left: 10rpx;
+}

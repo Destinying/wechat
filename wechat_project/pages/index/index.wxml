@@ -45,7 +45,8 @@
                       <scroll-view   scroll-y style="height:{{height}}px" bindscrolltolower='lower'  bindscroll="scroll">
                         <view class="container">
                             <allpages getallpages="{{getallpages}}" class="allpages_class {{showstate==false?'showstate':''}}" ></allpages>            
-                            <view hidden="{{hidden}}">加载中...</view>
+                            <view hidden="{{hidden}}" style="color:#898989;font-size:25rpx;">加载中...</view>
+                             <view hidden="{{hidden_01}}" style="color:#898989;font-size:25rpx;">我是有底线的...</view>
                         </view>
                       </scroll-view>
                   <!-- </swiper-item>

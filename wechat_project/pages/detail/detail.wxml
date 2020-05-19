@@ -25,7 +25,7 @@
                 </view>
                 <view>
                     <text class="yushou">{{money.yushou}}</text>
-                    <text class="money">{{money.money}}</text>
+                    <text class="money">￥{{money.money}} 元</text>
                 </view>
                 <view>
                     <text class="time">{{money.time}}</text>
@@ -87,4 +87,16 @@
               <image src="{{dibu.img1.img}}" mode="widthFix" style="width:100%;"></image>
         </view>
       </view>
+      <view class="fix_pos">
+        <view class="pay_dis">
+            <view>
+              <text>合计</text>
+              <text>￥</text>
+              <text>{{money.money}}</text>
+            </view>
+            <view class="pay_now" bindtap="liji_pay">
+                立即购买
+            </view>
+        </view>
+    </view>
 </view>

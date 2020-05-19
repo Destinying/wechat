@@ -23,6 +23,10 @@ Page({
     deviceTotal: 0,    //投诉建议总数
     devicePages: 0,     //投诉建议总页数
     deviceIndex: 1,      //投诉建议当前页
+    _pvideoId:"",
+    present_price:"",
+    title:"",
+    orderSn:""
   },
 
   /**
@@ -51,6 +55,10 @@ Page({
         id:id,
       },
       success(res){
+        console.log(res)
+        _this.data._pvideoId = res.data.data._pvideoId;
+        _this.data.present_price = res.data.data._pvideoInfo.present_price;
+        _this.data.title = res.data.data._pvideoInfo.title;
         var res_01 =res.data.data;
         console.log(res_01)
         var videoSet="";
@@ -91,18 +99,48 @@ Page({
     var video_list = _this.data.video_list
     video_list="1";
     wx.request({
+      method:"POST",
       url:"https://cloud.meshmellow.cn/wechatapi/payVideo.html",
       data:{
-        id:id
+        id:id,
+        token:app.globalData.token
       },
       success(res){
+        console.log(res)
         if(res.data.data.rs==1){
 
         } else if (res.data.data.rs == 5){
           wx.showToast({
             title: '独立付费课程,需要付费购买',
-            duration: 2000, 
-            icon: "none"
+            duration: 2000,
+            icon: "none",
+            success: function () {
+                  var _pvideoId  = _this.data._pvideoId 
+                  var present_price=_this.data.present_price 
+                  var title= _this.data.title 
+                  wx.request({
+                    url: 'https://cloud.meshmellow.cn/Wechatapi/subscribe.html',
+                    dataType:"json",
+                    method:"POST",
+                    data:{
+                      token: app.globalData.token,
+                      payCode: "nativePay|wxPay",
+                      buyType: 4,
+                      price: present_price,
+                      video_id: _pvideoId,
+                      coursename: title
+                    },
+                    success(res){
+                      console.log(res)
+                     _this.data.orderSn = res.data.data.orderSn
+                    }
+                  })
+              setTimeout(function () {
+                wx.navigateTo({
+                  url: '../confirmorder/confirmorder?orderid=' + _this.data.orderSn,
+                })
+              }, 2000)
+            }
           })
           _this.setData({
             video_list: video_list,
@@ -117,7 +155,14 @@ Page({
           wx.showToast({
             title: '请订阅后再观看课程',
             duration: 2000,
-            icon:"none"
+            icon:"none",
+            success: function () {
+              setTimeout(function () {
+                wx.switchTab({
+                  url: '../recharge/recharge',
+                })
+              }, 2000)
+            }
           })
           _this.setData({
             video_list: video_list,
@@ -134,9 +179,11 @@ Page({
     var _this = this;
    _this.data.id=event.currentTarget.id
     wx.request({
+      method:"POST",
       url: 'https://cloud.meshmellow.cn/wechatapi/payVideo.html',
       data: {
-        id: _this.data.id
+        id: _this.data.id,
+        token:app.globalData.token
       },
       success(res) {
         console.log(res.data.data)
