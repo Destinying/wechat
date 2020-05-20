@@ -53,6 +53,7 @@ Page({
       data:{
         // id: id,
         id:id,
+        token:app.globalData.token
       },
       success(res){
         console.log(res)
@@ -103,7 +104,8 @@ Page({
       url:"https://cloud.meshmellow.cn/wechatapi/payVideo.html",
       data:{
         id:id,
-        token:app.globalData.token
+        token:app.globalData.token,
+        surePlay:1
       },
       success(res){
         console.log(res)
@@ -183,7 +185,8 @@ Page({
       url: 'https://cloud.meshmellow.cn/wechatapi/payVideo.html',
       data: {
         id: _this.data.id,
-        token:app.globalData.token
+        token:app.globalData.token,
+        surePlay:1
       },
       success(res) {
         console.log(res.data.data)
@@ -209,8 +212,11 @@ Page({
     // console.log(_this.data.recom_list)
     wx.request({
       url: 'https://cloud.meshmellow.cn/wechatapi/payVideo.html',
+      method: "POST",
       data: {
-        id: _this.data.id
+        id: _this.data.id,
+        token: app.globalData.token,
+        surePlay:1
       },
       success(res) {
         console.log(res.data.data)
