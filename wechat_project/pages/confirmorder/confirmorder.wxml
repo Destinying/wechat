@@ -6,7 +6,7 @@
           <view></view> 
           </view>
       </view>
-      <view style="background:#fff;width:96%;margin:0 auto">
+      <view style="background:#fff;margin:0 10rpx;">
           <view class="box_style">
               <view class="line_style">
                   <view>产品：</view>

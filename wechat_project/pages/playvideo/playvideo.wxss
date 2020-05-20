@@ -39,7 +39,7 @@
   flex-direction:row;
   }
 .bottom_class{
-  border-bottom: 2px solid gainsboro;
+  /* border-bottom: 2px solid gainsboro; */
 }
 .default{
   line-height:100rpx;
@@ -68,8 +68,7 @@
   text-align:center;
 }
 .lesson_class{
-  width: 98%;
-  margin: 0 auto
+  margin: 0 10rpx
 }
 .set_video_class{
   width: 40%;
@@ -83,10 +82,10 @@
   background: #fff;
   flex-direction:row;
   width: 100%;
-  margin: 10rpx 0 10rpx 0;
+  margin: 8rpx 0 8rpx 0;
   display: flex;
   align-items: center;
-  padding: 10rpx;
+  /* padding: 10rpx; */
 }
 .layout_sele_text{
   width: 56%;

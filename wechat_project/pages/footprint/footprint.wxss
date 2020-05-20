@@ -1,13 +1,12 @@
 /* pages/footprint/footprint.wxss */
 .footprint_class{
   background: #fff;
-  margin-bottom: 10rpx;
+  margin-bottom: 8rpx;
   padding: 15rpx 0;
 }
 .footprint_layout{
-  width: 98%;
-  margin: 0 auto 0rpx;
-  padding: 10rpx 0;
+  margin: 0rpx 10rpx 0rpx;
+  padding: 8rpx 0 0 0;
 }
 .foot_lay{
   width: 100%;
@@ -24,7 +23,7 @@
 }
 .item_title{
   font-size: 28rpx;
-  margin-left: 15rpx;
+  margin-left: 25rpx;
   width: 50%;
   font-weight: bold;
 }
@@ -41,7 +40,7 @@
   margin-right: 5rpx;
 }
 .xiala_class{
-  margin-right: 15rpx;
+  margin-right: 25rpx;
 }
 .title_class{
   display: flex;
@@ -50,11 +49,11 @@
   color: #898989;
 }
 .title_class view:nth-child(1){
-  margin-left: 15rpx;
+  margin-left: 25rpx;
   font-size: 25rpx;
 }
 .title_class view:nth-child(2){
-  margin-right: 15rpx;
+  margin-right: 25rpx;
   font-size: 25rpx;
 }
 .title_class_01{

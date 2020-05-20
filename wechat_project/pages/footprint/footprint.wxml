@@ -15,7 +15,7 @@
               <view wx:else class="xiala_class"><image src="../../image/shangla.png" class="shangla" mode="widthFix"></image></view>
             </view>
             <view wx:if="{{slide_toggle[index]}}">
-                <view style="height:2px;width:96%;margin:20rpx auto 20rpx;background:#dcdddd"></view>
+                <view style="height:3rpx;margin:20rpx 25rpx 20rpx;background:#dcdddd"></view>
                 <view>
                     <view class="title_class">
                       <view>标题：</view>

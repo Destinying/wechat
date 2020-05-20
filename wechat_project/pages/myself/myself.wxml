@@ -8,8 +8,8 @@
   <view style="margin:0 10rpx;">
       <view class="back_style name">
          <view style="display:flex;flex:row;align-items:center">
-            <view style="border-radius:50%;">
-            <image src="{{headimgurl}}"  style="width:120rpx;"  mode="widthFix"></image>
+            <view style="padding:20rpx">
+            <image src="{{headimgurl}}"  style="width:120rpx;border-radius: 50%;"  mode="widthFix"></image>
             </view>
             <view style="margin-left:10rpx;color:#898989;font-size:28rpx;">微信昵称：{{username}}</view>
          </view>

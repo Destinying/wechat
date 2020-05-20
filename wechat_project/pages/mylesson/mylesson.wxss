@@ -5,8 +5,11 @@
   align-items: center;
   font-size: 25rpx;
   background: #fff;
-  margin: 10rpx 0;
+  margin:0 0 8rpx 0;
   padding: 10rpx 10rpx 0rpx 10rpx;
+}
+.my_lesson_layout:nth-child(1){
+  margin-top: 8rpx
 }
 .my_lesson_class{
 

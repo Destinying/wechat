@@ -78,8 +78,7 @@
   font-size: 30rpx;
 }
 .radio_group{
-  width: 96%;
-  margin: 10rpx auto;
+  margin: 8rpx 10rpx;
   background: #fff;
   padding: 30rpx 0;
 }

@@ -262,7 +262,7 @@ lower(event){
         this.setData({
           pixelRatio: res.pixelRatio,
           windowHeight: res.windowHeight,
-          windowWidth: 546,
+          windowWidth: 547,
           height:res.windowHeight-60
         })
        

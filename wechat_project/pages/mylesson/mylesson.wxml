@@ -6,7 +6,7 @@
     <view style="background:#fff;height:2px;width:150rpx;margin:10rpx auto 10rpx;"></view>
   </view>
   <view style="background:#fff;width:100%;padding:20rpx 0;text-align:center;font-size:30rpx;"><text>我的课程</text></view>
-  <view style="width:98%;margin:0 auto">
+  <view style="margin:0 10rpx">
       <view class="my_lesson_layout" wx:for="{{my_lesson_purchase}}" wx:key="index">
         <view>
           <image src="{{item.thumbnail}}" class="my_lesson_image" mode="widthFix"></image>

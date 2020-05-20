@@ -10,8 +10,7 @@
   border-radius: 0
 }
 .form_class{
-  width: 98%;
-  margin: 0 auto;
+  margin: 0 10rpx;
   padding: 60rpx 0 80rpx;
   background: #fff;
   font-size: 30rpx;

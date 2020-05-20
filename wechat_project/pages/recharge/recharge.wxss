@@ -1,13 +1,12 @@
 /* pages/recharge/recharge.wxss */
 .layout_class{
-  width: 96%;
-  margin: 0 auto
+  margin: 0 10rpx;
 }
 .season_recharge{
   box-shadow: 0px 0px 6px 4px #dcdcdc;
   color: #000;
   font-size: 24rpx;
-  margin-bottom: 30rpx;
+  margin-bottom: 8rpx;
   background: #fff
 }
 .season_recharge view text:nth-child(2){
@@ -40,7 +39,7 @@
   text-align: center;
   font-size: 35rpx;
   font-weight: bold;
-  margin-bottom: 30rpx;
+  margin-bottom: 8rpx;
 }
 .fix_pos{
   position: fixed;

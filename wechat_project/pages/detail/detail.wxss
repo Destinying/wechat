@@ -111,7 +111,8 @@
 }
 .lesson_introduction{
   border-left: 10rpx solid #bb0611;
-  padding-top: 30rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
   font-size: 30rpx;
   padding-left: 15rpx;
 }

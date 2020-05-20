@@ -3,7 +3,7 @@
   font-size: 30rpx
 }
 .scroll_class{
-  white-space:nowrap;
+  /* white-space:nowrap; */
 }
 .scroll_view{
   /* display: inline-block; */
@@ -17,14 +17,18 @@
   font-size: 24rpx;
   background: #fff;
   text-align: center;
-  width: 160rpx;
+  width: 176rpx;
   border-bottom:3rpx solid #989898;
-  height: 170rpx;
-  line-height: 170rpx;
+  /* height: 170rpx; */
+  padding: 80rpx 0;
+  /* line-height: 170rpx; */
   border-left: 16rpx solid #fff;
   /* transform: rotate(90deg); */
-  writing-mode: tb-rl;
-
+  /* writing-mode: tb-rl; */
+  box-sizing: border-box;
+  word-break: break-all;
+  word-wrap: break-word;
+  /* white-space: pre-line; */
 }
 .title_lay view{
  
@@ -102,13 +106,15 @@ page{
   font-size: 25rpx;
   text-align: center;
   margin: 0rpx;
-  width: 160rpx;
+  width: 176rpx;
   border-bottom:3rpx solid #dcdddd;
-  height: 170rpx;
-  line-height: 170rpx;
+  /* height: 170rpx;
+  line-height: 170rpx; */
+  padding: 80rpx 0;
   border-left: 16rpx solid #bb0611;
-  transform: translate(0,0,0);
-  writing-mode: tb-rl;
+  box-sizing: border-box;
+  /* transform: translate(0,0,0); */
+  /* writing-mode: tb-rl; */
 }
 .allpages_class{
   width: 100%

@@ -2,6 +2,7 @@
     <view>个人中心</view>
     <view style="background:#fff;height:2px;width:150rpx;margin:10rpx auto 10rpx;"></view>
 </view>
+<view style="margin:10rpx 10rpx 0">
 <scroll-view>
   <view class="motify {{prompt==''?'hide':''}}">
     <icon class="i show_type warning" type='warn' size='25' color='#FFF'></icon>
@@ -46,7 +47,7 @@
         </view>
         <view >
           <view class="level"  wx:if='{{member_info.level_name == "VIP订阅会员"}}'>{{member_info.level_name}}</view>
-          <view class="level"  wx:elif='{{member_info.level_name == "普通用户"}}'>普通会员</view>
+          <view class="level"  wx:elif='{{member_info.level_name == "普通会员"}}'>普通会员</view>
         </view>
         <view catchtap='listClick' data-url="/pages/myself/myself">
           <view>{{member_info.point}}</view>
@@ -262,3 +263,4 @@
     </view>
   </view>
 </scroll-view>
+</view>
