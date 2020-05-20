@@ -12,14 +12,12 @@
   background: #ffffff;
 }
 .nickname{
-  width: 96%;
-  margin: 0rpx auto;
-  padding: 30rpx 15rpx;
+  
+  padding: 30rpx 25rpx;
   flex-direction: row;
   display: flex;
   font-size: 25rpx;
   justify-content: space-between;
-  border-bottom: 10rpx solid #dcdddd;
   align-items: center;
   background: #fff
 }
@@ -27,5 +25,8 @@
   margin-top: 0rpx;
 }
 .name{
-  margin-top: 10rpx;
+  margin-top: 8rpx;
+}
+.nickname text:nth-child(1){
+  color: #898989
 }

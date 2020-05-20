@@ -39,7 +39,7 @@
            </scroll-view>
           </view>
           <!-- <view style="height:{{height}}px;background:#dcdddd;width:2%;position:relative;left:100rpx;box-sizing:border-box;float:left"></view> -->
-          <view class="tab-box" style="width:{{windowWidth}}rpx;margin:0 12rpx;">
+          <view class="tab-box" style="width:{{windowWidth}}rpx;margin:0 16rpx 0 12rpx;">
             <!-- <swiper current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{height}}px">        
                   <swiper-item wx:for="{{title_Classification}}" wx:key="index" class="tab-content" item-id="{{item.id}}"> -->
                       <scroll-view   scroll-y style="height:{{height}}px" bindscrolltolower='lower'  bindscroll="scroll">

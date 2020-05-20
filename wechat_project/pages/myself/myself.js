@@ -92,7 +92,13 @@ Page({
   onLoad: function (options) {
     var _this = this;
     _this.getpersonInfo()
-    _this.getaccountinfo()
+    _this.getaccountinfo();
+    _this.setData({
+      username: app.globalData.userInfo.username,
+      headimgurl: app.globalData.userInfo.headimgurl
+    })
+    
+    console.log(app.globalData.userInfo)
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

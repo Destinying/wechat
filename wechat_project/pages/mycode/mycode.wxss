@@ -415,7 +415,7 @@ scroll-view{
   color: #fff;
   font-size: 13px;
   margin-top: 60rpx;
-  width: 210rpx!important;
+  width: 250rpx!important;
 }
 
 .promoter_detail {

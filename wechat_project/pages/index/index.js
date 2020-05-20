@@ -85,6 +85,7 @@ Page({
 lower(event){
   console.log(event)
   var _this = this;
+
   event.index = 1
   var per_page = _this.data.per_page + 1;  //获取当前的页数加1传给后台
   console.log(per_page)
@@ -180,6 +181,7 @@ lower(event){
         title_Classification.splice(15, 1)
         _this.total = res.data.data.total //获取所有数据
         var res_data = res.data.data.data; //20个图片加文字
+        console.log(res_data)
         _this.per_page = res.data.data.per_page //获取当前页面数据数量
         var res_val_arr=[];
         res_data.forEach(function(val,index){
@@ -260,7 +262,7 @@ lower(event){
         this.setData({
           pixelRatio: res.pixelRatio,
           windowHeight: res.windowHeight,
-          windowWidth: 550,
+          windowWidth: 546,
           height:res.windowHeight-60
         })
        
@@ -396,13 +398,14 @@ lower(event){
    */
   onReady: function () {
     // this.queryMultipleNodes();
+    this.getallpages() 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getallpages() 
   },
 
   /**
