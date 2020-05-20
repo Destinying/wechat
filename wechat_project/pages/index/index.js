@@ -106,6 +106,7 @@ lower(event){
     },
     success(res) {
       console.log(res)
+      var count=res.data.count
       //当前页数返回的数据
       _this.result = _this.data.getallpages;
       console.log(_this.result)
@@ -121,7 +122,7 @@ lower(event){
       //算出当前页数      
       // console.log(_this.data.per_page)
       // console.log(resArr_01.length);
-      if (cont.length >= total || res.length < 5) {
+      if (count.length == total || resArr.length <= 5) {
         _this.setData({
           hidden:true,
           hidden_01:false
@@ -133,7 +134,9 @@ lower(event){
         });
        setTimeout(() => {
          _this.setData({
-           getallpages: resArr_01
+           getallpages: resArr_01,
+           hidden: false,
+           hidden_01: true
          });
          wx.hideLoading();
         }, 500)
