@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/shouye/shouye",
+    "pages/index/index",
     "pages/mycode/mycode",
     "pages/footprint/footprint",
     "pages/record_pay/record_pay",
@@ -34,7 +34,7 @@
       },
       {
         "pagePath": "pages/index/index",
-        "text": "列表",
+        "text": "课程",
         "iconPath": "image/list.png",
         "selectedIconPath": "image/list_05_08.png"
       },

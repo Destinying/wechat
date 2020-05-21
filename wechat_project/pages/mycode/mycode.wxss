@@ -154,7 +154,7 @@ scroll-view{
   color: #bb0611;
   text-align: center;
   display: inline-block;
-  font-size: 13px;
+  font-size: 35rpx;
 }
 
 .info-content-bottom text {
