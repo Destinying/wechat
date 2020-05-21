@@ -102,34 +102,36 @@ Page({
           }
           // console.log(out_time)
           // res[index].time = out_time;
+          if(val.status==0){
+            var out_time_02 = app.globalData.public_time(val.add_time);
+            res[index].c = out_time_02
+          }else{
             if (val.id == 3) {
-              //  var out_time = app.globalData.public_time(val.add_time);
-              //  var splice_data=out_time.split("");
-              //  var splice_data_01=parseInt(splice_data[3])+1;
-              //  splice_data.splice(3, 1, "" + splice_data_01 +"").toString();
-              //   console.log(splice_data);
-              //   var a=[];
-              //   var b="";
-              //   splice_data.forEach(function(val,index){
-              //     a.push(val)
-              //     b=a.join("");
-              //   })
-              //   console.log(b);
-              //   _this.data.b=b;
-              //   res[index].b = _this.data.b
               var season_time = 365 * 24 * 60 * 60;
               var out_pay_time = val.add_time + season_time;
               var out_time = app.globalData.public_time(out_pay_time);
               res[index].b = out_time
-            } else if (val.id == 2) {
+            } else {
               var season_time = 90 * 24 * 60 * 60;
               var out_pay_time_season = val.add_time + season_time;
               var out_time_01 = app.globalData.public_time(out_pay_time_season);
               res[index].b = out_time_01
-            }  else {
-              var out_time_02 = app.globalData.public_time(val.add_time);
-              res[index].b = out_time_02
             }
+          }
+            // if (val.id == 3) {
+            //   var season_time = 365 * 24 * 60 * 60;
+            //   var out_pay_time = val.add_time + season_time;
+            //   var out_time = app.globalData.public_time(out_pay_time);
+            //   res[index].b = out_time
+            // } else if (val.id == 2) {
+            //   var season_time = 90 * 24 * 60 * 60;
+            //   var out_pay_time_season = val.add_time + season_time;
+            //   var out_time_01 = app.globalData.public_time(out_pay_time_season);
+            //   res[index].b = out_time_01
+            // }  else {
+            //   var out_time_02 = app.globalData.public_time(val.add_time);
+            //   res[index].c = out_time_02
+            // }
         })
         _this.setData({
           not_out_list: res,

@@ -2,7 +2,7 @@
     <view>个人中心</view>
     <view style="background:#fff;height:2px;width:150rpx;margin:10rpx auto 10rpx;"></view>
 </view>
-<view style="margin:10rpx 10rpx 0">
+<view style="margin:15rpx 15rpx 0">
 <scroll-view>
   <view class="motify {{prompt==''?'hide':''}}">
     <icon class="i show_type warning" type='warn' size='25' color='#FFF'></icon>
@@ -13,7 +13,7 @@
   </block>
 
   <view class='member_top'>
-  <view class='member_head'>
+  <view class='member_head' style="padding-top: 50rpx;">
         <view class="member_info_head">
           <block wx:if='{{integralConfig.sign_integral == 1}}'>
             <view class="span signin {{isSign==1?'yes':'no'}}" catchtap="{{isSign==1?'':'signIn'}}">{{isSign==1?'已签到':'签到'}}</view>
@@ -38,7 +38,7 @@
       
       <view class='info-content-top'>
         <!-- <text catchtap='listClick' data-url="/pages/myself/myself">余额</text> -->
-        <text>{{member_info.nickname}}</text>
+        <text style="color:#{{member_info.level_name == '普通会员'?898989:bb0611}}">{{member_info.nickname}}</text>
         <!-- <text catchtap='listClick' data-url="/pages/myself/myself">积分</text> -->
       </view>
       <view class='info-content-bottom'>
@@ -46,8 +46,8 @@
           <view>{{member_info.balance}}</view>
         </view>
         <view >
-          <view class="level"  wx:if='{{member_info.level_name == "VIP订阅会员"}}'>{{member_info.level_name}}</view>
-          <view class="level"  wx:elif='{{member_info.level_name == "普通会员"}}'>普通会员</view>
+          <view class="level"  wx:if='{{member_info.level_name == "VIP订阅会员"}}'><image src="../../image/vip_member_pic_01.png" style="width:180rpx;" mode="widthFix"></image></view>
+          <view class="level"  wx:elif='{{member_info.level_name == "普通会员"}}'><image src="../../image/putong_member_pic_01.png" style="width:180rpx;" mode="widthFix"></image></view>
         </view>
         <view catchtap='listClick' data-url="/pages/myself/myself">
           <view>{{member_info.point}}</view>
@@ -230,7 +230,7 @@
         </view>
       </block>
       -->
-      <view style="height:2px;background:#dcdddd;width:90%;clear:both;margin: 20rpx 5%;"></view>
+      <view style="height:3rpx;background:#dcdddd;width:90%;clear:both;margin: 20rpx 5%;"></view>
         <view class='li'>
           <view class="a member_list_item" catchtap='listClick' data-url="/pages/record_pay/record_pay">
             <image src="../../image/person_set_center_04.png"></image>

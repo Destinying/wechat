@@ -4,7 +4,7 @@
   margin: 0 auto;
   display: flex;
   align-items: center;
-  border-bottom:10rpx solid #dcdddd;
+  border-bottom:8rpx solid #dcdddd;
   padding: 15rpx 0;
   background: #fff
 }

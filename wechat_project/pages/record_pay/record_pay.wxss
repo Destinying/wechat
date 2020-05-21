@@ -10,7 +10,7 @@
   margin-bottom: 8rpx;
 }
 .record_pay{
-  margin: 0rpx 10rpx 8rpx;
+  margin: 0rpx 15rpx 8rpx;
 }
 .order_sn{
   font-size: 28rpx;
@@ -31,11 +31,11 @@
   color: #898989;
 }
 .pay_status view{
-  background: #dcdddd;
+  background: #bb0611;
   font-size: 25rpx;
   margin-right: 15rpx;
   padding: 30rpx;
 }
 .pay_01{
-  color: #bb0611
+  color: #fff
 }

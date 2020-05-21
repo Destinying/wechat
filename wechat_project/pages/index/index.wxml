@@ -34,7 +34,10 @@
           <view style="position:relative;left:0rpx;top:115rpx;box-sizing:border-box;float:left;">
           <scroll-view scroll-y  class="scroll_class" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}" style="height:{{height}}px">
             <view class="scroll_view_01 {{currentTab == index?'active_01':''}}"  wx:for="{{title_Classification}}" wx:key="index" bindtap="switchNav" data-current="{{index}}" id="{{item.id}}">
-               {{item.name}}
+               <!-- {{item.name}} -->
+               <!-- <view wx:if="{{item.id==0}}">{{item.name}}</view> -->
+               <image  src="{{currentTab == index?item.redimg:item.greyimg}}" style="width:124rpx" mode="widthFix"></image>
+               <view style="width:176rpx;height:1rpx;background:#898989;margin-left:-16rpx;"></view>
             </view>
            </scroll-view>
           </view>

@@ -18,14 +18,14 @@
   background: #fff;
   text-align: center;
   width: 176rpx;
-  border-bottom:3rpx solid #989898;
   /* height: 170rpx; */
-  padding: 80rpx 0;
+  /* padding: 80rpx 0; */
   /* line-height: 170rpx; */
   border-left: 16rpx solid #fff;
   /* transform: rotate(90deg); */
   /* writing-mode: tb-rl; */
   box-sizing: border-box;
+  border-right: 16rpx solid #fff;
   word-break: break-all;
   word-wrap: break-word;
   /* white-space: pre-line; */
@@ -107,11 +107,11 @@ page{
   text-align: center;
   margin: 0rpx;
   width: 176rpx;
-  border-bottom:3rpx solid #dcdddd;
   /* height: 170rpx;
   line-height: 170rpx; */
-  padding: 80rpx 0;
+  /* padding: 80rpx 0; */
   border-left: 16rpx solid #bb0611;
+  border-right:  16rpx solid #898989;
   box-sizing: border-box;
   /* transform: translate(0,0,0); */
   /* writing-mode: tb-rl; */

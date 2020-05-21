@@ -5,7 +5,7 @@
     <view>个人中心</view>
     <view style="background:#fff;height:2px;width:150rpx;margin:10rpx auto 10rpx;"></view>
   </view>
-  <view style="margin-bottom:8rpx;background:#fff;width:100%;padding:20rpx 0;text-align:center;font-size:30rpx;"><text>线下订阅</text></view>
+  <view style="margin-bottom:15rpx;background:#fff;width:100%;padding:20rpx 0;text-align:center;font-size:30rpx;"><text>线下订阅</text></view>
   <view class="form_class">
   <form catchsubmit="formSubmit">
       <view>
@@ -25,7 +25,7 @@
       </button>
 </form>
   </view>
-  <view style="margin:8rpx 10rpx 0;">
+  <view style="margin:15rpx 15rpx 0;">
       <view style="background:#fff;"> 
           <view style="padding:30rpx;font-size:25rpx;color:#898989">
             <view>备注:</view>

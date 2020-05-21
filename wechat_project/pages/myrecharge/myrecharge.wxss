@@ -1,7 +1,6 @@
 /* pages/recharge/recharge.wxss */
 .layout_class{
-  width: 96%;
-  margin: 0 auto
+  margin: 0 15rpx;
 }
 .season_recharge{
   box-shadow: 0px 0px 6px 4px #dcdcdc;
@@ -101,7 +100,7 @@ wx-checkbox .wx-checkbox-input{
   background: #dcdddd
 } */ 
 .not_out_time{
-  margin: 0 10rpx;
+  margin: 0 15rpx;
 }
 .not_add_time_01{
   background: #fff;
@@ -114,16 +113,18 @@ wx-checkbox .wx-checkbox-input{
   justify-content: space-between
 }
 .not_add_time_01:nth-child(1){
-  margin-top: 8rpx;
+  margin-top: 15rpx;
 }
 .pay_status{
-  background: #dcdddd;
+  background: #bb0611;
   font-size: 25rpx;
   margin-right: 15rpx;
   padding: 30rpx;
+  color: #fff
 }
+
 .not_pay_status{
-  color: #bb0611
+  color: #fff;
 }
 .s_num{
   font-size: 28rpx;

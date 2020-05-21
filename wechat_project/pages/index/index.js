@@ -160,6 +160,19 @@ lower(event){
   //   loadMore(this);
   //   console.log("lower");
   // },
+  imageLoad: function (e) {
+
+    var imgwidth = e.detail.width;
+    var imgheight = e.detail.height;
+    var ratio = imgwidth / imgheight;
+    var viewHeight = 750 / ratio;
+    var imgHeight = this.data.imgHeight;
+    //把每一张图片的对应的高度记录到数组里  
+    imgHeight = viewHeight;
+    this.setData({
+      imgHeight: imgHeight
+    })
+  },
   getallpages() {
     var _this = this;
     var value = _this.data.value;
@@ -180,8 +193,8 @@ lower(event){
         title_data.splice(0,0,{id:0,name:"全部课程"}) //分类添加全部
         title_data.splice(3,0, { id: -1, name: "免费课程" })
         var title_Classification = res.data.tag_list; //标签
-        title_Classification.splice(0, 0, { id: 0, name: "所有内容" })
-        title_Classification.splice(15, 1)
+        title_Classification.splice(0, 0, { id: 0, greyimg: "http://cloud.meshmellow.cn/tpl/default/static/Wechatapp/001_01.png", redimg:"http://cloud.meshmellow.cn/tpl/default/static/Wechatapp/001_02.png"})
+        console.log(title_Classification) 
         _this.total = res.data.data.total //获取所有数据
         var res_data = res.data.data.data; //20个图片加文字
         console.log(res_data)
@@ -304,6 +317,7 @@ lower(event){
   switchNav(event){
     //每个tab选项宽度占1/5
     var _this=this;
+    console.log(event)
     var cur = event.currentTarget.dataset.current;
     _this.data.switchNav_01 = event.currentTarget.id;
     var value = _this.data.value;
