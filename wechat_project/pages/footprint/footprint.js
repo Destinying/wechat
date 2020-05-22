@@ -35,7 +35,8 @@ Page({
         _this.setData({
           res:res,
           slide_toggle: _this.data.slide_toggle,
-          data_count:_this.data.data_count
+          data_count:_this.data.data_count,
+          model_img_01: "../../image/null_pic_01.png"
         })
       }
     })
@@ -63,7 +64,14 @@ Page({
   },
   onLoad: function (options) {
     var _this=this;
-    _this.get_footprint()
+    wx.showLoading({ //期间为了显示效果可以添加一个过度的弹出框提示“加载中”  
+      title: '加载中...',
+      icon: 'loading',
+    });
+    setTimeout(() => {
+      _this.get_footprint()
+      wx.hideLoading();
+    }, 1000)
   },
 
   /**

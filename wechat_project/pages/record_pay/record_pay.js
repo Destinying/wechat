@@ -29,14 +29,23 @@ Page({
         console.log(res);
         _this.setData({
           res:res,
-          uesrinfo: uesrinfo
+          uesrinfo: uesrinfo,
+          model_img_01: "../../image/null_pic_01.png"
         })
       }
     })
   },
   onLoad: function (options) {
     var _this=this;
-    _this.record_pay()
+    // _this.record_pay()
+    wx.showLoading({ //期间为了显示效果可以添加一个过度的弹出框提示“加载中”  
+      title: '加载中...',
+      icon: 'loading',
+    });
+    setTimeout(() => {
+      _this.record_pay()
+      wx.hideLoading();
+    }, 1000)
   },
 
   /**

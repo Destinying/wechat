@@ -299,7 +299,7 @@ scroll-view{
 
 .member_list .ul .li .a {
   display: block;
-  max-width: 80px;
+  /* max-width: 80px; */
   margin: 0 auto;
 }
 
@@ -311,7 +311,7 @@ scroll-view{
 }
 
 .member_list .ul .li .a .span {
-  font-size: 12px;
+  font-size: 13px;
   margin-top: 5px;
   display: block;
   padding: 0 5px;

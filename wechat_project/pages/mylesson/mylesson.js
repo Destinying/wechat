@@ -29,7 +29,8 @@ Page({
         _this.data.purchase = res.data.data;
         console.log(_this.data.purchase)
         _this.setData({
-          my_lesson_purchase: _this.data.purchase
+          my_lesson_purchase: _this.data.purchase,
+          model_img_01: "../../image/null_pic_01.png"
         })
       }
     })
@@ -55,8 +56,17 @@ Page({
   },
   onLoad: function (options) {
     var _this=this;
-    _this.get_purchase_list();
-    _this.get_live_list()
+    // _this.get_purchase_list();
+    // _this.get_live_list()
+    wx.showLoading({ //期间为了显示效果可以添加一个过度的弹出框提示“加载中”  
+      title: '加载中...',
+      icon: 'loading',
+    });
+    setTimeout(() => {
+      _this.get_purchase_list();
+      _this.get_live_list()
+      wx.hideLoading();
+    }, 1000)
   },
 
   /**

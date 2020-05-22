@@ -135,6 +135,7 @@ Page({
         })
         _this.setData({
           not_out_list: res,
+          model_img_01:"../../image/null_pic_01.png"
         })
       }
     })
@@ -156,7 +157,15 @@ Page({
     _this.setData({
       out_time: options.out_time
     })
-    _this.get_outdata()
+    // _this.get_outdata()
+    wx.showLoading({ //期间为了显示效果可以添加一个过度的弹出框提示“加载中”  
+      title: '加载中...',
+      icon: 'loading',
+    });
+    setTimeout(() => {
+      _this.get_outdata()
+      wx.hideLoading();
+    }, 1000)
   },
 
   /**
