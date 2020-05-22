@@ -17,13 +17,20 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+  a_go_lesson:function(event){
+    console.log(event)
+    var _this=this;
+    var res=event.currentTarget.dataset.url
+    wx.switchTab({
+      url: res,
+    })
+  },
   getListdata: function () {
     var _this = this;
     wx.request({
       url: 'https://cloud.meshmellow.cn/Wechatapi/AppletIndex',
       success(res){
         var res=res.data;
-       
         _this.setData({
           swiper_img: res.swiper,
           lesson_list: res.tuijian,

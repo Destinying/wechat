@@ -48,6 +48,9 @@
         <view >
           <view class="level"  wx:if='{{member_info.level_name == "VIP订阅会员"}}'><image src="../../image/vip_member_pic_01.png" style="width:180rpx;" mode="widthFix"></image></view>
           <view class="level"  wx:elif='{{member_info.level_name == "普通会员"}}'><image src="../../image/putong_member_pic_01.png" style="width:180rpx;" mode="widthFix"></image></view>
+          <view  wx:if='{{member_info.level_name == "普通会员"}}' bindtap="switch_pay" style="display:block;color:#fff;font-size:28rpx;width:180rpx;background:#bb0611;margin:20rpx auto 0">
+          立即订阅
+          </view>
         </view>
         <view catchtap='listClick' data-url="/pages/myself/myself">
           <view>{{member_info.point}}</view>
