@@ -16,7 +16,7 @@
   padding: 30rpx 25rpx;
   flex-direction: row;
   display: flex;
-  font-size: 25rpx;
+  font-size: 28rpx;
   justify-content: space-between;
   align-items: center;
   background: #fff

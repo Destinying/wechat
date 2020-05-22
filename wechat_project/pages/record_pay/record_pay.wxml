@@ -18,7 +18,7 @@
             <view class="price">价格：￥{{item.price}}</view>
         </view>
         <view class="pay_status">
-            <view wx:if="{{item.status==1}}">已支付</view>
+            <view wx:if="{{item.status==1}}" style="white-space:nowrap;">已支付</view>
             <view wx:else class="pay_01" style="white-space:nowrap;"><navigator hover-class="none" url="../confirmorder/confirmorder?orderid={{item.order_sn}}">去支付</navigator></view>
         </view>
       </view>

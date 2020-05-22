@@ -6,16 +6,16 @@
   border-radius: 8rpx;
   color: rgb(206, 162, 96);
   border: 1px solid rgb(206, 162, 96);
-  padding: 5rpx 12rpx;
-  font-size: 30rpx;
+  padding: 2rpx 12rpx;
+  font-size: 28rpx;
 }
 .layout_class{
-  width: 98%;
-  margin: 0 auto;
+  /* width: 98%; */
+  margin: 0 15rpx;
   padding: 10rpx 0;
 }
 .info_name{
-  margin-left: 30rpx;
+  /* margin-left: 30rpx; */
   font-weight: bold;
   font-size: 30rpx;
 }
@@ -170,8 +170,8 @@
 }
 .active{
   background:#bb0611!important;
-  border-top-left-radius:10rpx;
-  border-top-right-radius: 10rpx;
+  /* border-top-left-radius:10rpx;
+  border-top-right-radius: 10rpx; */
 }
 .canshu_name{
   width: 40%;

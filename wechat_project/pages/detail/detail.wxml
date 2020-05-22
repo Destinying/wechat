@@ -5,9 +5,10 @@
       <view style="background:#fff;width:100%;">
         <view class="layout_class">
             <view>
-              <text class="info_type">{{info.type}}</text>
+              <!-- <text class="info_type">{{info.type}}</text> -->
               <text class="info_name">{{info.name}}</text>
             </view>
+            <view><image src='../../image/jingping_lesson.png' style="width:24rpx;height:24rpx;vertical-align:middle"></image><text style="font-size:24rpx;color:#bb0611;margin-left:10rpx;">精品课程</text></view>
             <view>
               <text class="info_long">{{info.long}}</text>
               <text class="info_video">{{info.video}}</text>
