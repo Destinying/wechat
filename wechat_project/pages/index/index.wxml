@@ -43,14 +43,15 @@
           </view>
           <!-- <view style="height:{{height}}px;background:#dcdddd;width:2%;position:relative;left:100rpx;box-sizing:border-box;float:left"></view> -->
           <view class="tab-box" style="width:{{windowWidth}}rpx;margin:0 15rpx 0 12rpx;">
-            <!-- <swiper current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{height}}px">        
+            <!-- <swiper current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{height}}px">
                   <swiper-item wx:for="{{title_Classification}}" wx:key="index" class="tab-content" item-id="{{item.id}}"> -->
                       <scroll-view   scroll-y style="height:{{height}}px" bindscrolltolower='lower'  bindscroll="scroll">
-                        <view class="container">
+                        <view class="container" wx:if="{{getallpages!=null&&getallpages!=''&&getallpages!=undefined}}">
                             <allpages getallpages="{{getallpages}}" class="allpages_class {{showstate==false?'showstate':''}}" ></allpages>            
                             <view hidden="{{hidden}}" style="color:#898989;font-size:25rpx;">加载中...</view>
                              <view hidden="{{hidden_01}}" style="color:#898989;font-size:25rpx;">我是有底线的...</view>
                         </view>
+                        <view wx:else style="text-align:center;position:absolute;margin-left:-140rpx;left:50%;top:50%;display:flex;align-items:center;margin-top:-130rpx"><image src="../../image/nothing_view.png" style="width:280rpx;" mode="widthFix"></image></view>
                       </scroll-view>
                   <!-- </swiper-item>
                 </swiper> -->
