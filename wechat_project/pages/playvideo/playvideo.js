@@ -112,6 +112,52 @@ Page({
         if(res.data.data.rs==1){
 
         } else if (res.data.data.rs == 5){
+
+
+          wx.showModal({
+            title: '提示',
+            content: '独立付费课程,需要付费购买',
+            showCancel: true,
+            cancelText: '取消',
+            cancelColor:  '#000000',
+            confirmText: '确定',
+            confirmColor: '#3CC51F',
+            success: function (res) {
+
+              if (res.confirm) {
+                  var _pvideoId  = _this.data._pvideoId 
+                  var present_price=_this.data.present_price 
+                  var title= _this.data.title 
+                  wx.request({
+                    url: 'https://cloud.meshmellow.cn/Wechatapi/subscribe.html',
+                    dataType:"json",
+                    method:"POST",
+                    data:{
+                      token: app.globalData.token,
+                      payCode: "nativePay|wxPay",
+                      buyType: 4,
+                      price: present_price,
+                      video_id: _pvideoId,
+                      coursename: title
+                    },
+                    success(res){
+                      console.log(res)
+                    _this.data.orderSn = res.data.data.orderSn
+                    }
+                  })
+                  setTimeout(function () {
+                    wx.navigateTo({
+                      url: '../confirmorder/confirmorder?orderid=' + _this.data.orderSn,
+                    })
+                  }, 2000)
+
+              } else if (res.cancel) {
+                console.log('用户点击取消')
+              }
+            }
+          })
+
+          /*
           wx.showToast({
             title: '独立付费课程,需要付费购买',
             duration: 2000,
@@ -144,6 +190,8 @@ Page({
               }, 2000)
             }
           })
+          */
+
           _this.setData({
             video_list: video_list,
             thumbnail: video_list,
