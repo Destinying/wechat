@@ -73,9 +73,12 @@
                     <view wx:if="{{item.status==1}}" class="s_date">到期日期：{{item.b}}</view>
                     <view wx:else class="s_date">下单日期：{{item.c}}</view>
                 </view>
-                <view class="pay_status">
-                    <view wx:if="{{item.status==1}}">已支付</view>
-                    <view wx:else class="not_pay_status" bindtap="na_go">去支付</view>
+                <view>
+                    <view wx:if="{{item.status==1}}" class="pay_status" style="white-space:nowrap">已支付</view>
+                    <view wx:else class="not_pay_status pay_status" bindtap="na_go" style="white-space:nowrap">去支付</view>
+                </view>
+                <view class="pay_status"  bindtap="delete_list" data-list="{{item.order_sn}}">
+                      <view  class="not_pay_status" style="white-space:nowrap" >删除</view>
                 </view> 
             </view>
         </view>

@@ -33,6 +33,40 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+  delete_list:function(event){
+    var _this=this;
+    console.log(event)
+    wx.showModal({
+      title: '提示',
+      content: '是否删除此订单信息',
+      showCancel: true,
+      cancelText: '取消',
+      cancelColor: '#000000',
+      confirmText: '确定',
+      confirmColor: '#3CC51F',
+      success: function (res) {
+        if (res.confirm) {
+          wx.request({
+            url: 'https://cloud.meshmellow.cn/Wechatapi/del_order',
+            dataType: "json",
+            method: "POST",
+            data: {
+              ordersn: event.currentTarget.dataset.list,
+              token: app.globalData.token
+            },
+            success(res) {
+              wx.nextTick(() => {
+                _this.get_outdata() // 在当前同步流程结束后，下一个时间片执行
+              })
+            }
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  
+  },
   get_checkout: function () {
     var _this = this;
     var checkout_params = true;

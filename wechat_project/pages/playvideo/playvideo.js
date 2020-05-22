@@ -26,7 +26,8 @@ Page({
     _pvideoId:"",
     present_price:"",
     title:"",
-    orderSn:""
+    orderSn:"",
+    resout_time:''
   },
 
   /**
@@ -99,6 +100,34 @@ Page({
     var id = _this.data.id
     var video_list = _this.data.video_list
     video_list="1";
+    if (_this.data.resout_time == "" || _this.data.resout_time == null || _this.data.resout_time ==undefined){
+      wx.showModal({
+        title: '提示',
+        content: '你还没有登录，点击确认立即登录',
+        showCancel: true,
+        cancelText: '取消',
+        cancelColor: '#000000',
+        confirmText: '确定',
+        confirmColor: '#3CC51F',
+        success: function (res) {
+          if (res.confirm) {
+            setTimeout(function () {
+              wx.switchTab({
+                url: '../mycode/mycode',
+              })
+            }, 1000)
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+          _this.setData({
+            enable: false,
+            gesture: false,
+            video_list: video_list,
+            thumbnail: video_list
+          })
+        }
+      })
+    }else{
     wx.request({
       method:"POST",
       url:"https://cloud.meshmellow.cn/wechatapi/payVideo.html",
@@ -202,28 +231,49 @@ Page({
           // console.log(videoCtxPrev)
           // videoCtxPrev.pause();
         }else{
-          wx.showToast({
-            title: '请订阅后再观看课程',
-            duration: 2000,
-            icon:"none",
-            success: function () {
-              setTimeout(function () {
-                wx.switchTab({
-                  url: '../recharge/recharge',
-                })
-              }, 2000)
+          wx.showModal({
+            title: '提示',
+            content: '请订阅后再观看视频',
+            showCancel: true,
+            cancelText: '取消',
+            cancelColor: '#000000',
+            confirmText: '确定',
+            confirmColor: '#3CC51F',
+            success: function (res) {
+              if (res.confirm) {
+                setTimeout(function () {
+                  wx.switchTab({
+                    // url: '../myrecharge/myrecharge?out_time=' + _this.data.resout_time.out_time,
+                    url:"../recharge/recharge"
+                  })
+                }, 1000)
+              } else if (res.cancel) {
+                console.log('用户点击取消')
+              }
             }
           })
-          _this.setData({
-            video_list: video_list,
-            thumbnail: video_list,
-            enable: false,
-            gesture:false
-          })
+            // wx.showToast({
+            //   title: '请订阅后再观看课程',
+            //   duration: 2000,
+            //   icon:"none",
+            //   success: function () {
+            //     setTimeout(function () {
+            //       wx.switchTab({
+            //         url: '../recharge/recharge',
+            //       })
+            //     }, 2000)
+            //   }
+            // })
+            _this.setData({
+              video_list: video_list,
+              thumbnail: video_list,
+              enable: false,
+              gesture:false
+            })
+          }
         }
-      }
     })
-    
+  }
   },
   click_getid:function(event){
     var _this = this;
@@ -285,6 +335,38 @@ Page({
   },
   onLoad: function (options) {
     var _this=this;
+    var video_list = _this.data.video_list
+    video_list = "1";
+     _this.data.resout_time = app.globalData.userInfo
+    console.log(_this.data.resout_time)
+    if (_this.data.resout_time == "" || _this.data.resout_time == null || _this.data.resout_time == undefined) {
+      wx.showModal({
+        title: '提示',
+        content: '你还没有登录，点击确认立即登录',
+        showCancel: true,
+        cancelText: '取消',
+        cancelColor: '#000000',
+        confirmText: '确定',
+        confirmColor: '#3CC51F',
+        success: function (res) {
+          if (res.confirm) {
+            setTimeout(function () {
+              wx.switchTab({
+                url: '../mycode/mycode',
+              })
+            }, 1000)
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+          _this.setData({
+            enable: false,
+            gesture: false,
+            video_list: video_list,
+            thumbnail: video_list
+          })
+        }
+      })
+    }
     _this.play_video
     _this.data.id=options.id;
     // console.log(_this.data.id)
