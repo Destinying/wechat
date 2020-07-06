@@ -42,8 +42,6 @@ App({
     //that.defaultImg();
     that.webSiteInfo();
 
-
-
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -77,7 +75,53 @@ App({
       }
     })
   },
-
+  globalData: {
+    siteBaseUrl: "https://cloud.meshmellow.cn/", //服务器url https://apitest.niuteam.cn/
+    secondDirectory: '', //如网站域名后存在二级目录，填写二级目录  例：'域名/applet/'
+    copyRight: {
+      is_load: 1, //是否加载版权信息 (请求失败后加载此配置)
+      default_logo: '', //版权LOGO图 (请求失败后加载此配置)
+      technical_support: 'Meshmellow School', //版权技术支持 (请求失败后加载此配置)
+    },
+    title: 'Meshmellow school', //title (请求失败后使用的title, 请求成功则使用后台配置title)
+    wx_info: '{}', //用户信息 (无需填写)
+    session_key: '', //小程序参数 (无需填写)
+    openid: '', //小程序用户唯一标识 (无需填写)
+    token: '', //用户标识 (无需填写)
+    sourceid: '', //推广ID (无需填写)
+    is_login: 0, //是否登录 (无需填写)
+    is_logout: 0, //是否退出登录 (无需填写)
+    is_first_bind: 0, //是否第一次绑定会员 (无需填写)
+    defaultImg: {
+      is_use: 0
+    }, //是否使用默认图 (无需填写)
+    webSiteInfo: {}, //基础配置 (无需填写)
+    tab_parm: '', //订单返回参数 (无需填写)
+    tab_type: '', //订单返回类型 (无需填写)
+    login_count: 0, //登录次数 (无需填写)
+    is_login_request: 0, //是否正在进行登录/注册请求 (无需填写)
+    is_yet_login: 0, //是否已经登录
+    current_address: '', //保存当前地址
+    //原有配置
+    userInfo: null,
+    /*
+    header: {
+      "content-type": "application/x-www-form-urlencoded",
+      'Cookie': ''
+    },
+    */
+    public_time: function (res_add_time) {
+      var add_time = new Date(res_add_time * 1000);
+      var Y = add_time.getFullYear();
+      var M = (add_time.getMonth() + 1 < 10 ? '0' + (add_time.getMonth() + 1) : add_time.getMonth() + 1);
+      var D = (add_time.getDate() < 10 ? '0' + add_time.getDate() : add_time.getDate());
+      var H = (add_time.getHours() < 10 ? '0' + add_time.getHours() : add_time.getHours());
+      var min = (add_time.getMinutes() < 10 ? '0' + add_time.getMinutes() : add_time.getMinutes());
+      var S = (add_time.getSeconds() < 10 ? '0' + add_time.getSeconds() : add_time.getSeconds())
+      var res_val = Y + "-" + M + "-" + D + " " + H + ":" + min + ":" + S;
+      return res_val
+    },
+  },
   //app登录
   app_login: function () {
     let that = this;
@@ -91,7 +135,7 @@ App({
     wx.login({
       success: function (res) {
         that.sendRequest({
-          url: "api.php?s=Login/getWechatInfo",
+          url: "wechatapi/getWechatInfo.html",
           data: {
             code: res.code
           },
@@ -142,16 +186,15 @@ App({
     let that = this;
     let openid = that.globalData.openid;
     let wx_info = that.globalData.wx_info;
-    let sourceid = that.globalData.sourceid;
+    let sourceid = that.globalData.sourceid;      //推广员标识
     //防止重复请求登录/注册
     let is_login_request = that.globalData.is_login_request;
     if (is_login_request == 1) {
       return false;
     }
-    console.log(sourceid)
     that.setLoginRequest(1);
     that.sendRequest({
-      url: "api.php?s=login/wechatLogin",
+      url: "wechatapi/wechatLogin.html",
       data: {
         openid: openid,
         wx_info: wx_info,
@@ -224,7 +267,6 @@ App({
     }
 
     if (!param.hideLoading) {
-      
       this.showToast({
         title: 'Loading...',
         icon: 'loading',
@@ -276,7 +318,7 @@ App({
             showCancel: false,
             success: function (res) {
               wx.reLaunch({
-                url: '/pages/mine/mine',
+                url: '/pages/mycode/mycode',
               })
             }
           });
@@ -290,7 +332,7 @@ App({
         } else if (code == -20) {
           //越权行为
           wx.switchTab({
-            url: '/pages/mine/mine',
+            url: '/pages/mycode/mycode',
           })
         } else if (code == -10) {
           //数据异常
@@ -430,6 +472,7 @@ App({
       wx_info.unionid = default_wx_info.unionid;
     }
     this.globalData.wx_info = JSON.stringify(wx_info);
+    //console.log(this.globalData);
   },
 
   setToken: function (token) {
@@ -483,7 +526,7 @@ App({
     let that = this;
 
     that.sendRequest({
-      url: "wechatapi/getWechatInfo.html",
+      url: "wechatapi/getWebSiteInfo.html",
       data: {},
       success: function (res) {
         let code = res.code;
@@ -492,9 +535,11 @@ App({
           that.globalData.webSiteInfo = data;
           if (data.title != '' && data.title != undefined) {
             that.globalData.title = data.title;
+            /*
             wx.setNavigationBarTitle({
               title: data.title,
             })
+            */
           }
         }
         //console.log(res);
@@ -599,7 +644,7 @@ App({
     that.globalData.current_address = '';
     that.globalData.is_yet_login = 0;
     wx.reLaunch({
-      url: '/pagesother/pages/login/login/login',
+      url: '/pages/mycode/mycode',
     })
   },
 

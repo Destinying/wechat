@@ -1,0 +1,117 @@
+{
+  "img": "https://cloud.meshmellow.cn/tpl/default/static/live/img/dog_god_04_10_img_01.jpg",
+  "video": "http://video.meshmellow.cn/cloud/uploads/video/manager/20200409/ETXRrSnRmPP7k4rR2bAZkmkyhHaA46Yn.mp4",
+  "info": {
+    "type": "精品",
+    "name": "走进次世代游戏教学之《 犬神游戏角色概念设计课程 》",
+    "long": "总时长 750分钟",
+    "video": "课程视频 15个"
+  },
+  "money": {
+    "yuanjia": "原价",
+    "yuanmoney": "￥199 元",
+    "yushou": "预售价",
+    "money": "￥129 元",
+    "time": "预售时间：即日起"
+  },
+  "erweima": {
+    "name": "欢迎扫码QQ、微信咨询交流",
+    "qq": "https://cloud.meshmellow.cn/tpl/default/static/live/img/QQ_king_img.jpg?a=1",
+    "weixin": "https://cloud.meshmellow.cn/tpl/default/static/live/img/wechat_king_img.jpg",
+    "detail1": "任课老师将解答详情",
+    "detail2": "（此二维码长期有效）"
+  },
+  "intro": {
+    "one": {
+      "name": "课程介绍",
+      "enname": "INTRODUCTION",
+      "describe": {
+        "1": "走进次世代游戏教学之《 犬神游戏角色概念设计课程 》",
+        "2": "Meshmellow School 邀你一起弯道超车！",
+        "3": "足不出户磨练技术！",
+        "4": "待到山花烂漫时，你就可以笑傲江湖啦！",
+        "5": "我们致力于。",
+        "6":"培养专业化的设计思维方式",
+        "7": "确立专业化的原画设计理念",
+        "8": "上课期间你将获得",
+        "9": "1.老师在线实时互动 & 疑问解答",
+        "10": "2.个性化教学 & 作业点评",
+        "11": "2.个性化教学 & 作业点评",
+        "12": "3.课程交流群 & 素材经验分享",
+        "13": "我们的课程宗旨是通过各环节的教学学习,",
+        "14": "能逐个解决你们在原画设计的难点",
+        "15": "由浅入深,",
+        "16": "由常用技法到特殊技法的逐步过渡",
+        "17": "来完成原画设计的学习。",
+        "18": "咱花小钱学大本领",
+        "19": "在家实现弯道超车"
+     }
+    },
+    "two": {
+      "name": "课程特色",
+      "enname": "FEATURES",
+      "describe": {
+        "img2": "https://cloud.meshmellow.cn/tpl/default/static/live/img/dog_god_04_09_img_02.png"
+      }
+    }
+  },
+  "canshu": {
+    "1": {
+      "name": "项目",
+      "describe": "详细说明"
+    },
+    "2": {
+      "name": "课程名称",
+      "describe": "走进次世代游戏教学之《 犬神游戏角色概念设计课程 》"
+    },
+    "3": {
+      "name": "作者",
+      "describe": "俏态制造局"
+    },
+    "4": {
+      "name": "包含内容",
+      "describe": "高清视频+QQ微信群答疑"
+    },
+    "5": {
+      "name": "课时数",
+      "describe": "共约750分钟，15课时"
+    },
+    "6": {
+      "name": "使用软件",
+      "describe": "Photoshop"
+    },
+    "7": {
+      "name": "系统支持",
+      "describe": "不限系统"
+    },
+    "8": {
+      "name": "适合学员",
+      "describe": "所有感兴趣学员"
+    }
+  },
+  "dibu": {
+    "img1": {
+      "img": "https://cloud.meshmellow.cn/tpl/default/static/live/img/gif_dog_animation_02.jpg"
+    },
+    "info": "asdasdasdasd", 
+        "img2": {
+            "qq": {
+              "img": "https://cloud.meshmellow.cn/tpl/default/static/live/img/QQ_king_img.jpg?a=1",
+              "name": "QQ"
+            },
+            "weixin": {
+              "img": "https://cloud.meshmellow.cn/tpl/default/static/live/img/wechat_king_img.jpg",
+              "name": "微信"
+            }
+        },
+    "describe": {
+      "one": "欢迎扫码QQ、微信咨询交流",
+      "two": "任课老师将解答详情",
+      "three": "（此二维码长期有效）"
+    }
+  },
+  "buy": {
+    "money": "￥ 198元",
+    "name": "立即购买"
+  }
+}

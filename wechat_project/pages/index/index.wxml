@@ -2,17 +2,18 @@
 
 <view style="height:100%">
   
-    <view class="title_lay">
-      <view class="fenlei_layout">
-          <text>分类：</text>
+    <view class="title_lay lay_new">
+      <view class="fenlei_layout" style="margin-left: 2%;">
+          <!-- <text>分类：</text> -->
           <view class="fenlei">
             <view  class="title_data {{currentTab_01 == item.id?'active':''}}" wx:for="{{title_data}}" wx:key="index" bindtap="clicktitle" id="{{item.id}}">
                   {{item.name}}
             </view>
           </view>
       </view>
-  
-      <view  class="flex_view">
+      <view style="background:#bb0611;height:6rpx;width:100%;"></view>
+    </view>
+      <!-- <view  class="flex_view" style="margin-left: 2%;">
       <text style="display:block">标签：</text>
       <view class="title_inline">
           <scroll-view scroll-x  class="scroll_class" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
@@ -21,21 +22,39 @@
             </view>
           </scroll-view>
       </view>
+      </view> -->
+      <view>
+          <!-- <view  class="flex_view">
+                <scroll-view scroll-x  class="scroll_class" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+                  <view class="scroll_view {{currentTab == index?'active':''}}" wx:for="{{title_Classification}}" wx:key="index" bindtap="switchNav" data-current="{{index}}" id="{{item.id}}">
+                        {{item.name}}
+                  </view>
+                </scroll-view>
+          </view> -->
+          <view style="position:relative;left:0rpx;top:115rpx;box-sizing:border-box;float:left;">
+          <scroll-view scroll-y  class="scroll_class" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}" style="height:{{height}}px">
+            <view class="scroll_view_01 {{currentTab == index?'active_01':''}}"  wx:for="{{title_Classification}}" wx:key="index" bindtap="switchNav" data-current="{{index}}" id="{{item.id}}">
+               <!-- {{item.name}} -->
+               <!-- <view wx:if="{{item.id==0}}">{{item.name}}</view> -->
+               <image  src="{{currentTab == index?item.redimg:item.greyimg}}" style="width:124rpx;vertical-align:middle" mode="widthFix"></image>
+               <view style="width:176rpx;height:1rpx;background:#898989;margin-left:-16rpx;"></view>
+            </view>
+           </scroll-view>
+          </view>
+          <!-- <view style="height:{{height}}px;background:#dcdddd;width:2%;position:relative;left:100rpx;box-sizing:border-box;float:left"></view> -->
+          <view class="tab-box" style="width:{{windowWidth}}rpx;margin:0 15rpx 0 12rpx;">
+            <!-- <swiper current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{height}}px">
+                  <swiper-item wx:for="{{title_Classification}}" wx:key="index" class="tab-content" item-id="{{item.id}}"> -->
+                      <scroll-view   scroll-y style="height:{{height}}px" bindscrolltolower='lower'  bindscroll="scroll">
+                        <view class="container" wx:if="{{getallpages!=null&&getallpages!=''&&getallpages!=undefined}}">
+                            <allpages getallpages="{{getallpages}}" class="allpages_class {{showstate==false?'showstate':''}}" ></allpages>            
+                            <view hidden="{{hidden}}" style="color:#898989;font-size:25rpx;">加载中...</view>
+                             <view hidden="{{hidden_01}}" style="color:#898989;font-size:25rpx;">我是有底线的...</view>
+                        </view>
+                        <view wx:else style="text-align:center;position:absolute;margin-left:-140rpx;left:50%;top:50%;display:flex;align-items:center;margin-top:-130rpx"><image src="../../image/nothing_view.png" style="width:280rpx;" mode="widthFix"></image></view>
+                      </scroll-view>
+                  <!-- </swiper-item>
+                </swiper> -->
+          </view>
       </view>
-  </view>
-  <!-- <view class="container">
-    <allpages getallpages="{{getallpages}}"></allpages>
-  </view> -->
-  
-
-   <swiper class="tab-box" current="{{currentTab}}" duration="300" bindchange="switchTab" >        
-        <swiper-item wx:for="{{title_Classification}}" wx:key="index" class="tab-content" item-id="{{item.id}}">
-            <scroll-view scroll-y style="height:{{height}}px" bindscrolltolower='lower'>
-            
-              <view class="container">
-                  <allpages getallpages="{{getallpages}}" class="allpages_class {{showstate==false?'showstate':''}}" ></allpages>    
-              </view>
-            </scroll-view>
-        </swiper-item>
-    </swiper>
 </view>

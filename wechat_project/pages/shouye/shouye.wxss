@@ -1,0 +1,101 @@
+/* pages/shouye/shouye.wxss */
+.swiper_img{
+  width: 100%;
+  height: 100%;
+}
+.lesson_tuijian{
+  text-align: center;
+  font-size: 35rpx;
+  font-weight: bold;
+  background: #bb0611;
+  color: #fff;
+  padding: 20rpx 0;
+  letter-spacing: 5rpx
+}
+
+.font_border{
+  background: #fff;
+  height: 2px;
+  width: 150rpx;
+  margin: 10rpx auto 10rpx;
+}
+.lesson_detail{
+  width: 100%;
+  margin: 0 auto 30rpx;
+}
+.lesson_detail image{
+  width: 100%;
+  height: 100%
+}
+.title_style{
+  font-size: 32rpx;
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  font-weight: bold;
+  justify-content: space-between;
+}
+.title_style_02{
+  color: #000000;
+  text-decoration: line-through;
+  margin-right: 20rpx;
+  text-decoration-color: #ea5432;
+}
+.title_style_03{
+  color: #fff;
+  background: #bb0611;
+  padding: 0 10rpx;
+}
+.title_style_01{
+  font-size: 28rpx;
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  font-weight: bold;
+}
+.layout_class{
+  padding: 0% 0 0% 4%;
+  border-left: 15rpx solid #bb0611;
+  width: 90%;
+  margin: 20rpx 0;
+}
+.all_back{
+  background: #f7f8f8;
+  margin-bottom: 30rpx;
+  padding-bottom: 10rpx;
+}
+.describe{
+  color: #898989;
+  font-weight: 400;
+  font-size: 25rpx;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+.online_class{
+  background: #f7f8f8;
+  margin: 0rpx 0 30rpx;
+  padding-bottom: 30rpx;
+}
+.online_title{
+  font-size: 32rpx;
+  color:#000;
+  font-weight:bold;
+  
+  margin-top: 20rpx;
+}
+.online_par{
+  font-size: 25rpx;
+  padding: 10rpx 0 0rpx 0;
+  color: #898989
+}
+.add_border_class{
+  border-left: 15rpx solid #bb0611;
+  padding: 0% 0 0% 4%;
+  width: 90%
+}
+.subscribe{
+  font-size: 30rpx;
+  color: #bb0611;
+  font-weight: bold;
+  padding: 10rpx 0 0 0;
+}

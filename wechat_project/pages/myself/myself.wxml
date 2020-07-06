@@ -1,0 +1,81 @@
+<!--pages/myself/myself.wxml-->
+<view>
+ <view style="background:#b90611;padding: 20rpx 0;font-size: 35rpx;text-align: center;font-weight: bold;letter-spacing:5rpx;color:#fff">
+    <view>个人中心</view>
+    <view style="background:#fff;height:2px;width:150rpx;margin:10rpx auto 10rpx;"></view>
+  </view>
+  <view style="background:#fff;width:100%;padding:20rpx 0;text-align:center;font-size:30rpx;"><text>个人设置</text></view>
+  <view style="margin:0 15rpx;">
+      <view class="back_style name">
+         <view style="display:flex;flex:row;align-items:center">
+            <view style="padding:20rpx">
+            <image src="{{headimgurl}}"  style="width:120rpx;border-radius: 50%;"  mode="widthFix"></image>
+            </view>
+            <view style="margin-left:10rpx;color:#898989;font-size:28rpx;">微信昵称：{{username}}</view>
+         </view>
+         <view style="background:#fff;">
+          <view style="margin:0rpx 15rpx;height:3rpx;background:#dcdddd"></view>
+          </view>
+      </view>
+          <view class="nickname">
+              <text>昵称：</text>
+              <text>{{nickname}}</text>
+          </view>
+          <view style="background:#fff;">
+          <view style="margin:0rpx 15rpx;height:3rpx;background:#dcdddd"></view>
+          </view>
+          <view class="nickname">
+              <text>性别：</text>
+              <text>{{sex}}</text>
+          </view>
+          <view>
+          <view style="background:#fff;">
+          <view style="margin:0rpx 15rpx;height:3rpx;background:#dcdddd"></view>
+          </view>
+          </view>
+          <view class="nickname">
+              <text>会员类型：</text>
+              <text>{{isVip}}</text>
+          </view>
+           <view style="background:#fff;">
+          <view style="margin:0rpx 15rpx;height:3rpx;background:#dcdddd"></view>
+          </view>
+          <view class="nickname">
+              <text>会员日期：</text>
+              <text>{{out_time}}</text>
+          </view>
+          
+          <view class="nickname name">
+              <text>真实姓名：</text>
+              <text>{{realname}}</text>
+          </view>
+          <view style="background:#fff;">
+          <view style="margin:0rpx 15rpx;height:3rpx;background:#dcdddd"></view>
+          </view>
+          <view class="nickname">
+              <text>出生年月：</text>
+              <text>{{birth}}</text>
+          </view>
+          <view style="background:#fff;">
+          <view style="margin:0rpx 15rpx;height:3rpx;background:#dcdddd"></view>
+          </view>
+          <view class="nickname">
+              <text>所在学校：</text>
+              <text>{{graduateschool}}</text>
+          </view>
+          <view style="background:#fff;">
+          <view style="margin:0rpx 15rpx;height:3rpx;background:#dcdddd"></view>
+          </view>
+          <view class="nickname">
+              <text>联系方式：</text>
+              <text>{{mobile}}</text>
+          </view>
+          <view style="background:#fff;">
+          <view style="margin:0rpx 15rpx;height:3rpx;background:#dcdddd"></view>
+          </view>
+          <view class="nickname">
+              <text>联系邮箱：</text>
+              <text>{{email}}</text>
+          </view>
+      </view>
+</view>

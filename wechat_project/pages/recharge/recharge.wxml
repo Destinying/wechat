@@ -1,0 +1,64 @@
+<!--pages/recharge/recharge.wxml-->
+<view class="global_style">
+  <view class="member_subscription">
+    <view>会员订阅</view>
+    <view></view>
+  </view>
+    <view class="layout_class">
+        <view class="member"></view>
+          <view class="season_recharge">
+            <view class="season_par_class_01" bindtap="get_checkout">
+                <view class="season_par_class_02">
+                  <view class="ma">
+                  <text>季度订阅</text>
+                  <text>￥</text>
+                  <text>199.00/VIP  90天</text>
+                  </view>
+                  <view class="season_par_class ma_01">
+                      <view>1. 普通会员基本权益 </view>
+                      <view>2. 免费观看所有教程 </view>
+                      <view>（不含翻译字幕版全球艺术家教程， 为期3个月，期满需续订， 退订则仅享普通会员</view>
+                  </view>
+                </view>
+                <view class="radio_class ma">
+                    <checkbox-group>
+                        <checkbox color="#fff" checked="{{checkout_params}}" value="{{obj_season}}" ></checkbox>
+                    </checkbox-group>
+                </view>
+            </view>
+          </view>
+          <view class="season_recharge">
+            <view class="season_par_class_01" bindtap="get_checkout_year">
+                <view class="season_par_class_02">
+                  <view class="ma">
+                  <text>年度订阅</text>
+                  <text>￥</text>
+                  <text>599.00/VIP  365天</text>
+                  </view>
+                  <view class="season_par_class ma_01">
+                      <view>1. 普通会员基本权益 </view>
+                      <view>2. 免费观看所有教程 </view>
+                      <view>（为期12个月，期满需续订， 退订则仅享普通会员基本权益）</view>
+                  </view>
+                </view>
+                <view class="radio_class ma">
+                    <checkbox-group>
+                        <checkbox color="#fff" checked="{{checkout_params_year}}" value="{{obj_year}}" ></checkbox>
+                    </checkbox-group>
+                </view>
+            </view>
+          </view>
+    </view>
+    <view class="fix_pos">
+        <view class="pay_dis">
+            <view>
+              <text>合计</text>
+              <text>￥</text>
+              <text>{{price}}</text>
+            </view>
+            <view class="pay_now" bindtap="liji_pay">
+                立即购买
+            </view>
+        </view>
+    </view>
+</view>

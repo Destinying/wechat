@@ -1,1 +1,132 @@
 /* pages/playvideo/playvideo.wxss */
+@import '../../alibaba/alibaba.wxss';
+
+.page_title_class{
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333
+}
+.width_layout{
+  width: 96%;
+  margin: 0 auto
+}
+.play_count{
+  font-size: 24rpx;
+  margin-left: 10rpx;
+  color: #898989
+}
+.icon-buoumaotubiao24{
+  margin-left: 30rpx;
+}
+.time_class{
+  font-size: 24rpx;
+  margin-left: 10rpx;
+  color: #898989
+}
+.iconfont{
+  font-size: 24rpx;
+  color: #898989
+}
+.gery_class{
+  width: 100%;
+  height: 10rpx;
+  background: #bb0611;
+}
+.nav{
+  width:100%;
+  height:100rpx;
+  display:flex;
+  flex-direction:row;
+  }
+.bottom_class{
+  /* border-bottom: 2px solid gainsboro; */
+}
+.default{
+  line-height:100rpx;
+  text-align:center;
+  flex:1;
+  border-right:1px solid gainsboro;
+  color:#000;
+  font-weight:bold;
+  font-size:30rpx;
+  background: #fff
+}
+.red{
+  line-height:100rpx;
+  text-align:center;
+  color:#fff;
+  background: #bb0611;
+  flex:1;
+  font-weight:bold;
+  font-size:30rpx;
+}
+.show{
+  display:block;
+}
+.hidden{
+  display:none;
+  text-align:center;
+}
+.lesson_class{
+  margin: 15rpx 15rpx 0;
+}
+.set_video_class{
+  width: 40%;
+  height: 180rpx;
+}
+.set_lesson_image{
+  width: 100%;
+  height: 100%;
+}
+.layout_sele{
+  background: #fff;
+  flex-direction:row;
+  width: 100%;
+  margin: 0rpx 0 8rpx 0;
+  display: flex;
+  align-items: center;
+  /* padding: 10rpx; */
+}
+.layout_sele_text{
+  width: 56%;
+  margin: 0 2%;
+  display: -webkit-box;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  color: #333;
+  font-size: 24rpx;
+}
+.layout_sele_text view{
+  margin: 10rpx 10rpx 10rpx 10rpx;
+}
+.layout_sele_text view text{
+  margin: 0 5rpx
+}
+.layout_sele_text view text:nth-child(3){
+  margin-left: 30rpx
+}
+.layout_sele_text view:nth-child(1){
+  font-weight: bold;
+  font-size: 30rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+}
+.layout_sele_text view text:nth-child(1){
+  margin: 0 5rpx 0 0
+}
+.no_lesson{
+  text-align: center;
+  font-size: 30rpx;
+  color: #898989;
+  opacity: 0.8;
+  margin-top: 20rpx;
+}

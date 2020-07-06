@@ -1,26 +1,48 @@
 {
   "pages": [
+    "pages/shouye/shouye",
     "pages/index/index",
+    "pages/mycode/mycode",
+    "pages/footprint/footprint",
+    "pages/record_pay/record_pay",
+    "pages/myrecharge/myrecharge",
+    "pages/mylesson/mylesson",
+    "pages/recharge/recharge",
+    "pages/confirmorder/confirmorder",
+    "pages/myself/myself",
+    "pages/detail/detail",
     "pages/playvideo/playvideo",
     "pages/allpages/allpages",
-    "pages/mycode/mycode",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/offline/offline"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "Meshmellow",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "red",
-    "selectedColor": "#d81e06",
+    "color": "#000",
+    "selectedColor": "#bb0611",
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/shouye/shouye",
         "text": "首页",
         "iconPath": "image/select_shouye.png",
-        "selectedIconPath": "image/shouye_origin.png"
+        "selectedIconPath": "image/shouye_05_08.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "课程",
+        "iconPath": "image/list.png",
+        "selectedIconPath": "image/list_05_08.png"
+      },
+      {
+        "pagePath": "pages/recharge/recharge",
+        "text": "订阅",
+        "iconPath": "image/dingyue.png",
+        "selectedIconPath": "image/dingyue_05_08.png"
       },
       {
         "pagePath": "pages/mycode/mycode",
@@ -38,7 +60,7 @@
         "pagePath": "pages/mycode/mycode",
         "text": "我的",
         "iconPath": "image/mycode_origin.png",
-        "selectedIconPath": "image/select_mycode.png"
+        "selectedIconPath": "image/wode_05_08.png"
       }
     ]
   },

@@ -1,0 +1,233 @@
+/* pages/detail/detail.wxss */
+.video_class{
+  width: 100%;
+}
+.info_type{
+  border-radius: 8rpx;
+  color: rgb(206, 162, 96);
+  border: 1px solid rgb(206, 162, 96);
+  padding: 2rpx 12rpx;
+  font-size: 28rpx;
+}
+.layout_class{
+  /* width: 98%; */
+  margin: 0 15rpx;
+  padding: 10rpx 0;
+}
+.info_name{
+  /* margin-left: 30rpx; */
+  font-weight: bold;
+  font-size: 30rpx;
+}
+.info_long{
+  color: #898989;
+  font-size: 24rpx;
+}
+.info_video{
+  color: #898989;
+  font-size: 24rpx;
+  margin-left: 30rpx
+}
+.border_class{
+  height: 1px;
+  width: 98%;
+  margin: 0 auto;
+  background:rgb(242, 242, 242);
+  margin-top: 20rpx;
+}
+.layout_class_01{
+  margin-top: 10rpx
+}
+.yuanjia{
+  font-size: 24rpx;
+  color: #898989;
+}
+.yuanmoney{
+  font-size: 35rpx;
+  text-decoration: line-through;
+  color: #bb0611;
+  margin-left: 40rpx;
+}
+.yushou{
+  font-size: 24rpx;
+  color: #898989;
+}
+.money{
+  font-size: 35rpx;
+  color: #bb0611;
+  margin-left:40rpx;
+}
+.time{
+  font-size: 24rpx;
+  color: #898989;
+}
+.flex_class{
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+.hot_sail{
+  background: #bb0611;
+  color: #fff;
+  padding: 15rpx 25rpx;
+  margin-right: 30rpx;
+  border-radius: 5rpx;
+  font-size: 24rpx;
+}
+.flex_price{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.yuanjia text{
+  opacity: 0
+}
+.erweima_name{
+  text-align: center;
+  font-size: 24rpx;
+  margin-top: 10rpx;
+  padding-top: 15rpx;
+}
+.erweima_img image{
+  width: 300rpx;
+  height: 300rpx;
+  margin: 0 30rpx;
+}
+.erweima_img{
+  text-align: center;
+  margin-top: 30rpx;
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  font-size: 24rpx;
+}
+.erweima_detail{
+  text-align: center;
+  font-size: 24rpx;
+  margin-top: 30rpx;
+}
+.lesson_introduction{
+  border-left: 10rpx solid #bb0611;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  font-size: 30rpx;
+  padding-left: 15rpx;
+}
+.intro_one{
+  font-size: 40rpx;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 30rpx;
+}
+.intro_enname{
+  font-size: 24rpx;
+  margin-top: 20rpx;
+  text-align: center
+}
+.intro_two{
+  font-weight: bold
+}
+.describe_item{
+  font-size: 24rpx;
+  margin-top: 20rpx;
+  text-align: center
+}
+.intro_img_two{
+  text-align: center;
+  margin-top: 30rpx;
+}
+.menu_title{
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-bottom:20rpx;
+}
+.layout_class_other{
+  width: 85%;
+  margin: 30rpx auto 30rpx;
+}
+.menu_pargroup{
+  font-size: 24rpx;
+  width: 80%;
+  margin: 0 auto 10rpx;
+}
+.lesson_params{
+  width: 85%;
+  margin: 0 auto;
+}
+.canshu_01{
+  color: #000;
+  display: flex;
+  flex-direction: row;
+  font-size: 24rpx;
+  border-top:2px solid #fff;
+  align-content: center;
+}
+.canshu_class{
+  background: #dcdddd
+}
+.active{
+  background:#bb0611!important;
+  /* border-top-left-radius:10rpx;
+  border-top-right-radius: 10rpx; */
+}
+.canshu_name{
+  width: 40%;
+  text-align: center;
+  border-right: 2px solid #fff;
+  padding:20rpx 0;
+
+}
+.canshu_describe{
+  width: 60%;
+  text-align: center;
+  padding: 20rpx 0;
+
+}
+.canshu_01:nth-child(1){
+  border-top:none;
+  margin-top: 30rpx;
+}
+.dibu{
+  width:85%;
+  margin: 30rpx auto;
+  text-align: center
+}
+.fix_pos{
+  position: fixed;
+  bottom: 0;
+  border-top: 1px solid #d9d9d9;
+  width: 100%;
+}
+.pay_now{
+  width: 50%;
+  background: #bb0611;
+  color: #fff;
+  text-align: center;
+  font-size: 35rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+}
+.pay_dis{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff
+} 
+.pay_dis view text{
+  color:#bb0611;
+  font-size: 35rpx;
+}
+.pay_dis>view{
+  margin-left: 20rpx;
+}
+.pay_dis view text:nth-child(2){
+  font-size: 25rpx;
+  margin-left: 30rpx;
+}
+.pay_dis view text:nth-child(3){
+  margin-left: 10rpx;
+}

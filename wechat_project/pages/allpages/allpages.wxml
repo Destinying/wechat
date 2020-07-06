@@ -1,12 +1,25 @@
+<wxs src="../../utils/filter_time.wxs" module="filter"></wxs>
 <navigator url = "../playvideo/playvideo?id={{item.id}}" hover-class="none" wx:for="{{getallpages}}" wx:key="index">
   <view class="all_pages" >
       <view class="layout_img">
-        <image src='{{item.thumbnail}}' class="all_pages_img"></image>
+        <image src='{{item.thumbnail}}' class="all_pages_img" mode="widthFix"></image>
       </view>
       <view class="layout_text">
         <text>{{item.title}}</text>
-        <text>销售价：￥{{item.present_price}}</text>
-        <text>更新时间：{{item.res_name}}</text>
+        <view wx:if="{{item.class==103}}" style="font-size:20rpx;display:flex;flex:row;align-items:center">
+          <view><image src='../../image/shoujia_05_15.png' style="width:24rpx;height:24rpx;vertical-align:middle"></image><text>￥{{item.present_price}}</text></view>
+          <view style="margin-left:20rpx;"><image src='../../image/jingping_lesson.png' style="width:24rpx;height:24rpx;vertical-align:middle"></image><text>精品课程</text></view>
+        </view>
+        <view wx:else>
+          <view wx:if="{{item.gold!=0}}" style="font-size:20rpx;display:flex;flex:row;align-items:center">
+            <view><image src='../../image/shoujia_05_15.png' style="width:24rpx;height:24rpx;vertical-align:middle"></image><text>订阅课程</text></view>
+            <view style="margin-left:20rpx;"><image src='../../image/member_05_15.png' style="width:24rpx;height:24rpx;vertical-align:middle"></image><text>会员免费</text></view>
+          </view>
+          <view wx:else>
+            <view><image src='../../image/free_lesson_05_15.png' style="width:24rpx;height:24rpx;vertical-align:middle"></image><text>免费课程</text></view>
+          </view>
+        </view>
+        <text>更新时间：{{filter.time_change(item.update_time)}}</text>
       </view>
   </view>
 </navigator>

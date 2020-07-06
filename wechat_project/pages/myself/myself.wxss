@@ -1,0 +1,32 @@
+/* pages/myself/myself.wxss */
+.mount_info{
+  width: 90%;
+  margin: 10rpx 15rpx;
+  border-left: 10rpx solid #b90611;
+  font-size: 30rpx;
+  padding: 5rpx 0 5rpx 15rpx;
+  background: #ffffff
+}
+.back_style{
+  padding: 15rpx 0; 
+  background: #ffffff;
+}
+.nickname{
+  
+  padding: 30rpx 25rpx;
+  flex-direction: row;
+  display: flex;
+  font-size: 28rpx;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff
+}
+.realname{
+  margin-top: 0rpx;
+}
+.name{
+  margin-top:15rpx;
+}
+.nickname text:nth-child(1){
+  color: #898989
+}

@@ -1,0 +1,41 @@
+/* pages/record_pay/record_pay.wxss */
+.record_pay_class{
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  width: 100%;
+  padding: 10rpx 0;
+  justify-content: space-between;
+  margin-bottom: 8rpx;
+}
+.record_pay{
+  margin: 0rpx 15rpx 8rpx;
+}
+.order_sn{
+  font-size: 28rpx;
+}
+.uesrinfo{
+  font-size: 25rpx;
+  color: #898989;
+  margin-bottom: 5rpx;
+  margin-top: 5rpx;
+}
+.add_time{
+  font-size: 25rpx;
+  color: #898989;
+  margin-bottom: 5rpx;
+}
+.price{
+  font-size: 25rpx;
+  color: #898989;
+}
+.pay_status view{
+  background: #bb0611;
+  font-size: 25rpx;
+  margin-right: 15rpx;
+  padding: 30rpx;
+}
+.pay_01{
+  color: #fff
+}

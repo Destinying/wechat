@@ -1,7 +1,58 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+var loadMore=function(event){
+  var _this=this;
+  _this.setData({
+    hidden: false
+  });
+  wx.request({
+    header: getApp().globalData.header,
+    url: 'https://cloud.meshmellow.cn/wechatapi/course_lists.html',
+    data: {
+      page: per_page,
+      cid: value,
+      tag_id: switchNav,
+      header: getApp().globalData.header,
+    },
+    success(res) {
+      console.log(res)
+      //当前页数返回的数据
+      _this.result = _this.data.getallpages;
+      console.log(_this.result)
+      var resArr = [];
+      var resArr_01 = [];
+      resArr = res.data.data.data;  //存的现在最新的20个数据
+      // console.log(resArr)
+      var total = res.data.data.total; //页面数据总数量
+      resArr_01 = _this.result.concat(resArr);
+      var cont = resArr_01;
+      _this.data.per_page = res.data.data.current_page;
+      //算出当前页数      
+      // console.log(_this.data.per_page)
+      // console.log(resArr_01.length);
+      // if (cont.length >= total) {
+      //   wx.showToast({ //如果全部加载完成了也弹一个框
+      //     title: '我也是有底线的~',
+      //     icon: 'none',
+      //     duration: 1000,
+      //   });
+      //   return false;
+      // } else {
+      //   wx.showLoading({ //期间为了显示效果可以添加一个过度的弹出框提示“加载中”  
+      //     title: '加载中5555',
+      //     icon: 'loading',
+      //   });
+      //   // setTimeout(() => {
+      _this.setData({
+        getallpages: resArr_01
+      });
+      //   wx.hideLoading();
+      //   // }, 1500)
+      // }
+    }
+  })
+}
 Page({ 
   /**
    * 页面的初始数据
@@ -27,73 +78,99 @@ Page({
    per_page:1,
    cont:'',
    result:[],
-   dif_title:[]
+   dif_title:[],
+    hidden_01:true,
+    hidden:false
   },
-  lower(event){
-    var _this=this;
-    event.index=1
-    // console.log(event)
-    var per_page = _this.data.per_page+1;  //获取当前的页数加1传给后台
-    // console.log(per_page)
-    var value = _this.data.value;
-    var switchNav = _this.data.switchNav_01;
-    wx.request({
-      header:getApp().globalData.header,
-      url: 'https://cloud.meshmellow.cn/wechatapi/course_lists.html',
-      dataType:'POST',
-      data: {
-        page: per_page,
-        cid: value,
-        tag_id: switchNav,
-      },
-      success(res) {
-        
-        if (res.header["Set-Cookie"] != null) {
-          //设置cookie
-          getApp().globalData.header["Cookie"] += res.header["Set-Cookie"]
-        }
-        console.log(res)
-        // console.log(res)                   //当前页数返回的数据
-        _this.result = _this.data.getallpages; 
-        // console.log(_this.result)
-        var resArr = [];
-        var resArr_01=[];
-        resArr=res.data.data.data;  //存的现在最新的20个数据
-        // console.log(resArr)
-        
-        var total =res.data.data.total;
-        // var per_page = parseInt(total/_this.per_page)
-        // _this.result.forEach(function (val, index) {
-        //   resArr_01.push(val)
-        // })
-        // console.log(resArr_01)     // 所有页数返回回来的数据
-        resArr_01= _this.result.concat(resArr);
-        var cont=resArr_01;
-        _this.data.per_page = res.data.data.current_page;
-        //算出当前页数      
-        // console.log(_this.data.per_page)
-        // console.log(resArr_01.length);
-    if (cont.length >= total) {
-      wx.showToast({ //如果全部加载完成了也弹一个框
-        title: '我也是有底线的~',
-        icon: 'none',
-        duration: 1000,
-        iconType:'cancel'
-      });
-      return false;
-    } else {
-      wx.showLoading({ //期间为了显示效果可以添加一个过度的弹出框提示“加载中”  
-        title: '加载中',
-        icon: 'loading',
-      });
-      setTimeout(() => {
+lower(event){
+  console.log(event)
+  var _this = this;
+
+  event.index = 1
+  var per_page = _this.data.per_page + 1;  //获取当前的页数加1传给后台
+  console.log(per_page)
+  var value = _this.data.value;
+  var switchNav = _this.data.switchNav_01;
+  _this.setData({
+    hidden:false,
+    hidden_01:true
+  });
+  wx.request({
+    header: getApp().globalData.header,
+    url: 'https://cloud.meshmellow.cn/wechatapi/course_lists.html',
+    data: {
+      page: per_page,
+      cid: value,
+      tag_id: switchNav,
+      header: getApp().globalData.header,
+    },
+    success(res) {
+      console.log(res)
+      var count=res.data.count
+      //当前页数返回的数据
+      _this.result = _this.data.getallpages;
+      console.log(_this.result)
+      var resArr = [];
+      var resArr_01 = [];
+      resArr = res.data.data.data;  //存的现在最新的20个数据
+      // console.log(resArr)
+      var total = res.data.data.total; //页面数据总数量
+      
+      resArr_01 = _this.result.concat(resArr);
+      var cont = resArr_01;
+      _this.data.per_page = res.data.data.current_page;
+      //算出当前页数      
+      // console.log(_this.data.per_page)
+      // console.log(resArr_01.length);
+      if (count.length == total || resArr.length <= 5) {
         _this.setData({
-          getallpages: resArr_01
+          hidden:true,
+          hidden_01:false
+        })
+      } else {
+        wx.showLoading({ //期间为了显示效果可以添加一个过度的弹出框提示“加载中”  
+          title: '加载中...',
+          icon: 'loading',
         });
-        wx.hideLoading();
-      }, 1500)
-    }
+       setTimeout(() => {
+         _this.setData({
+           getallpages: resArr_01,
+           hidden: false,
+           hidden_01: true
+         });
+         wx.hideLoading();
+        }, 500)
       }
+    }
+  })
+    console.log("lower");
+  },
+  scroll: function (event) {
+    //该方法绑定了页面滚动时的事件，我这里记录了当前的position.y的值,为了请求数据之后把页面定位到这里来。
+    this.setData({
+      scrollTop: event.detail.scrollTop
+    });
+  },
+  // topLoad: function (event) {
+  //   //  该方法绑定了页面滑动到顶部的事件，然后做上拉刷新
+  //   this.setData({
+  //     getallpages: [],
+  //     scrollTop: 0
+  //   });
+  //   loadMore(this);
+  //   console.log("lower");
+  // },
+  imageLoad: function (e) {
+
+    var imgwidth = e.detail.width;
+    var imgheight = e.detail.height;
+    var ratio = imgwidth / imgheight;
+    var viewHeight = 750 / ratio;
+    var imgHeight = this.data.imgHeight;
+    //把每一张图片的对应的高度记录到数组里  
+    imgHeight = viewHeight;
+    this.setData({
+      imgHeight: imgHeight
     })
   },
   getallpages() {
@@ -108,13 +185,19 @@ Page({
       },
       success(res) {
         // console.log(res)
+        if (res.data.data.data.length<5) {
+          _this.data.hidden = true;
+          _this.data.hidden_01 = false
+        }
         var title_data=res.data.class_list; //分类
-        title_data.splice(0,0,{id:0,name:"全部"}) //分类添加全部
+        title_data.splice(0,0,{id:0,name:"全部课程"}) //分类添加全部
+        title_data.splice(3,0, { id: -1, name: "免费课程" })
         var title_Classification = res.data.tag_list; //标签
-        title_Classification.splice(0, 0, { id: 0, name: "全部" })
-        title_Classification.splice(16, 1)
+        title_Classification.splice(0, 0, { id: 0, greyimg: "http://cloud.meshmellow.cn/tpl/default/static/Wechatapp/001_01.png", redimg:"http://cloud.meshmellow.cn/tpl/default/static/Wechatapp/001_02.png"})
+        console.log(title_Classification) 
         _this.total = res.data.data.total //获取所有数据
         var res_data = res.data.data.data; //20个图片加文字
+        console.log(res_data)
         _this.per_page = res.data.data.per_page //获取当前页面数据数量
         var res_val_arr=[];
         res_data.forEach(function(val,index){
@@ -131,7 +214,9 @@ Page({
           getallpages: res_data,
           title_data: title_data,
           showstate:true,
-          title_Classification: title_Classification
+          title_Classification: title_Classification,
+          hidden: _this.data.hidden,
+          hidden_01: _this.data.hidden_01
         })
       }
     })
@@ -155,9 +240,9 @@ Page({
   //   })
     
   // },
-
   onLoad: function (options) {
     this.getallpages();
+    // loadMore(this)
     // this.queryMultipleNodes();
     if (app.globalData.userInfo) {
       this.setData({
@@ -189,11 +274,12 @@ Page({
 
     wx.getSystemInfo({
       success: (res) => {
+        console.log(res)
         this.setData({
           pixelRatio: res.pixelRatio,
           windowHeight: res.windowHeight,
-          windowWidth: res.windowWidth,
-          height:res.windowHeight
+          windowWidth: 547,
+          height:res.windowHeight-60
         })
        
       },
@@ -231,6 +317,7 @@ Page({
   switchNav(event){
     //每个tab选项宽度占1/5
     var _this=this;
+    console.log(event)
     var cur = event.currentTarget.dataset.current;
     _this.data.switchNav_01 = event.currentTarget.id;
     var value = _this.data.value;
@@ -258,7 +345,7 @@ Page({
       title: '加载中...',
       showstate: false
     })
-    // setTimeout(function () {
+   setTimeout(function () {
     wx.request({
         url:"https://cloud.meshmellow.cn/wechatapi/course_lists.html",
         data:{
@@ -267,17 +354,26 @@ Page({
         },
         method:"POST",
         success(res){
+          if (res.data.data.data.length <5){
+            _this.data.hidden=true;
+            _this.data.hidden_01=false
+          }
           _this.dif_title=res.data.data.data;
           // console.log(_this.dif_title)
+          
           _this.setData({
             getallpages: _this.dif_title,
-          showstate:true
+            showstate:true,
+            hidden: _this.data.hidden,
+            hidden_01: _this.data.hidden_01
           })
         }
       })
-    // },1000)
+     wx.hideLoading();
+   },500)
   },
   switchTab(event){
+    
     var cur = event.detail.current;
     var cur_id = event.detail.currentItemId
     var _this=this;
@@ -308,7 +404,7 @@ Page({
             wx.hideLoading()
           }
         })
-      },1000)
+      },5000)
         
      
     
@@ -319,13 +415,14 @@ Page({
    */
   onReady: function () {
     // this.queryMultipleNodes();
+    this.getallpages() 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getallpages() 
   },
 
   /**

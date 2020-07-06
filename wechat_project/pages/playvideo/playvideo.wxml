@@ -1,16 +1,71 @@
 <!--pages/playvideo/playvideo.wxml-->
+<wxs src="../../utils/filter_time.wxs" module="filter"></wxs>
 <view>
   <view>
-    <video src="http://video.meshmellow.cn/cloud/uploads/video/sys/20200320/PpZScTC7KCQnnddCA5ecs248F6ia53Gm.mp4?sign=" direction poster="http://video.meshmellow.cn/cloud/uploads/video/manager/20200320/wG6xY6d5EWZzrzbpzYifr8kDfyXFZ48c.jpg" show-mute-btn enable-play-gesture style="width:100%" bindplay="play_video">
+    <video src="{{video_list}}" direction poster="{{thumbnail}}" enable-play-gesture="{{enable}}" id="media{{id}}" show-mute-btn  style="width:100%" bindplay="play_video" enable-progress-gesture="{{gesture}}">
     </video>
   </view>
-  <view> 
-    <view>
-      <text>anbdasd</text>
+  <view style="background:#fff;width:100%;padding:20rpx 0">
+    <view class="width_layout"> 
+        <view>
+          <text class="page_title_class">{{page_title}}</text>
+        </view>
+        <view>
+          <text class="iconfont icon-bofang"></text>
+          <text class="play_count">{{click}}</text>
+          <text class="iconfont icon-buoumaotubiao24"></text>
+          <text class="time_class">{{add_time}}</text>
+        </view>
     </view>
-    <view>
-      <text>455</text>
-      <text>2012-20-11  11:11:11</text>
+  </view>
+  <view class="gery_class"></view>
+  <view class="nav bc_white">
+          <view class="{{selected?'red':'default'}} bottom_class" bindtap="selected">课时</view>
+          <view class="{{selected1?'red':'default'}} bottom_class" bindtap="selected1">推荐</view>
+  </view>
+  <view class="lesson_class">
+    <view style="width:100%;overflow:hidden;">
+        <view class="{{selected?'show':'hidden'}}">
+          <block wx:if="{{bool}}">
+            <view wx:for="{{video_set}}"  wx:key="index" class="layout_sele" id="{{item.id}}" bindtap="click_getid">
+                <view class="set_video_class">
+                      <image src="{{item.thumbnail}}" class="set_lesson_image"></image>
+                </view>
+                <view class="layout_sele_text">
+                  <view>{{item.title}}</view>
+                  <view>发布时间：{{filter.time_change(item.add_time)}}</view>
+                  <view>
+                    <text class="iconfont icon-dianzan"></text>
+                    <text>{{item.good}}</text>
+                    <text class="play_count icon-bofang iconfont"></text>
+                    <text>{{item.click}}</text>
+                  </view>
+                </view>
+            </view>
+            <view class="loading" hidden="{{!searchLoading}}">正在载入更多...</view>
+            <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
+          </block>  
+            <block wx:else>
+              <view class="no_lesson">{{video_set}}</view>
+            </block>
+        </view>
+        <view class="{{selected1?'show':'hidden'}}">
+            <view wx:for="{{recom_list}}" wx:key="index" class="layout_sele" bindtap="click_getid_tuijian" id="{{item.id}}">
+                  <view class="set_video_class">
+                    <image src="{{item.thumbnail}}" class="set_lesson_image "></image>
+                  </view>
+                  <view class="layout_sele_text">
+                  <view>{{item.title}}</view>
+                  <view>发布时间：{{filter.time_change(item.add_time)}}</view>
+                  <view>
+                    <text class="iconfont icon-dianzan"></text>
+                    <text>{{item.good}}</text>
+                    <text class="play_count icon-bofang iconfont"></text>
+                    <text>{{item.click}}</text>
+                  </view>
+                </view>
+            </view> 
+        </view>
     </view>
-  </view> 
+  </view>
 </view>
