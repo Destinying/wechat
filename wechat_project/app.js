@@ -1,5 +1,40 @@
 //app.js
 App({
+  globalData: {
+    siteBaseUrl: "https://cloud.meshmellow.cn/", //服务器url https://apitest.niuteam.cn/
+    secondDirectory: '', //如网站域名后存在二级目录，填写二级目录  例：'域名/applet/'
+    copyRight: {
+      is_load: 1, //是否加载版权信息 (请求失败后加载此配置)
+      default_logo: '', //版权LOGO图 (请求失败后加载此配置)
+      technical_support: 'Meshmellow School', //版权技术支持 (请求失败后加载此配置)
+    },
+    title: 'Meshmellow school', //title (请求失败后使用的title, 请求成功则使用后台配置title)
+    wx_info: '{}', //用户信息 (无需填写)
+    session_key: '', //小程序参数 (无需填写)
+    openid: '', //小程序用户唯一标识 (无需填写)
+    token: '', //用户标识 (无需填写)
+    sourceid: '', //推广ID (无需填写)
+    is_login: 0, //是否登录 (无需填写)
+    is_logout: 0, //是否退出登录 (无需填写)
+    is_first_bind: 0, //是否第一次绑定会员 (无需填写)
+    defaultImg: {
+      is_use: 0
+    }, //是否使用默认图 (无需填写)
+    webSiteInfo: {}, //基础配置 (无需填写)
+    tab_parm: '', //订单返回参数 (无需填写)
+    tab_type: '', //订单返回类型 (无需填写)
+    login_count: 0, //登录次数 (无需填写)
+    is_login_request: 0, //是否正在进行登录/注册请求 (无需填写)
+    is_yet_login: 0, //是否已经登录
+    current_address: '', //保存当前地址
+    //原有配置
+    userInfo: null,
+    header: {
+      "content-type": "application/x-www-form-urlencoded",
+      'Cookie': ''
+    }
+  },
+
   onLaunch: function () {
 
     let that = this;
@@ -647,4 +682,5 @@ App({
   isNull:function (data) {
     return(data == "" || data == undefined || data == null) ? true : false;
   }
+
 })

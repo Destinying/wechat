@@ -46,6 +46,18 @@
       },
       {
         "pagePath": "pages/mycode/mycode",
+        "text": "分类",
+        "iconPath": "image/mycode_origin.png",
+        "selectedIconPath": "image/select_mycode.png"
+      },
+      {
+        "pagePath": "pages/mycode/mycode",
+        "text": "订阅",
+        "iconPath": "image/mycode_origin.png",
+        "selectedIconPath": "image/select_mycode.png"
+      },
+      {
+        "pagePath": "pages/mycode/mycode",
         "text": "我的",
         "iconPath": "image/mycode_origin.png",
         "selectedIconPath": "image/wode_05_08.png"
